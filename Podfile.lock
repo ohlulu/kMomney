@@ -1,0 +1,33 @@
+PODS:
+  - EFCountingLabel (4.3.1)
+  - JTAppleCalendar (7.1.7)
+  - SnapKit (4.2.0)
+
+DEPENDENCIES:
+  - EFCountingLabel
+  - JTAppleCalendar (~> 7.1)
+  - "SnapKit (from `git@github.com:SnapKit/SnapKit.git`, branch `develop`)"
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - EFCountingLabel
+    - JTAppleCalendar
+
+EXTERNAL SOURCES:
+  SnapKit:
+    :branch: develop
+    :git: "git@github.com:SnapKit/SnapKit.git"
+
+CHECKOUT OPTIONS:
+  SnapKit:
+    :commit: eea05d74f073696202cd0bb8e744e4c89781a414
+    :git: "git@github.com:SnapKit/SnapKit.git"
+
+SPEC CHECKSUMS:
+  EFCountingLabel: 656f4309c562b98a8cc89eaa955a1acb3e29b074
+  JTAppleCalendar: 96da4d8388fa6dc82d6a60d41ef36a015e167e2f
+  SnapKit: ae1cdee794f6a7b8e909092c5244a79b9d1c9e26
+
+PODFILE CHECKSUM: 178160f8e786825be293ca4bb675afc57972523f
+
+COCOAPODS: 1.5.3
