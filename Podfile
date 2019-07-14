@@ -1,21 +1,30 @@
-# Uncomment the next line to define a global platform for your project
-platform :ios, '11.0'
+platform :ios, '12.0'
 
 target 'kMoney' do
-  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
-  pod 'JTAppleCalendar', '~> 7.1'
-  pod 'SnapKit', :git => 'git@github.com:SnapKit/SnapKit.git', :branch => 'develop'
+  
+  # Rx
+  pod 'RxSwift',    '~> 4.0'
+  pod 'RxCocoa',    '~> 4.0'
+  pod "RxGesture"
+  pod "RxRealm"
+  
+  # DB
+  pod 'RealmSwift'
+  
+  # UI
+  pod 'Charts'
+  pod 'SnapKit', '~> 5.0.0'
   pod 'EFCountingLabel'
 
   target 'kMoneyTests' do
     inherit! :search_paths
-    # Pods for testing
+    
   end
 
   target 'kMoneyUITests' do
     inherit! :search_paths
-    # Pods for testing
+    
   end
 
 end
