@@ -207,4 +207,38 @@ extension Date {
         newDate.second = value
         return newDate
     }
+    
+    func beginning(of component: Calendar.Component) -> Date? {
+        if component == .day {
+            return Calendar.current.startOfDay(for: self)
+        }
+        
+        var components: Set<Calendar.Component> {
+            switch component {
+            case .second:
+                return [.year, .month, .day, .hour, .minute, .second]
+                
+            case .minute:
+                return [.year, .month, .day, .hour, .minute]
+                
+            case .hour:
+                return [.year, .month, .day, .hour]
+                
+            case .weekOfYear, .weekOfMonth:
+                return [.yearForWeekOfYear, .weekOfYear]
+                
+            case .month:
+                return [.year, .month]
+                
+            case .year:
+                return [.year]
+                
+            default:
+                return []
+            }
+        }
+        
+        guard !components.isEmpty else { return nil }
+        return Calendar.current.date(from: Calendar.current.dateComponents(components, from: self))
+    }
 }

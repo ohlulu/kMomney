@@ -10,7 +10,7 @@ import UIKit
 
 class DashboardTabBarController: UITabBarController {
     
-    let overviewVC = OverviewViewController()
+    let reportVC = UIViewController()
     let settingVC = SettingViewController()
     
     let button = UIButton()
@@ -45,18 +45,17 @@ extension DashboardTabBarController {
     func initialVCs() {
         
         let whiteVC = UIViewController()
-        
-        viewControllers = [
-            BaseNavigationController(rootViewController: overviewVC),
-            whiteVC,
-            BaseNavigationController(rootViewController: settingVC)
-        ]
-        
-        viewControllers?[0].tabBarItem
+        let vc1 = BaseNavigationController(rootViewController: reportVC)
+        let vc2 = BaseNavigationController(rootViewController: settingVC)
+        vc1.tabBarItem
             = UITabBarItem(title: "總覽", image: nil, selectedImage: nil)
-        
-        viewControllers?[2].tabBarItem
+        vc2.tabBarItem
             = UITabBarItem(title: "設定", image: nil, selectedImage: nil)
+        viewControllers = [
+            vc1,
+            whiteVC,
+            vc2
+        ]
         
         tabBar.items?[1].isEnabled = false
     }

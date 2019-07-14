@@ -47,12 +47,12 @@
 		BEA3CDA2226311AB00BE1DC8 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA3CD83226311AB00BE1DC8 /* UIImageExtension.swift */; };
 		BEA3CDA3226311AB00BE1DC8 /* UICollectionViewExtenion.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA3CD84226311AB00BE1DC8 /* UICollectionViewExtenion.swift */; };
 		BEA3CDA4226311AB00BE1DC8 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA3CD85226311AB00BE1DC8 /* DateExtension.swift */; };
-		BEA3CDA82263129500BE1DC8 /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA3CDA72263129500BE1DC8 /* OverviewViewController.swift */; };
 		BEA3CDAA226312B200BE1DC8 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA3CDA9226312B200BE1DC8 /* SettingViewController.swift */; };
 		BEA3CDAC2263144B00BE1DC8 /* Asset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEA3CDAB2263144B00BE1DC8 /* Asset.xcassets */; };
 		BEA3CDAF226316C400BE1DC8 /* TintColorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA3CDAE226316C400BE1DC8 /* TintColorFactory.swift */; };
 		BEA3CDB22263178000BE1DC8 /* ImageFacotry.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA3CDB12263178000BE1DC8 /* ImageFacotry.swift */; };
 		BEA3CDB42263187B00BE1DC8 /* GlobalImport.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA3CDB32263187B00BE1DC8 /* GlobalImport.swift */; };
+		BEA3CDB922634A2100BE1DC8 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA3CDB822634A2100BE1DC8 /* UIHelper.swift */; };
 		E7B1EF693A61EE27295A816A /* Pods_kMoneyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBE39E4A717746154116D347 /* Pods_kMoneyTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -124,12 +124,12 @@
 		BEA3CD83226311AB00BE1DC8 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		BEA3CD84226311AB00BE1DC8 /* UICollectionViewExtenion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtenion.swift; sourceTree = "<group>"; };
 		BEA3CD85226311AB00BE1DC8 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
-		BEA3CDA72263129500BE1DC8 /* OverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
 		BEA3CDA9226312B200BE1DC8 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		BEA3CDAB2263144B00BE1DC8 /* Asset.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Asset.xcassets; path = ../Asset.xcassets; sourceTree = "<group>"; };
 		BEA3CDAE226316C400BE1DC8 /* TintColorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TintColorFactory.swift; sourceTree = "<group>"; };
 		BEA3CDB12263178000BE1DC8 /* ImageFacotry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFacotry.swift; sourceTree = "<group>"; };
 		BEA3CDB32263187B00BE1DC8 /* GlobalImport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalImport.swift; sourceTree = "<group>"; };
+		BEA3CDB822634A2100BE1DC8 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		C19430838692ADDBBD474E0B /* Pods-kMoneyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kMoneyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kMoneyTests/Pods-kMoneyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C1CF24BF821556BAAF36A576 /* Pods_kMoney.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kMoney.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3753CC075D28F88815CCE5F /* Pods-kMoney.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kMoney.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kMoney/Pods-kMoney.debug.xcconfig"; sourceTree = "<group>"; };
@@ -247,7 +247,7 @@
 			children = (
 				BEA3CD5C22630F8100BE1DC8 /* Base */,
 				BEA3CD612263108200BE1DC8 /* Dashboard */,
-				BEA3CDA52263123200BE1DC8 /* OverviewPage */,
+				BEA3CDA52263123200BE1DC8 /* Report */,
 				BEA3CDA62263126800BE1DC8 /* SettingPage */,
 			);
 			path = View;
@@ -354,12 +354,11 @@
 			path = UIExtension;
 			sourceTree = "<group>";
 		};
-		BEA3CDA52263123200BE1DC8 /* OverviewPage */ = {
+		BEA3CDA52263123200BE1DC8 /* Report */ = {
 			isa = PBXGroup;
 			children = (
-				BEA3CDA72263129500BE1DC8 /* OverviewViewController.swift */,
 			);
-			path = OverviewPage;
+			path = Report;
 			sourceTree = "<group>";
 		};
 		BEA3CDA62263126800BE1DC8 /* SettingPage */ = {
@@ -373,6 +372,7 @@
 		BEA3CDAD2263169800BE1DC8 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				BEA3CDB7226349FE00BE1DC8 /* UIHelper */,
 				BEA3CDB02263176A00BE1DC8 /* Factory */,
 				BEA3CD62226311AB00BE1DC8 /* GlobalExtension */,
 			);
@@ -386,6 +386,14 @@
 				BEA3CDAE226316C400BE1DC8 /* TintColorFactory.swift */,
 			);
 			path = Factory;
+			sourceTree = "<group>";
+		};
+		BEA3CDB7226349FE00BE1DC8 /* UIHelper */ = {
+			isa = PBXGroup;
+			children = (
+				BEA3CDB822634A2100BE1DC8 /* UIHelper.swift */,
+			);
+			path = UIHelper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -590,24 +598,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-kMoney/Pods-kMoney-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/EFCountingLabel/EFCountingLabel.framework",
-				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
-				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-kMoney/Pods-kMoney-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EFCountingLabel.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-kMoney/Pods-kMoney-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-kMoney/Pods-kMoney-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-kMoney/Pods-kMoney-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -650,13 +649,13 @@
 				BEA3CD96226311AB00BE1DC8 /* PrintDebug.swift in Sources */,
 				BEA3CD9C226311AB00BE1DC8 /* TimeIntervalExtension.swift in Sources */,
 				BEA3CDA2226311AB00BE1DC8 /* UIImageExtension.swift in Sources */,
-				BEA3CDA82263129500BE1DC8 /* OverviewViewController.swift in Sources */,
 				BEA3CDA0226311AB00BE1DC8 /* UIFontExtension.swift in Sources */,
 				BEA3CD9B226311AB00BE1DC8 /* UIViewExtension.swift in Sources */,
 				BEA3CD5E2263105000BE1DC8 /* BaseNavigationController.swift in Sources */,
 				BEA3CD9D226311AB00BE1DC8 /* UIStackViewExtension.swift in Sources */,
 				BEA3CD97226311AB00BE1DC8 /* UILabelExtension.swift in Sources */,
 				BEA3CD87226311AB00BE1DC8 /* ThreadExtension.swift in Sources */,
+				BEA3CDB922634A2100BE1DC8 /* UIHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -827,7 +826,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TSTQSY2TJN;
 				INFOPLIST_FILE = kMoney/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -847,7 +846,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TSTQSY2TJN;
 				INFOPLIST_FILE = kMoney/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
