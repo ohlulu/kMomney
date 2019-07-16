@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,11 @@
 		BE15CBC9226308B300AFAB2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE15CBC7226308B300AFAB2C /* LaunchScreen.storyboard */; };
 		BE15CBD4226308B300AFAB2C /* kMoneyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15CBD3226308B300AFAB2C /* kMoneyTests.swift */; };
 		BE15CBDF226308B300AFAB2C /* kMoneyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15CBDE226308B300AFAB2C /* kMoneyUITests.swift */; };
+		BE9F371922DDB09B009E5E9C /* KMFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F371822DDB09B009E5E9C /* KMFont.swift */; };
+		BE9F371C22DDB60D009E5E9C /* Ext+UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F371B22DDB60D009E5E9C /* Ext+UINavigationController.swift */; };
+		BE9F371F22DDC07D009E5E9C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F371E22DDC07D009E5E9C /* HomeViewController.swift */; };
+		BE9F372122DDC0C9009E5E9C /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F372022DDC0C9009E5E9C /* ReportViewController.swift */; };
+		BE9F372322DDC0F3009E5E9C /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F372222DDC0F3009E5E9C /* SettingViewController.swift */; };
 		BEA3CD5B22630F7D00BE1DC8 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA3CD5A22630F7D00BE1DC8 /* BaseViewController.swift */; };
 		BEA3CD5E2263105000BE1DC8 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA3CD5D2263105000BE1DC8 /* BaseNavigationController.swift */; };
 		BEA3CD602263107D00BE1DC8 /* DashboardTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA3CD5F2263107D00BE1DC8 /* DashboardTabBarController.swift */; };
@@ -28,7 +33,6 @@
 		BEA3CD8F226311AB00BE1DC8 /* RunTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA3CD6F226311AB00BE1DC8 /* RunTime.swift */; };
 		BEA3CD90226311AB00BE1DC8 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA3CD71226311AB00BE1DC8 /* UIButtonExtension.swift */; };
 		BEA3CD91226311AB00BE1DC8 /* UIScreenExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA3CD72226311AB00BE1DC8 /* UIScreenExtension.swift */; };
-		BEA3CD92226311AB00BE1DC8 /* UIAlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA3CD73226311AB00BE1DC8 /* UIAlertControllerExtension.swift */; };
 		BEA3CD93226311AB00BE1DC8 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA3CD74226311AB00BE1DC8 /* UIColorExtension.swift */; };
 		BEA3CD94226311AB00BE1DC8 /* NumberTypeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA3CD75226311AB00BE1DC8 /* NumberTypeExtension.swift */; };
 		BEA3CD95226311AB00BE1DC8 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA3CD76226311AB00BE1DC8 /* UITextFieldExtension.swift */; };
@@ -36,7 +40,6 @@
 		BEA3CD97226311AB00BE1DC8 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA3CD78226311AB00BE1DC8 /* UILabelExtension.swift */; };
 		BEA3CD98226311AB00BE1DC8 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA3CD79226311AB00BE1DC8 /* UIViewControllerExtension.swift */; };
 		BEA3CD99226311AB00BE1DC8 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA3CD7A226311AB00BE1DC8 /* UITableViewExtension.swift */; };
-		BEA3CD9A226311AB00BE1DC8 /* UIScrollViewEntension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA3CD7B226311AB00BE1DC8 /* UIScrollViewEntension.swift */; };
 		BEA3CD9B226311AB00BE1DC8 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA3CD7C226311AB00BE1DC8 /* UIViewExtension.swift */; };
 		BEA3CD9C226311AB00BE1DC8 /* TimeIntervalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA3CD7D226311AB00BE1DC8 /* TimeIntervalExtension.swift */; };
 		BEA3CD9D226311AB00BE1DC8 /* UIStackViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA3CD7E226311AB00BE1DC8 /* UIStackViewExtension.swift */; };
@@ -47,9 +50,8 @@
 		BEA3CDA2226311AB00BE1DC8 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA3CD83226311AB00BE1DC8 /* UIImageExtension.swift */; };
 		BEA3CDA3226311AB00BE1DC8 /* UICollectionViewExtenion.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA3CD84226311AB00BE1DC8 /* UICollectionViewExtenion.swift */; };
 		BEA3CDA4226311AB00BE1DC8 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA3CD85226311AB00BE1DC8 /* DateExtension.swift */; };
-		BEA3CDAA226312B200BE1DC8 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA3CDA9226312B200BE1DC8 /* SettingViewController.swift */; };
 		BEA3CDAC2263144B00BE1DC8 /* Asset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEA3CDAB2263144B00BE1DC8 /* Asset.xcassets */; };
-		BEA3CDAF226316C400BE1DC8 /* TintColorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA3CDAE226316C400BE1DC8 /* TintColorFactory.swift */; };
+		BEA3CDAF226316C400BE1DC8 /* ColorMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA3CDAE226316C400BE1DC8 /* ColorMaker.swift */; };
 		BEA3CDB22263178000BE1DC8 /* ImageFacotry.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA3CDB12263178000BE1DC8 /* ImageFacotry.swift */; };
 		BEA3CDB42263187B00BE1DC8 /* GlobalImport.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA3CDB32263187B00BE1DC8 /* GlobalImport.swift */; };
 		BEA3CDB922634A2100BE1DC8 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA3CDB822634A2100BE1DC8 /* UIHelper.swift */; };
@@ -90,6 +92,11 @@
 		BE15CBDA226308B300AFAB2C /* kMoneyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kMoneyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE15CBDE226308B300AFAB2C /* kMoneyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kMoneyUITests.swift; sourceTree = "<group>"; };
 		BE15CBE0226308B300AFAB2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE9F371822DDB09B009E5E9C /* KMFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMFont.swift; sourceTree = "<group>"; };
+		BE9F371B22DDB60D009E5E9C /* Ext+UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+UINavigationController.swift"; sourceTree = "<group>"; };
+		BE9F371E22DDC07D009E5E9C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		BE9F372022DDC0C9009E5E9C /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
+		BE9F372222DDC0F3009E5E9C /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		BEA3CD5A22630F7D00BE1DC8 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		BEA3CD5D2263105000BE1DC8 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		BEA3CD5F2263107D00BE1DC8 /* DashboardTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTabBarController.swift; sourceTree = "<group>"; };
@@ -105,7 +112,6 @@
 		BEA3CD6F226311AB00BE1DC8 /* RunTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunTime.swift; sourceTree = "<group>"; };
 		BEA3CD71226311AB00BE1DC8 /* UIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		BEA3CD72226311AB00BE1DC8 /* UIScreenExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScreenExtension.swift; sourceTree = "<group>"; };
-		BEA3CD73226311AB00BE1DC8 /* UIAlertControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertControllerExtension.swift; sourceTree = "<group>"; };
 		BEA3CD74226311AB00BE1DC8 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		BEA3CD75226311AB00BE1DC8 /* NumberTypeExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberTypeExtension.swift; sourceTree = "<group>"; };
 		BEA3CD76226311AB00BE1DC8 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
@@ -113,7 +119,6 @@
 		BEA3CD78226311AB00BE1DC8 /* UILabelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
 		BEA3CD79226311AB00BE1DC8 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		BEA3CD7A226311AB00BE1DC8 /* UITableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
-		BEA3CD7B226311AB00BE1DC8 /* UIScrollViewEntension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScrollViewEntension.swift; sourceTree = "<group>"; };
 		BEA3CD7C226311AB00BE1DC8 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		BEA3CD7D226311AB00BE1DC8 /* TimeIntervalExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeIntervalExtension.swift; sourceTree = "<group>"; };
 		BEA3CD7E226311AB00BE1DC8 /* UIStackViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStackViewExtension.swift; sourceTree = "<group>"; };
@@ -124,9 +129,8 @@
 		BEA3CD83226311AB00BE1DC8 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		BEA3CD84226311AB00BE1DC8 /* UICollectionViewExtenion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtenion.swift; sourceTree = "<group>"; };
 		BEA3CD85226311AB00BE1DC8 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
-		BEA3CDA9226312B200BE1DC8 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
-		BEA3CDAB2263144B00BE1DC8 /* Asset.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Asset.xcassets; path = ../Asset.xcassets; sourceTree = "<group>"; };
-		BEA3CDAE226316C400BE1DC8 /* TintColorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TintColorFactory.swift; sourceTree = "<group>"; };
+		BEA3CDAB2263144B00BE1DC8 /* Asset.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Asset.xcassets; sourceTree = "<group>"; };
+		BEA3CDAE226316C400BE1DC8 /* ColorMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorMaker.swift; sourceTree = "<group>"; };
 		BEA3CDB12263178000BE1DC8 /* ImageFacotry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFacotry.swift; sourceTree = "<group>"; };
 		BEA3CDB32263187B00BE1DC8 /* GlobalImport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalImport.swift; sourceTree = "<group>"; };
 		BEA3CDB822634A2100BE1DC8 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
@@ -186,6 +190,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BE006B4022DDA62900A08239 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				BEA3CDB32263187B00BE1DC8 /* GlobalImport.swift */,
+				BE15CBBE226308B000AFAB2C /* AppDelegate.swift */,
+				BE15CBC7226308B300AFAB2C /* LaunchScreen.storyboard */,
+				BEA3CDAB2263144B00BE1DC8 /* Asset.xcassets */,
+				BE15CBCA226308B300AFAB2C /* Info.plist */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		BE15CBB2226308B000AFAB2C = {
 			isa = PBXGroup;
 			children = (
@@ -211,15 +227,12 @@
 		BE15CBBD226308B000AFAB2C /* kMoney */ = {
 			isa = PBXGroup;
 			children = (
-				BEA3CDB32263187B00BE1DC8 /* GlobalImport.swift */,
-				BE15CBBE226308B000AFAB2C /* AppDelegate.swift */,
+				BE006B4022DDA62900A08239 /* Resource */,
 				BEA3CDAD2263169800BE1DC8 /* Extension */,
+				BEA3CD5922630F5300BE1DC8 /* Model */,
 				BEA3CD5722630F3200BE1DC8 /* View */,
 				BEA3CD5822630F3F00BE1DC8 /* ViewModel */,
-				BEA3CD5922630F5300BE1DC8 /* Model */,
-				BE15CBC7226308B300AFAB2C /* LaunchScreen.storyboard */,
-				BEA3CDAB2263144B00BE1DC8 /* Asset.xcassets */,
-				BE15CBCA226308B300AFAB2C /* Info.plist */,
+				BE9F371622DDB066009E5E9C /* Theme */,
 			);
 			path = kMoney;
 			sourceTree = "<group>";
@@ -242,11 +255,45 @@
 			path = kMoneyUITests;
 			sourceTree = "<group>";
 		};
+		BE9F371622DDB066009E5E9C /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				BE9F371A22DDB38D009E5E9C /* Color */,
+				BE9F371722DDB07D009E5E9C /* Font */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		BE9F371722DDB07D009E5E9C /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				BE9F371822DDB09B009E5E9C /* KMFont.swift */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		BE9F371A22DDB38D009E5E9C /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				BEA3CDAE226316C400BE1DC8 /* ColorMaker.swift */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
+		BE9F371D22DDBF88009E5E9C /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				BE9F371E22DDC07D009E5E9C /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		BEA3CD5722630F3200BE1DC8 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				BEA3CD5C22630F8100BE1DC8 /* Base */,
 				BEA3CD612263108200BE1DC8 /* Dashboard */,
+				BE9F371D22DDBF88009E5E9C /* Home */,
 				BEA3CDA52263123200BE1DC8 /* Report */,
 				BEA3CDA62263126800BE1DC8 /* SettingPage */,
 			);
@@ -331,7 +378,6 @@
 			children = (
 				BEA3CD71226311AB00BE1DC8 /* UIButtonExtension.swift */,
 				BEA3CD72226311AB00BE1DC8 /* UIScreenExtension.swift */,
-				BEA3CD73226311AB00BE1DC8 /* UIAlertControllerExtension.swift */,
 				BEA3CD74226311AB00BE1DC8 /* UIColorExtension.swift */,
 				BEA3CD75226311AB00BE1DC8 /* NumberTypeExtension.swift */,
 				BEA3CD76226311AB00BE1DC8 /* UITextFieldExtension.swift */,
@@ -339,7 +385,6 @@
 				BEA3CD78226311AB00BE1DC8 /* UILabelExtension.swift */,
 				BEA3CD79226311AB00BE1DC8 /* UIViewControllerExtension.swift */,
 				BEA3CD7A226311AB00BE1DC8 /* UITableViewExtension.swift */,
-				BEA3CD7B226311AB00BE1DC8 /* UIScrollViewEntension.swift */,
 				BEA3CD7C226311AB00BE1DC8 /* UIViewExtension.swift */,
 				BEA3CD7D226311AB00BE1DC8 /* TimeIntervalExtension.swift */,
 				BEA3CD7E226311AB00BE1DC8 /* UIStackViewExtension.swift */,
@@ -350,6 +395,7 @@
 				BEA3CD83226311AB00BE1DC8 /* UIImageExtension.swift */,
 				BEA3CD84226311AB00BE1DC8 /* UICollectionViewExtenion.swift */,
 				BEA3CD85226311AB00BE1DC8 /* DateExtension.swift */,
+				BE9F371B22DDB60D009E5E9C /* Ext+UINavigationController.swift */,
 			);
 			path = UIExtension;
 			sourceTree = "<group>";
@@ -357,6 +403,7 @@
 		BEA3CDA52263123200BE1DC8 /* Report */ = {
 			isa = PBXGroup;
 			children = (
+				BE9F372022DDC0C9009E5E9C /* ReportViewController.swift */,
 			);
 			path = Report;
 			sourceTree = "<group>";
@@ -364,7 +411,7 @@
 		BEA3CDA62263126800BE1DC8 /* SettingPage */ = {
 			isa = PBXGroup;
 			children = (
-				BEA3CDA9226312B200BE1DC8 /* SettingViewController.swift */,
+				BE9F372222DDC0F3009E5E9C /* SettingViewController.swift */,
 			);
 			path = SettingPage;
 			sourceTree = "<group>";
@@ -383,7 +430,6 @@
 			isa = PBXGroup;
 			children = (
 				BEA3CDB12263178000BE1DC8 /* ImageFacotry.swift */,
-				BEA3CDAE226316C400BE1DC8 /* TintColorFactory.swift */,
 			);
 			path = Factory;
 			sourceTree = "<group>";
@@ -616,13 +662,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEA3CDAF226316C400BE1DC8 /* TintColorFactory.swift in Sources */,
+				BEA3CDAF226316C400BE1DC8 /* ColorMaker.swift in Sources */,
 				BEA3CD8E226311AB00BE1DC8 /* UIimage+Copy.swift in Sources */,
 				BEA3CDA4226311AB00BE1DC8 /* DateExtension.swift in Sources */,
 				BE15CBBF226308B000AFAB2C /* AppDelegate.swift in Sources */,
 				BEA3CD88226311AB00BE1DC8 /* URLExtension.swift in Sources */,
+				BE9F372322DDC0F3009E5E9C /* SettingViewController.swift in Sources */,
 				BEA3CD99226311AB00BE1DC8 /* UITableViewExtension.swift in Sources */,
-				BEA3CD9A226311AB00BE1DC8 /* UIScrollViewEntension.swift in Sources */,
 				BEA3CDA1226311AB00BE1DC8 /* UIWindowExtension.swift in Sources */,
 				BEA3CD8C226311AB00BE1DC8 /* CopyProtocol.swift in Sources */,
 				BEA3CDB42263187B00BE1DC8 /* GlobalImport.swift in Sources */,
@@ -635,14 +681,15 @@
 				BEA3CD9E226311AB00BE1DC8 /* FileMamagerExtension.swift in Sources */,
 				BEA3CD86226311AB00BE1DC8 /* PrivacyAuthorization.swift in Sources */,
 				BEA3CD8A226311AB00BE1DC8 /* DoubleExtension.swift in Sources */,
-				BEA3CDAA226312B200BE1DC8 /* SettingViewController.swift in Sources */,
+				BE9F371C22DDB60D009E5E9C /* Ext+UINavigationController.swift in Sources */,
+				BE9F372122DDC0C9009E5E9C /* ReportViewController.swift in Sources */,
+				BE9F371922DDB09B009E5E9C /* KMFont.swift in Sources */,
 				BEA3CD5B22630F7D00BE1DC8 /* BaseViewController.swift in Sources */,
 				BEA3CD89226311AB00BE1DC8 /* StringExtension.swift in Sources */,
 				BEA3CD602263107D00BE1DC8 /* DashboardTabBarController.swift in Sources */,
 				BEA3CD8F226311AB00BE1DC8 /* RunTime.swift in Sources */,
 				BEA3CDB22263178000BE1DC8 /* ImageFacotry.swift in Sources */,
 				BEA3CD90226311AB00BE1DC8 /* UIButtonExtension.swift in Sources */,
-				BEA3CD92226311AB00BE1DC8 /* UIAlertControllerExtension.swift in Sources */,
 				BEA3CD8B226311AB00BE1DC8 /* ArrayEntension.swift in Sources */,
 				BEA3CD9F226311AB00BE1DC8 /* ClosureType.swift in Sources */,
 				BEA3CD91226311AB00BE1DC8 /* UIScreenExtension.swift in Sources */,
@@ -652,6 +699,7 @@
 				BEA3CDA0226311AB00BE1DC8 /* UIFontExtension.swift in Sources */,
 				BEA3CD9B226311AB00BE1DC8 /* UIViewExtension.swift in Sources */,
 				BEA3CD5E2263105000BE1DC8 /* BaseNavigationController.swift in Sources */,
+				BE9F371F22DDC07D009E5E9C /* HomeViewController.swift in Sources */,
 				BEA3CD9D226311AB00BE1DC8 /* UIStackViewExtension.swift in Sources */,
 				BEA3CD97226311AB00BE1DC8 /* UILabelExtension.swift in Sources */,
 				BEA3CD87226311AB00BE1DC8 /* ThreadExtension.swift in Sources */,
@@ -825,13 +873,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TSTQSY2TJN;
-				INFOPLIST_FILE = kMoney/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/kMoney/Resource/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ohlulu.kMoney.kMoney;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ohlulu.kMoney;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -845,13 +893,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TSTQSY2TJN;
-				INFOPLIST_FILE = kMoney/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/kMoney/Resource/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ohlulu.kMoney.kMoney;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ohlulu.kMoney;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

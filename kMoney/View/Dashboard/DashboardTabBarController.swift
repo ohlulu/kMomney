@@ -10,7 +10,12 @@ import UIKit
 
 class DashboardTabBarController: UITabBarController {
     
-    let reportVC = UIViewController()
+    // MARK: UI
+    
+    let homeVC = HomeViewController()
+    
+    let reportVC = ReportViewController()
+    
     let settingVC = SettingViewController()
     
     let button = UIButton()
@@ -27,16 +32,7 @@ class DashboardTabBarController: UITabBarController {
 fileprivate extension DashboardTabBarController {
     
     func setupUI() {
-        
         tabBar.tintColor = .mainBlue
-    
-        button.setBackgroundImage(UIImage.add, for: .normal)
-        view.addSubview(button)
-        button.snp.makeConstraints { (make) in
-            make.top.equalTo(tabBar.snp.top).offset(10)
-            make.centerX.equalToSuperview()
-            make.size.equalTo(49)
-        }
     }
 }
 
@@ -44,19 +40,18 @@ extension DashboardTabBarController {
     
     func initialVCs() {
         
-        let whiteVC = UIViewController()
-        let vc1 = BaseNavigationController(rootViewController: reportVC)
-        let vc2 = BaseNavigationController(rootViewController: settingVC)
+        let vc1 = BaseNavigationController(rootVC: homeVC)
+        let vc2 = BaseNavigationController(rootVC: reportVC)
+        let vc3 = BaseNavigationController(rootVC: settingVC)
         vc1.tabBarItem
             = UITabBarItem(title: "總覽", image: nil, selectedImage: nil)
         vc2.tabBarItem
+            = UITabBarItem(title: "財報", image: nil, selectedImage: nil)
+        vc3.tabBarItem
             = UITabBarItem(title: "設定", image: nil, selectedImage: nil)
         viewControllers = [
-            vc1,
-            whiteVC,
-            vc2
+            vc1, vc2, vc3
         ]
-        
-        tabBar.items?[1].isEnabled = false
+
     }
 }
