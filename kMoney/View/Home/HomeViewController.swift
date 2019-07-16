@@ -1,5 +1,5 @@
 //
-//  SettingViewController.swift
+//  HomeViewController.swift
 //  kMoney
 //
 //  Created by ohlulu on 2019/7/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingViewController: BaseViewController {
+class HomeViewController: BaseViewController {
 
     // MARK: UI element
 
@@ -33,7 +33,7 @@ class SettingViewController: BaseViewController {
 
 // MARK: - Observer sequence
 
-fileprivate extension SettingViewController {
+fileprivate extension HomeViewController {
     
     func observerSequence() {
         
@@ -42,9 +42,9 @@ fileprivate extension SettingViewController {
 
 // MARK: - Setup UI methods
 
-fileprivate extension SettingViewController {
+fileprivate extension HomeViewController {
 
     func setupUI() {
-        navigationItem.title = "設定"
+        navigationItem.title = "7月"
     }
 }

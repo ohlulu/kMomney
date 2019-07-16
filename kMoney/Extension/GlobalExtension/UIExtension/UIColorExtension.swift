@@ -34,6 +34,12 @@ public extension UIColor {
 }
 
 extension UIColor {
+    
+    @discardableResult
+    func setAlpha(_ value: CGFloat) -> UIColor {
+        return withAlphaComponent(value)
+    }
+    
     func createImage() -> UIImage? {
         let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
         UIGraphicsBeginImageContext(rect.size)
@@ -47,56 +53,4 @@ extension UIColor {
         UIGraphicsEndImageContext()
         return image
     }
-}
-
-extension UIColor {
-
-    @nonobjc class var green: UIColor {
-        return UIColor(red: 134.0 / 255.0, green: 188.0 / 255.0, blue: 37.0 / 255.0, alpha: 1.0)
-    }
-
-    @nonobjc class var midGray: UIColor {
-        return UIColor(white: 155.0 / 255.0, alpha: 1.0)
-    }
-
-    @nonobjc class var darkGreen: UIColor {
-        return UIColor(red: 6.0 / 255.0, green: 106.0 / 255.0, blue: 56.0 / 255.0, alpha: 1.0)
-    }
-
-    @nonobjc class var words: UIColor {
-        return UIColor(white: 74.0 / 255.0, alpha: 1.0)
-    }
-
-    @nonobjc class var white: UIColor {
-        return UIColor(white: 1.0, alpha: 1.0)
-    }
-    
-    @nonobjc class var background: UIColor {
-        return UIColor(white: 245.0 / 255.0, alpha: 1.0)
-    }
-
-    @nonobjc class var offWhite: UIColor {
-        return UIColor(red: 250.0 / 255.0, green: 250.0 / 255.0, blue: 248.0 / 255.0, alpha: 1.0)
-    }
-    
-    @nonobjc class var spruce: UIColor {
-        return UIColor(red: 13.0 / 255.0, green: 105.0 / 255.0, blue: 61.0 / 255.0, alpha: 1.0)
-    }
-    
-    @nonobjc class var avocadoGreen: UIColor {
-        return UIColor(red: 113.0 / 255.0, green: 157.0 / 255.0, blue: 34.0 / 255.0, alpha: 1.0)
-    }
-    
-    @nonobjc class var green10: UIColor {
-        return UIColor(red: 134.0 / 255.0, green: 188.0 / 255.0, blue: 37.0 / 255.0, alpha: 0.1)
-    }
-    
-    @nonobjc class var everGreen: UIColor {
-        return UIColor(red: 4.0 / 255.0, green: 64.0 / 255.0, blue: 34.0 / 255.0, alpha: 1.0)
-    }
-    
-    @nonobjc class var shadowGray: UIColor {
-        return UIColor(red: 198.0 / 255.0, green: 198.0 / 255.0, blue: 204.0 / 255.0, alpha: 1.0)
-    }
-
 }
