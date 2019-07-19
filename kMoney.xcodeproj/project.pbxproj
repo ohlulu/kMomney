@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		14D9C116240C784CE61206D9 /* Pods_kMoneyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 901D7C5A10BFB50EE8E1CBFF /* Pods_kMoneyUITests.framework */; };
 		B86985727EDE5DC532850060 /* Pods_kMoney.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1CF24BF821556BAAF36A576 /* Pods_kMoney.framework */; };
+		BE0430FE22E20F4900C5F74B /* ColorSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0430FD22E20F4900C5F74B /* ColorSet.swift */; };
+		BE04310022E2102F00C5F74B /* IconSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0430FF22E2102F00C5F74B /* IconSet.swift */; };
+		BE04310222E2109400C5F74B /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE04310122E2109400C5F74B /* Category.swift */; };
+		BE04310422E211F700C5F74B /* Records.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE04310322E211F700C5F74B /* Records.swift */; };
 		BE15CBBF226308B000AFAB2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15CBBE226308B000AFAB2C /* AppDelegate.swift */; };
 		BE15CBC9226308B300AFAB2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE15CBC7226308B300AFAB2C /* LaunchScreen.storyboard */; };
 		BE15CBD4226308B300AFAB2C /* kMoneyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15CBD3226308B300AFAB2C /* kMoneyTests.swift */; };
@@ -82,6 +86,10 @@
 		901D7C5A10BFB50EE8E1CBFF /* Pods_kMoneyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kMoneyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		947BFB79FAB14181E8C93989 /* Pods-kMoneyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kMoneyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-kMoneyTests/Pods-kMoneyTests.release.xcconfig"; sourceTree = "<group>"; };
 		BBE39E4A717746154116D347 /* Pods_kMoneyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kMoneyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE0430FD22E20F4900C5F74B /* ColorSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSet.swift; sourceTree = "<group>"; };
+		BE0430FF22E2102F00C5F74B /* IconSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSet.swift; sourceTree = "<group>"; };
+		BE04310122E2109400C5F74B /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		BE04310322E211F700C5F74B /* Records.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Records.swift; sourceTree = "<group>"; };
 		BE15CBBB226308B000AFAB2C /* kMoney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kMoney.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE15CBBE226308B000AFAB2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE15CBC8226308B300AFAB2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -310,6 +318,10 @@
 		BEA3CD5922630F5300BE1DC8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BE0430FD22E20F4900C5F74B /* ColorSet.swift */,
+				BE0430FF22E2102F00C5F74B /* IconSet.swift */,
+				BE04310122E2109400C5F74B /* Category.swift */,
+				BE04310322E211F700C5F74B /* Records.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -351,6 +363,7 @@
 				BEA3CD67226311AB00BE1DC8 /* StringExtension.swift */,
 				BEA3CD68226311AB00BE1DC8 /* DoubleExtension.swift */,
 				BEA3CD69226311AB00BE1DC8 /* ArrayEntension.swift */,
+				BEA3CD85226311AB00BE1DC8 /* DateExtension.swift */,
 			);
 			path = FundationEntension;
 			sourceTree = "<group>";
@@ -394,7 +407,6 @@
 				BEA3CD82226311AB00BE1DC8 /* UIWindowExtension.swift */,
 				BEA3CD83226311AB00BE1DC8 /* UIImageExtension.swift */,
 				BEA3CD84226311AB00BE1DC8 /* UICollectionViewExtenion.swift */,
-				BEA3CD85226311AB00BE1DC8 /* DateExtension.swift */,
 				BE9F371B22DDB60D009E5E9C /* Ext+UINavigationController.swift */,
 			);
 			path = UIExtension;
@@ -671,6 +683,8 @@
 				BEA3CD99226311AB00BE1DC8 /* UITableViewExtension.swift in Sources */,
 				BEA3CDA1226311AB00BE1DC8 /* UIWindowExtension.swift in Sources */,
 				BEA3CD8C226311AB00BE1DC8 /* CopyProtocol.swift in Sources */,
+				BE0430FE22E20F4900C5F74B /* ColorSet.swift in Sources */,
+				BE04310022E2102F00C5F74B /* IconSet.swift in Sources */,
 				BEA3CDB42263187B00BE1DC8 /* GlobalImport.swift in Sources */,
 				BEA3CD94226311AB00BE1DC8 /* NumberTypeExtension.swift in Sources */,
 				BEA3CDA3226311AB00BE1DC8 /* UICollectionViewExtenion.swift in Sources */,
@@ -696,11 +710,13 @@
 				BEA3CD96226311AB00BE1DC8 /* PrintDebug.swift in Sources */,
 				BEA3CD9C226311AB00BE1DC8 /* TimeIntervalExtension.swift in Sources */,
 				BEA3CDA2226311AB00BE1DC8 /* UIImageExtension.swift in Sources */,
+				BE04310422E211F700C5F74B /* Records.swift in Sources */,
 				BEA3CDA0226311AB00BE1DC8 /* UIFontExtension.swift in Sources */,
 				BEA3CD9B226311AB00BE1DC8 /* UIViewExtension.swift in Sources */,
 				BEA3CD5E2263105000BE1DC8 /* BaseNavigationController.swift in Sources */,
 				BE9F371F22DDC07D009E5E9C /* HomeViewController.swift in Sources */,
 				BEA3CD9D226311AB00BE1DC8 /* UIStackViewExtension.swift in Sources */,
+				BE04310222E2109400C5F74B /* Category.swift in Sources */,
 				BEA3CD97226311AB00BE1DC8 /* UILabelExtension.swift in Sources */,
 				BEA3CD87226311AB00BE1DC8 /* ThreadExtension.swift in Sources */,
 				BEA3CDB922634A2100BE1DC8 /* UIHelper.swift in Sources */,
