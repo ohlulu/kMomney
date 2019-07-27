@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ChameleonFramework
 
 class BaseViewController: UIViewController {
 
@@ -20,6 +21,7 @@ class BaseViewController: UIViewController {
 
 fileprivate extension BaseViewController {
     func setupUI() {
-        view.backgroundColor = .white
+        
+        view.backgroundColor = UIColor(gradientStyle: .radial, withFrame: view.bounds, andColors: UIColor.Gradient.black)
     }
 }

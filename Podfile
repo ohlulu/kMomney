@@ -16,6 +16,8 @@ target 'kMoney' do
   pod 'Charts'
   pod 'SnapKit', '~> 5.0.0'
   pod 'EFCountingLabel'
+  pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
+  pod 'FSCalendar'
 
   target 'kMoneyTests' do
     inherit! :search_paths

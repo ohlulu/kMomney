@@ -7,11 +7,6 @@
 //
 
 import Foundation
-//func printDebug<T> (_ message: T, file: String = #file, method: String = #function, line: Int = #line) {
-//    #if DEBUG
-//    print("\((file as NSString).lastPathComponent)[\(line)], \(method): \(message)")
-//    #endif
-//}
 
 /// Xcode Build Setting -> Other Swift flags -> Debug, add `-D DEBUG`
 

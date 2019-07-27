@@ -8,4 +8,4 @@
 
 @_exported import SnapKit
 @_exported import RxCocoa
-
+@_exported import RxSwift

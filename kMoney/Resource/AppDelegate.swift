@@ -14,9 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        initialTheme()
-        
+    
         initialWindow()
         
         
@@ -27,13 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 // MARK: Initail func
 
 extension AppDelegate {
-    
-    func initialTheme() {
-        UINavigationBar.appearance().titleTextAttributes = [
-            .foregroundColor : UIColor.mainBlue,
-            .font: UIFont.systemFont(ofSize: 24)
-        ]
-    }
     
     func initialWindow() {
         

@@ -40,12 +40,6 @@ extension Date {
 
 extension Date {
     
-    enum DLFormatType: String {
-        case full = "yyyy/MM/dd HH:mm"
-        case mid = "MM/dd HH: mm"
-        case onlyDay = "yyyy/MM/dd"
-    }
-    
     // MARK: - compare
     
     var isToday: Bool {
@@ -62,18 +56,12 @@ extension Date {
     
     func string(format: String = "yyyy-MM-dd HH:mm:ss") -> String {
         let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "zh_TW")
         formatter.dateFormat = format
         return formatter.string(from: self)
     }
     
-    func string(format: DLFormatType) -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = format.rawValue
-        return formatter.string(from: self)
-    }
-    
-    func adding(_ component: Calendar.Component, value: Int) -> Date {
+    @discardableResult
+    func add(_ component: Calendar.Component, value: Int) -> Date {
         return Calendar.current.date(byAdding: component, value: value, to: self)!
     }
     
@@ -173,72 +161,45 @@ extension Date {
         }
     }
     
+    @discardableResult
     public func setYear(_ value: Int) -> Date {
         var newDate = self
         newDate.year = value
         return newDate
     }
     
+    @discardableResult
     public func setMonth(_ value: Int) -> Date {
         var newDate = self
         newDate.month = value
         return newDate
     }
+    
+    @discardableResult
     public func setDay(_ value: Int) -> Date {
         var newDate = self
         newDate.day = value
         return newDate
     }
     
+    @discardableResult
     public func setHour(_ value: Int) -> Date {
         var newDate = self
         newDate.hour = value
         return newDate
     }
     
+    @discardableResult
     public func setMinute(_ value: Int) -> Date {
         var newDate = self
         newDate.minute = value
         return newDate
     }
     
+    @discardableResult
     public func setSecond(_ value: Int) -> Date {
         var newDate = self
         newDate.second = value
         return newDate
-    }
-    
-    func beginning(of component: Calendar.Component) -> Date? {
-        if component == .day {
-            return Calendar.current.startOfDay(for: self)
-        }
-        
-        var components: Set<Calendar.Component> {
-            switch component {
-            case .second:
-                return [.year, .month, .day, .hour, .minute, .second]
-                
-            case .minute:
-                return [.year, .month, .day, .hour, .minute]
-                
-            case .hour:
-                return [.year, .month, .day, .hour]
-                
-            case .weekOfYear, .weekOfMonth:
-                return [.yearForWeekOfYear, .weekOfYear]
-                
-            case .month:
-                return [.year, .month]
-                
-            case .year:
-                return [.year]
-                
-            default:
-                return []
-            }
-        }
-        
-        guard !components.isEmpty else { return nil }
-        return Calendar.current.date(from: Calendar.current.dateComponents(components, from: self))
     }
 }

@@ -9,7 +9,4 @@
 import UIKit
 
 extension UIImage {
-    
-    static var add = UIImage(named: "add")!
-    
 }

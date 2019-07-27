@@ -8,28 +8,6 @@
 
 import UIKit
 
-extension UIView {
-    func setVerticalContent(_ priority: UILayoutPriority) {
-        setContentHuggingPriority(priority, for: .vertical)
-        setContentCompressionResistancePriority(priority, for: .vertical)
-    }
-    
-    func setHorizontalContent(_ priority: UILayoutPriority) {
-        setContentHuggingPriority(priority, for: .horizontal)
-        setContentCompressionResistancePriority(priority, for: .horizontal)
-    }
-    
-    func setVerticalContent(_ priorityFloat: Float) {
-        setContentHuggingPriority(UILayoutPriority(priorityFloat), for: .vertical)
-        setContentCompressionResistancePriority(UILayoutPriority(priorityFloat), for: .vertical)
-    }
-    
-    func setHorizontalContent(_ priorityFloat: Float) {
-        setContentHuggingPriority(UILayoutPriority(priorityFloat), for: .horizontal)
-        setContentCompressionResistancePriority(UILayoutPriority(priorityFloat), for: .horizontal)
-    }
-}
-
 @IBDesignable class PaddingLabel: UILabel {
     
     @IBInspectable var inset: UIEdgeInsets = .zero {

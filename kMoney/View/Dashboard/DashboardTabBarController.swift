@@ -11,12 +11,12 @@ import UIKit
 class DashboardTabBarController: UITabBarController {
     
     // MARK: UI
-    
-    let homeVC = HomeViewController()
-    
-    let reportVC = ReportViewController()
-    
-    let settingVC = SettingViewController()
+    private lazy var allControllers: [UIViewController] = [
+        reportVC, homeVC, settingVC
+    ]
+    private let reportVC = BaseNavigationController(rootVC: ReportViewController())
+    private let homeVC = BaseNavigationController(rootVC: HomeViewController())
+    private let settingVC = BaseNavigationController(rootVC: SettingViewController())
     
     let button = UIButton()
     
@@ -32,7 +32,10 @@ class DashboardTabBarController: UITabBarController {
 fileprivate extension DashboardTabBarController {
     
     func setupUI() {
-        tabBar.tintColor = .mainBlue
+        tabBar.tintColor = .white
+        tabBar.barTintColor = .black
+        tabBar.shadowImage = UIImage()
+        tabBar.isTranslucent = false
     }
 }
 
@@ -40,18 +43,14 @@ extension DashboardTabBarController {
     
     func initialVCs() {
         
-        let vc1 = BaseNavigationController(rootVC: homeVC)
-        let vc2 = BaseNavigationController(rootVC: reportVC)
-        let vc3 = BaseNavigationController(rootVC: settingVC)
-        vc1.tabBarItem
-            = UITabBarItem(title: "總覽", image: nil, selectedImage: nil)
-        vc2.tabBarItem
+        homeVC.tabBarItem
+            = UITabBarItem(title: "Home", image: nil, selectedImage: nil)
+        reportVC.tabBarItem
             = UITabBarItem(title: "財報", image: nil, selectedImage: nil)
-        vc3.tabBarItem
+        settingVC.tabBarItem
             = UITabBarItem(title: "設定", image: nil, selectedImage: nil)
-        viewControllers = [
-            vc1, vc2, vc3
-        ]
 
+        viewControllers = allControllers
+        selectedIndex = 1
     }
 }

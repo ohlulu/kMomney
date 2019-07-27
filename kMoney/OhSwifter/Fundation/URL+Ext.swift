@@ -15,7 +15,7 @@ enum ImageType {
 
 extension URL {
     enum FileType {
-        case non
+        case unknown
         case pdf
         case image(ImageType)
     }
@@ -24,7 +24,7 @@ extension URL {
 extension URL.FileType: Equatable {
     static func ==(lhs: URL.FileType, rhs: URL.FileType) -> Bool {
         switch (lhs, rhs) {
-        case (.non, .non):
+        case (.unknown, .unknown):
             return true
         case (.pdf, .pdf):
             return true
@@ -39,7 +39,7 @@ extension URL.FileType: Equatable {
 extension URL {
     func fileType() -> FileType {
         
-        let nonfileType = FileType.non
+        let nonfileType = FileType.unknown
         let fileName = self.lastPathComponent
         
         guard let extName = fileName.split(separator: ".").last?.lowercased() else {

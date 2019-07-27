@@ -8,6 +8,9 @@
 
 import UIKit
 
+
+
+// MARK: - convenience initial
 public extension UIColor {
     
     static func rgba(red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat = 1)
@@ -34,18 +37,14 @@ public extension UIColor {
 }
 
 extension UIColor {
-    
-    @discardableResult
-    func setAlpha(_ value: CGFloat) -> UIColor {
-        return withAlphaComponent(value)
-    }
-    
-    func createImage() -> UIImage? {
+    func createImage(withAlpha alpha: CGFloat = 1) -> UIImage? {
         let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
         UIGraphicsBeginImageContext(rect.size)
         guard let context = UIGraphicsGetCurrentContext() else {
             return nil
         }
+        
+        context.setAlpha(alpha)
         context.setFillColor(self.cgColor)
         context.fill(rect)
         
@@ -53,4 +52,20 @@ extension UIColor {
         UIGraphicsEndImageContext()
         return image
     }
+}
+
+extension UIColor {
+    
+    @discardableResult
+    func setAlpha(_ alpha: CGFloat) -> Self {
+        self.withAlphaComponent(alpha)
+        return self
+    }
+}
+
+// MARK: - Gradient
+
+extension UIColor {
+    
+    
 }

@@ -10,6 +10,9 @@ import Foundation
 
 extension Array {
     
+    /// Return `nil` if index out of range
+    ///
+    /// - Parameter index: index in array
     subscript(safe index: Int?) -> Element? {
         guard let index = index else { return nil }
         return indices.contains(index) ? self[index] : nil

@@ -10,6 +10,15 @@ import UIKit
 
 class BaseNavigationController: UINavigationController {
 
+    init(rootVC: UIViewController) {
+        super.init(nibName: nil, bundle: nil)
+        self.viewControllers = [rootVC]
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -34,13 +43,16 @@ extension BaseNavigationController: UIGestureRecognizerDelegate {
 fileprivate extension BaseNavigationController {
     func setupUI() {
         
-        clearBarBackgroundColor()
-        
         interactivePopGestureRecognizer?.delegate = self
         
-        navigationBar.tintColor = .mainBlue
+        navigationBar.tintColor = .white
         navigationBar.titleTextAttributes = [
-            .foregroundColor: UIColor.mainBlue
+            .foregroundColor: UIColor.white,
+            .font: UIFont.systemFont(ofSize: 17, weight: .semibold)
         ]
+        
+        let shadow = UIColor.pureBlack.createImage(withAlpha: 0.25)
+        navigationBar.shadowImage = shadow
+        navigationBar.setBackgroundImage(UIImage(), for: .default)
     }
 }
