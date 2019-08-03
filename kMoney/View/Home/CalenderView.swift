@@ -28,8 +28,7 @@ extension CalendarView: FSCalendarDelegateAppearance {
 extension CalendarView: FSCalendarDelegate {
     func calendar(_ calendar: FSCalendar, willDisplay cell: FSCalendarCell, for date: Date, at monthPosition: FSCalendarMonthPosition) {
         if monthPosition == .next && monthPosition == .previous {
-            cell.titleLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-            cell.titleLabel.textColor = UIColor.white.setAlpha(0.5)
+            cell.titleLabel.textColor = UIColor.gunmetal.setAlpha(0.6   )
         }
     }
 }
@@ -46,7 +45,7 @@ extension CalendarView {
         delegate = self
         locale = Locale(identifier: "zh-TW")
         placeholderType = .fillHeadTail
-        appearance.weekdayFont = UIFont.systemFont(ofSize: 14, weight: .regular)
+        appearance.weekdayFont = UIFont.systemFont(ofSize: 14, weight: .bold)
         appearance.weekdayTextColor = .white
         appearance.headerTitleColor = .white
         appearance.headerMinimumDissolvedAlpha = 0
@@ -58,7 +57,7 @@ extension CalendarView {
         appearance.todayColor = .clear
         appearance.selectionColor = .lavenderBlue
         appearance.titleSelectionColor = .white
-        appearance.titleFont = UIFont.systemFont(ofSize: 14, weight: .semibold)
+        appearance.titleFont = UIFont.systemFont(ofSize: 14, weight: .medium)
         
     }
     

@@ -15,6 +15,7 @@ class HomeViewController: BaseViewController {
     
     private let calendarView = CalendarView()
     private let addButton = UIButton(size: CGSize(width: 40, height: 40))
+    private let searchButton = UIButton()
 
     // MARK: Private property
     
@@ -51,14 +52,16 @@ fileprivate extension HomeViewController {
 fileprivate extension HomeViewController {
 
     func setupUI() {
-        navigationItem.title = "錢呢"
         addBackgroundImage()
+        
+        searchButton.setImage(.search, for: .normal)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: searchButton)
         
         view.addSubview(calendarView)
         calendarView.snp.makeConstraints { (make) in
             make.left.right.equalToSuperview()
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
-            make.height.equalToSuperview().dividedBy(2.3)
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(-4)
+            make.height.equalToSuperview().dividedBy(2.6)
         }
         
         let separatorView = UIView()
@@ -71,11 +74,10 @@ fileprivate extension HomeViewController {
         }
         
         view.addSubview(addButton)
-        addButton.layer.cornerRadius = 20
-        addButton.layer.masksToBounds = true
+        addButton.setImage(.addNormal, for: .normal)
+        addButton.setImage(.addPressed, for: .highlighted)
         addButton.snp.makeConstraints { (make) in
-            make.right.equalToSuperview()
-                .offset(-18)
+            make.right.equalToSuperview()   .offset(-18)
             make.size.equalTo(40)
             make.bottom
                 .equalTo(view.safeAreaLayoutGuide.snp.bottom)

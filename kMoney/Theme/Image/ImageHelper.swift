@@ -40,4 +40,12 @@ extension UIImage {
     static var background: UIImage {
         return UIImage(named: "background")!
     }
+    
+    static var search: UIImage {
+        return UIImage(named: "search")!
+    }
+    
+    static var calendar: UIImage {
+        return UIImage(named: "calendar")!
+    }
 }
