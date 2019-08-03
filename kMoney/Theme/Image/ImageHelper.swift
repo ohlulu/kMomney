@@ -37,4 +37,7 @@ extension UIImage {
         return UIImage(named: "close")!
     }
 
+    static var background: UIImage {
+        return UIImage(named: "background")!
+    }
 }

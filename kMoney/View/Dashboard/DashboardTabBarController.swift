@@ -32,8 +32,9 @@ class DashboardTabBarController: UITabBarController {
 fileprivate extension DashboardTabBarController {
     
     func setupUI() {
-        tabBar.tintColor = .white
-        tabBar.barTintColor = .black
+        tabBar.tintColor = .lavenderBlue
+        tabBar.unselectedItemTintColor = .pureWhite
+        tabBar.barTintColor = .black90
         tabBar.shadowImage = UIImage()
         tabBar.isTranslucent = false
     }
@@ -42,15 +43,14 @@ fileprivate extension DashboardTabBarController {
 extension DashboardTabBarController {
     
     func initialVCs() {
-        
         homeVC.tabBarItem
-            = UITabBarItem(title: "Home", image: .home, selectedImage: nil)
+            = UITabBarItem(title: "錢呢", image: .home, selectedImage: .home)
         reportVC.tabBarItem
-            = UITabBarItem(title: "財報", image: nil, selectedImage: nil)
+            = UITabBarItem(title: "財報", image: .report, selectedImage: .report)
         settingVC.tabBarItem
-            = UITabBarItem(title: "設定", image: nil, selectedImage: nil)
-
+            = UITabBarItem(title: "設定", image: .setting, selectedImage: .setting)
         viewControllers = allControllers
         selectedIndex = 1
+        
     }
 }

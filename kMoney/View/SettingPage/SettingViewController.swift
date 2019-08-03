@@ -46,5 +46,6 @@ fileprivate extension SettingViewController {
 
     func setupUI() {
         navigationItem.title = "設定"
+        addBackgroundImage()
     }
 }

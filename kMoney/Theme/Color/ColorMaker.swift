@@ -9,44 +9,47 @@
 import UIKit
 
 
-extension UIColor {
-    
-    static var white: UIColor {
-        return UIColor.rgba(red: 251, green: 251, blue: 251)
-    }
-    
-    static var black: UIColor {
-        return UIColor.rgba(red: 37, green: 37, blue: 37)
-    }
 
+// MARK: - Pure color
+extension UIColor {
     static var pureBlack: UIColor {
         return UIColor.rgba(red: 0, green: 0, blue: 0)
     }
     
-    static var lavenderBlue: UIColor {
-        return UIColor.rgba(red: 125, green: 144, blue: 243)
-    }
-    
-    static var charcoalGrey: UIColor {
-        return UIColor.rgba(red: 49, green: 49, blue: 49)
+    static var pureWhite: UIColor {
+        return UIColor.rgba(red: 255, green: 255, blue: 255)
     }
 }
 
+
+// MARK: - Custom color
 extension UIColor {
     
-    struct Gradient {
-        static var black: [UIColor] {
-            return [
-                UIColor.rgba(red: 74, green: 74, blue: 87),
-                UIColor.rgba(red: 29, green: 29, blue: 37)
-            ]
-        }
-        
-        static var mainPurper: [UIColor] {
-            return [
-                UIColor.rgba(red: 134, green: 153, blue: 255),
-                UIColor.rgba(red: 105, green: 127, blue: 245)
-            ]
-        }
+    @nonobjc class var lavenderBlue: UIColor {
+        return UIColor(red: 125.0 / 255.0, green: 144.0 / 255.0, blue: 243.0 / 255.0, alpha: 1.0)
+    }
+    
+    @nonobjc class var charcoalGrey: UIColor {
+        return UIColor(red: 49.0 / 255.0, green: 49.0 / 255.0, blue: 59.0 / 255.0, alpha: 1.0)
+    }
+    
+    @nonobjc class var seafoamBlue: UIColor {
+        return UIColor(red: 92.0 / 255.0, green: 200.0 / 255.0, blue: 202.0 / 255.0, alpha: 1.0)
+    }
+    
+    @nonobjc class var gunmetal: UIColor {
+        return UIColor(red: 74.0 / 255.0, green: 74.0 / 255.0, blue: 87.0 / 255.0, alpha: 1.0)
+    }
+    
+    @nonobjc class var blueGrey: UIColor {
+        return UIColor(red: 140.0 / 255.0, green: 140.0 / 255.0, blue: 164.0 / 255.0, alpha: 1.0)
+    }
+    
+    @nonobjc class var cornflower: UIColor {
+        return UIColor(red: 105.0 / 255.0, green: 127.0 / 255.0, blue: 245.0 / 255.0, alpha: 1.0)
+    }
+    
+    @nonobjc class var black90: UIColor {
+        return UIColor(white: 37.0 / 255.0, alpha: 0.9)
     }
 }

@@ -11,17 +11,34 @@ import ChameleonFramework
 
 class BaseViewController: UIViewController {
 
+    private lazy var backgroundImage = UIImage.background
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
     }
 }
 
-// MARK: Setup UI methods
+// MARK: - Usage
+
+extension BaseViewController {
+    
+    @discardableResult
+    func addBackgroundImage() -> Self {
+        let imageView = UIImageView(image: backgroundImage)
+        view.addSubview(imageView)
+        imageView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+        return self
+    }
+}
+
+// MARK: - Setup UI methods
 
 fileprivate extension BaseViewController {
+    
     func setupUI() {
         
-        view.backgroundColor = UIColor(gradientStyle: .radial, withFrame: view.bounds, andColors: UIColor.Gradient.black)
     }
 }

@@ -52,6 +52,7 @@ fileprivate extension HomeViewController {
 
     func setupUI() {
         navigationItem.title = "COIN"
+        addBackgroundImage()
         
         view.addSubview(calendarView)
         calendarView.snp.makeConstraints { (make) in
@@ -69,7 +70,6 @@ fileprivate extension HomeViewController {
             make.height.equalTo(4)
         }
         
-        addButton.backgroundColor = UIColor(gradientStyle: .topToBottom, withFrame: CGRect(x: 0, y: 0, width: 40, height: 40), andColors: UIColor.Gradient.mainPurper)
         view.addSubview(addButton)
         addButton.layer.cornerRadius = 20
         addButton.layer.masksToBounds = true
