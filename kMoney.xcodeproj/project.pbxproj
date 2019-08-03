@@ -57,8 +57,8 @@
 		BEA3CD602263107D00BE1DC8 /* DashboardTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA3CD5F2263107D00BE1DC8 /* DashboardTabBarController.swift */; };
 		BEA3CDAC2263144B00BE1DC8 /* Asset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEA3CDAB2263144B00BE1DC8 /* Asset.xcassets */; };
 		BEA3CDAF226316C400BE1DC8 /* ColorMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA3CDAE226316C400BE1DC8 /* ColorMaker.swift */; };
-		BEA3CDB22263178000BE1DC8 /* ImageFacotry.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA3CDB12263178000BE1DC8 /* ImageFacotry.swift */; };
 		BEA3CDB42263187B00BE1DC8 /* GlobalImport.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA3CDB32263187B00BE1DC8 /* GlobalImport.swift */; };
+		BEE4A2FD22F542BD00C0F81D /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE4A2FC22F542BD00C0F81D /* ImageHelper.swift */; };
 		E7B1EF693A61EE27295A816A /* Pods_kMoneyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBE39E4A717746154116D347 /* Pods_kMoneyTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -141,8 +141,8 @@
 		BEA3CD5F2263107D00BE1DC8 /* DashboardTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTabBarController.swift; sourceTree = "<group>"; };
 		BEA3CDAB2263144B00BE1DC8 /* Asset.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Asset.xcassets; sourceTree = "<group>"; };
 		BEA3CDAE226316C400BE1DC8 /* ColorMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorMaker.swift; sourceTree = "<group>"; };
-		BEA3CDB12263178000BE1DC8 /* ImageFacotry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFacotry.swift; sourceTree = "<group>"; };
 		BEA3CDB32263187B00BE1DC8 /* GlobalImport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalImport.swift; sourceTree = "<group>"; };
+		BEE4A2FC22F542BD00C0F81D /* ImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
 		C19430838692ADDBBD474E0B /* Pods-kMoneyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kMoneyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kMoneyTests/Pods-kMoneyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C1CF24BF821556BAAF36A576 /* Pods_kMoney.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kMoney.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3753CC075D28F88815CCE5F /* Pods-kMoney.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kMoney.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kMoney/Pods-kMoney.debug.xcconfig"; sourceTree = "<group>"; };
@@ -368,6 +368,7 @@
 		BE9F371622DDB066009E5E9C /* Theme */ = {
 			isa = PBXGroup;
 			children = (
+				BEE4A2FB22F542B400C0F81D /* Image */,
 				BE9F371A22DDB38D009E5E9C /* Color */,
 				BE9F371722DDB07D009E5E9C /* Font */,
 			);
@@ -475,9 +476,16 @@
 		BEA3CDB02263176A00BE1DC8 /* Factory */ = {
 			isa = PBXGroup;
 			children = (
-				BEA3CDB12263178000BE1DC8 /* ImageFacotry.swift */,
 			);
 			path = Factory;
+			sourceTree = "<group>";
+		};
+		BEE4A2FB22F542B400C0F81D /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				BEE4A2FC22F542BD00C0F81D /* ImageHelper.swift */,
+			);
+			path = Image;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -725,7 +733,6 @@
 				BEA3CD5B22630F7D00BE1DC8 /* BaseViewController.swift in Sources */,
 				BE964FE222EC344E00158C92 /* FileMamager+Ext.swift in Sources */,
 				BEA3CD602263107D00BE1DC8 /* DashboardTabBarController.swift in Sources */,
-				BEA3CDB22263178000BE1DC8 /* ImageFacotry.swift in Sources */,
 				BE964FD922EC344E00158C92 /* UIStackView+Ext.swift in Sources */,
 				BE964FD022EC344E00158C92 /* Ext+UIScreen.swift in Sources */,
 				BE04310422E211F700C5F74B /* Records.swift in Sources */,
@@ -738,6 +745,7 @@
 				BE9F371F22DDC07D009E5E9C /* HomeViewController.swift in Sources */,
 				BE964FD422EC344E00158C92 /* UITableView+Ext.swift in Sources */,
 				BE964FE022EC344E00158C92 /* Double+Ext.swift in Sources */,
+				BEE4A2FD22F542BD00C0F81D /* ImageHelper.swift in Sources */,
 				BE04310622E3721B00C5F74B /* HomeViewModel.swift in Sources */,
 				BE964FE622EC344E00158C92 /* URL+Ext.swift in Sources */,
 				BE964FDC22EC344E00158C92 /* UIView+Ext.swift in Sources */,
