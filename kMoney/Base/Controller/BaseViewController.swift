@@ -12,6 +12,7 @@ import ChameleonFramework
 class BaseViewController: UIViewController {
 
     private lazy var backgroundImage = UIImage.background
+    internal lazy var bag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()

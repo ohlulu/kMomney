@@ -43,7 +43,11 @@ class HomeViewController: BaseViewController {
 fileprivate extension HomeViewController {
     
     func observerSequence() {
-        
+        addButton.rx.tap
+            .subscribe(onNext: { [unowned self] _ in
+                let vc = DetailViewController(diffusionPoint: self.addButton.center)
+                self.present(vc, animated: true, completion: nil)
+            }).disposed(by: bag)
     }
 }
 
