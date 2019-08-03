@@ -15,8 +15,6 @@
 		BE04310422E211F700C5F74B /* Records.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE04310322E211F700C5F74B /* Records.swift */; };
 		BE04310622E3721B00C5F74B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE04310522E3721B00C5F74B /* HomeViewModel.swift */; };
 		BE04310822E3725700C5F74B /* CalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE04310722E3725700C5F74B /* CalenderView.swift */; };
-		BE04310A22E3762500C5F74B /* CalendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE04310922E3762500C5F74B /* CalendarHeaderView.swift */; };
-		BE04310C22E386EB00C5F74B /* WeekdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE04310B22E386EB00C5F74B /* WeekdayView.swift */; };
 		BE15CBBF226308B000AFAB2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15CBBE226308B000AFAB2C /* AppDelegate.swift */; };
 		BE15CBC9226308B300AFAB2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE15CBC7226308B300AFAB2C /* LaunchScreen.storyboard */; };
 		BE15CBD4226308B300AFAB2C /* kMoneyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15CBD3226308B300AFAB2C /* kMoneyTests.swift */; };
@@ -92,8 +90,6 @@
 		BE04310322E211F700C5F74B /* Records.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Records.swift; sourceTree = "<group>"; };
 		BE04310522E3721B00C5F74B /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		BE04310722E3725700C5F74B /* CalenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderView.swift; sourceTree = "<group>"; };
-		BE04310922E3762500C5F74B /* CalendarHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHeaderView.swift; sourceTree = "<group>"; };
-		BE04310B22E386EB00C5F74B /* WeekdayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdayView.swift; sourceTree = "<group>"; };
 		BE15CBBB226308B000AFAB2C /* kMoney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kMoney.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE15CBBE226308B000AFAB2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE15CBC8226308B300AFAB2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -396,8 +392,6 @@
 			children = (
 				BE9F371E22DDC07D009E5E9C /* HomeViewController.swift */,
 				BE04310722E3725700C5F74B /* CalenderView.swift */,
-				BE04310922E3762500C5F74B /* CalendarHeaderView.swift */,
-				BE04310B22E386EB00C5F74B /* WeekdayView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -716,7 +710,6 @@
 				BE9F372322DDC0F3009E5E9C /* SettingViewController.swift in Sources */,
 				BE964FDF22EC344E00158C92 /* TimeInterval+Ext.swift in Sources */,
 				BE964FD122EC344E00158C92 /* UICollectionView+Ext.swift in Sources */,
-				BE04310A22E3762500C5F74B /* CalendarHeaderView.swift in Sources */,
 				BE964FD722EC344E00158C92 /* UIColor+Ext.swift in Sources */,
 				BE964FE422EC344E00158C92 /* String+Ext.swift in Sources */,
 				BE0430FE22E20F4900C5F74B /* ColorSet.swift in Sources */,
@@ -739,7 +732,6 @@
 				BE04310822E3725700C5F74B /* CalenderView.swift in Sources */,
 				BE964FD322EC344E00158C92 /* UITextField+Ext.swift in Sources */,
 				BE964FD222EC344E00158C92 /* UIImage+Ext.swift in Sources */,
-				BE04310C22E386EB00C5F74B /* WeekdayView.swift in Sources */,
 				BEA3CD5E2263105000BE1DC8 /* BaseNavigationController.swift in Sources */,
 				BE964FCC22EC344E00158C92 /* PrivacyAuthorization.swift in Sources */,
 				BE9F371F22DDC07D009E5E9C /* HomeViewController.swift in Sources */,
