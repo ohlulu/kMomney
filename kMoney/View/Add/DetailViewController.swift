@@ -25,6 +25,7 @@ class DetailViewController: BaseViewController {
         super.init(nibName: nil, bundle: nil)
         if let diffusionPoint = diffusionPoint {
             transitionAnimation.targetPoint = diffusionPoint
+            transitionAnimation.interaction.wireGesture(on: self)
             transitioningDelegate = transitionAnimation
             modalPresentationStyle = .custom
         }
