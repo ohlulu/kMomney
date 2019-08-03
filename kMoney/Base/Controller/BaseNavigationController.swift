@@ -48,11 +48,10 @@ fileprivate extension BaseNavigationController {
         navigationBar.tintColor = .white
         navigationBar.titleTextAttributes = [
             .foregroundColor: UIColor.white,
-            .font: UIFont.systemFont(ofSize: 17, weight: .semibold)
+            .font: KMFont.text(.medium, 16).rawValue
         ]
         
-        let shadow = UIColor.pureBlack.createImage(withAlpha: 0.25)
-        navigationBar.shadowImage = shadow
+        navigationBar.shadowImage = UIImage()
         navigationBar.setBackgroundImage(UIImage(), for: .default)
     }
 }

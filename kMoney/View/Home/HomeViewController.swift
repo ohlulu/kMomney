@@ -51,7 +51,7 @@ fileprivate extension HomeViewController {
 fileprivate extension HomeViewController {
 
     func setupUI() {
-        navigationItem.title = "COIN"
+        navigationItem.title = "錢呢"
         addBackgroundImage()
         
         view.addSubview(calendarView)
