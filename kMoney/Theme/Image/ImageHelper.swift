@@ -17,24 +17,24 @@ extension UIImage {
         return UIImage(named: "addPressed")!
     }
 
-    static var settingSelected: UIImage {
-        return UIImage(named: "settingSelected")!
+    static var setting: UIImage {
+        return UIImage(named: "setting")!
     }
 
-    static var homeSelected: UIImage {
-        return UIImage(named: "homeSelected")!
+    static var home: UIImage {
+        return UIImage(named: "home")!
     }
 
     static var addNormal: UIImage {
         return UIImage(named: "addNormal")!
     }
 
-    static var reportSelected: UIImage {
-        return UIImage(named: "reportSelected")!
+    static var report: UIImage {
+        return UIImage(named: "report")!
     }
 
-    static var navigationBarClose: UIImage {
-        return UIImage(named: "navigationBarClose")!
+    static var close: UIImage {
+        return UIImage(named: "close")!
     }
 
 }

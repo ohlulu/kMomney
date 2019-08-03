@@ -44,7 +44,7 @@ extension DashboardTabBarController {
     func initialVCs() {
         
         homeVC.tabBarItem
-            = UITabBarItem(title: "Home", image: nil, selectedImage: nil)
+            = UITabBarItem(title: "Home", image: .home, selectedImage: nil)
         reportVC.tabBarItem
             = UITabBarItem(title: "財報", image: nil, selectedImage: nil)
         settingVC.tabBarItem
