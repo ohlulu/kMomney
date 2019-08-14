@@ -14,7 +14,11 @@ class HomeViewController: BaseViewController {
     // MARK: UI element
     
     private let calendarView = CalendarView()
-    private let addButton = UIButton(size: CGSize(width: 40, height: 40))
+    private let addButton = UIButton().oh
+        .image(.addNormal, for: .normal)
+        .image(.addPressed, for: .highlighted)
+        .done()
+    
     private let searchButton = UIButton()
 
     // MARK: Private property
@@ -78,10 +82,8 @@ fileprivate extension HomeViewController {
         }
         
         view.addSubview(addButton)
-        addButton.setImage(.addNormal, for: .normal)
-        addButton.setImage(.addPressed, for: .highlighted)
         addButton.snp.makeConstraints { (make) in
-            make.right.equalToSuperview()   .offset(-18)
+            make.right.equalToSuperview().offset(-18)
             make.size.equalTo(40)
             make.bottom
                 .equalTo(view.safeAreaLayoutGuide.snp.bottom)

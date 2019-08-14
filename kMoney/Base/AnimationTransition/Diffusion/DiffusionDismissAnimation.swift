@@ -33,7 +33,8 @@ class DiffusionDismissAnimation: NSObject , UIViewControllerAnimatedTransitionin
         let containerFrame = containerView.frame
         let maxY = max(containerFrame.height - endPoint.y, endPoint.y)
         let maxX = max(containerFrame.width - endPoint.x, endPoint.x)
-        let maxSize = max(maxY, maxX) * 2.1
+        let length = sqrt(pow(maxX, 2) + pow(maxY, 2)) * 2
+        let maxSize = max(length, length)
         
         let maskView = UIView()
         maskView.frame.size = CGSize(width: maxSize, height: maxSize)

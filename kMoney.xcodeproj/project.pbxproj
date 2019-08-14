@@ -19,33 +19,6 @@
 		BE15CBC9226308B300AFAB2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE15CBC7226308B300AFAB2C /* LaunchScreen.storyboard */; };
 		BE15CBD4226308B300AFAB2C /* kMoneyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15CBD3226308B300AFAB2C /* kMoneyTests.swift */; };
 		BE15CBDF226308B300AFAB2C /* kMoneyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15CBDE226308B300AFAB2C /* kMoneyUITests.swift */; };
-		BE964FCC22EC344E00158C92 /* PrivacyAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE964FAA22EC344E00158C92 /* PrivacyAuthorization.swift */; };
-		BE964FCD22EC344E00158C92 /* ClosureType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE964FAD22EC344E00158C92 /* ClosureType.swift */; };
-		BE964FCE22EC344E00158C92 /* PrintDebug.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE964FAF22EC344E00158C92 /* PrintDebug.swift */; };
-		BE964FCF22EC344E00158C92 /* UILabel+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE964FB122EC344E00158C92 /* UILabel+Ext.swift */; };
-		BE964FD022EC344E00158C92 /* Ext+UIScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE964FB222EC344E00158C92 /* Ext+UIScreen.swift */; };
-		BE964FD122EC344E00158C92 /* UICollectionView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE964FB322EC344E00158C92 /* UICollectionView+Ext.swift */; };
-		BE964FD222EC344E00158C92 /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE964FB422EC344E00158C92 /* UIImage+Ext.swift */; };
-		BE964FD322EC344E00158C92 /* UITextField+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE964FB522EC344E00158C92 /* UITextField+Ext.swift */; };
-		BE964FD422EC344E00158C92 /* UITableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE964FB622EC344E00158C92 /* UITableView+Ext.swift */; };
-		BE964FD522EC344E00158C92 /* UIButton+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE964FB722EC344E00158C92 /* UIButton+Ext.swift */; };
-		BE964FD622EC344E00158C92 /* UIScrollView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE964FB822EC344E00158C92 /* UIScrollView+Ext.swift */; };
-		BE964FD722EC344E00158C92 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE964FB922EC344E00158C92 /* UIColor+Ext.swift */; };
-		BE964FD822EC344E00158C92 /* UIAlertController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE964FBA22EC344E00158C92 /* UIAlertController+Ext.swift */; };
-		BE964FD922EC344E00158C92 /* UIStackView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE964FBB22EC344E00158C92 /* UIStackView+Ext.swift */; };
-		BE964FDA22EC344E00158C92 /* UIWindow+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE964FBC22EC344E00158C92 /* UIWindow+Ext.swift */; };
-		BE964FDB22EC344E00158C92 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE964FBD22EC344E00158C92 /* UIViewController+Ext.swift */; };
-		BE964FDC22EC344E00158C92 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE964FBE22EC344E00158C92 /* UIView+Ext.swift */; };
-		BE964FDD22EC344E00158C92 /* RunTime+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE964FC022EC344E00158C92 /* RunTime+Ext.swift */; };
-		BE964FDE22EC344E00158C92 /* NumberType+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE964FC222EC344E00158C92 /* NumberType+Ext.swift */; };
-		BE964FDF22EC344E00158C92 /* TimeInterval+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE964FC322EC344E00158C92 /* TimeInterval+Ext.swift */; };
-		BE964FE022EC344E00158C92 /* Double+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE964FC422EC344E00158C92 /* Double+Ext.swift */; };
-		BE964FE122EC344E00158C92 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE964FC522EC344E00158C92 /* Date+Ext.swift */; };
-		BE964FE222EC344E00158C92 /* FileMamager+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE964FC622EC344E00158C92 /* FileMamager+Ext.swift */; };
-		BE964FE322EC344E00158C92 /* Thread+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE964FC722EC344E00158C92 /* Thread+Ext.swift */; };
-		BE964FE422EC344E00158C92 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE964FC822EC344E00158C92 /* String+Ext.swift */; };
-		BE964FE522EC344E00158C92 /* Array+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE964FC922EC344E00158C92 /* Array+Ext.swift */; };
-		BE964FE622EC344E00158C92 /* URL+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE964FCA22EC344E00158C92 /* URL+Ext.swift */; };
 		BE9F371922DDB09B009E5E9C /* KMFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F371822DDB09B009E5E9C /* KMFont.swift */; };
 		BE9F371F22DDC07D009E5E9C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F371E22DDC07D009E5E9C /* HomeViewController.swift */; };
 		BE9F372122DDC0C9009E5E9C /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F372022DDC0C9009E5E9C /* ReportViewController.swift */; };
@@ -105,34 +78,6 @@
 		BE15CBDA226308B300AFAB2C /* kMoneyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kMoneyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE15CBDE226308B300AFAB2C /* kMoneyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kMoneyUITests.swift; sourceTree = "<group>"; };
 		BE15CBE0226308B300AFAB2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BE964FAA22EC344E00158C92 /* PrivacyAuthorization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyAuthorization.swift; sourceTree = "<group>"; };
-		BE964FAB22EC344E00158C92 /* OhSwifter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OhSwifter.h; sourceTree = "<group>"; };
-		BE964FAD22EC344E00158C92 /* ClosureType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosureType.swift; sourceTree = "<group>"; };
-		BE964FAF22EC344E00158C92 /* PrintDebug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrintDebug.swift; sourceTree = "<group>"; };
-		BE964FB122EC344E00158C92 /* UILabel+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Ext.swift"; sourceTree = "<group>"; };
-		BE964FB222EC344E00158C92 /* Ext+UIScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Ext+UIScreen.swift"; sourceTree = "<group>"; };
-		BE964FB322EC344E00158C92 /* UICollectionView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Ext.swift"; sourceTree = "<group>"; };
-		BE964FB422EC344E00158C92 /* UIImage+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
-		BE964FB522EC344E00158C92 /* UITextField+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Ext.swift"; sourceTree = "<group>"; };
-		BE964FB622EC344E00158C92 /* UITableView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Ext.swift"; sourceTree = "<group>"; };
-		BE964FB722EC344E00158C92 /* UIButton+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Ext.swift"; sourceTree = "<group>"; };
-		BE964FB822EC344E00158C92 /* UIScrollView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Ext.swift"; sourceTree = "<group>"; };
-		BE964FB922EC344E00158C92 /* UIColor+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
-		BE964FBA22EC344E00158C92 /* UIAlertController+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Ext.swift"; sourceTree = "<group>"; };
-		BE964FBB22EC344E00158C92 /* UIStackView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStackView+Ext.swift"; sourceTree = "<group>"; };
-		BE964FBC22EC344E00158C92 /* UIWindow+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIWindow+Ext.swift"; sourceTree = "<group>"; };
-		BE964FBD22EC344E00158C92 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
-		BE964FBE22EC344E00158C92 /* UIView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
-		BE964FC022EC344E00158C92 /* RunTime+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RunTime+Ext.swift"; sourceTree = "<group>"; };
-		BE964FC222EC344E00158C92 /* NumberType+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NumberType+Ext.swift"; sourceTree = "<group>"; };
-		BE964FC322EC344E00158C92 /* TimeInterval+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Ext.swift"; sourceTree = "<group>"; };
-		BE964FC422EC344E00158C92 /* Double+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Ext.swift"; sourceTree = "<group>"; };
-		BE964FC522EC344E00158C92 /* Date+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
-		BE964FC622EC344E00158C92 /* FileMamager+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FileMamager+Ext.swift"; sourceTree = "<group>"; };
-		BE964FC722EC344E00158C92 /* Thread+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Thread+Ext.swift"; sourceTree = "<group>"; };
-		BE964FC822EC344E00158C92 /* String+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
-		BE964FC922EC344E00158C92 /* Array+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Ext.swift"; sourceTree = "<group>"; };
-		BE964FCA22EC344E00158C92 /* URL+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Ext.swift"; sourceTree = "<group>"; };
 		BE9F371822DDB09B009E5E9C /* KMFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMFont.swift; sourceTree = "<group>"; };
 		BE9F371E22DDC07D009E5E9C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BE9F372022DDC0C9009E5E9C /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
@@ -259,7 +204,6 @@
 			isa = PBXGroup;
 			children = (
 				BE006B4022DDA62900A08239 /* Resource */,
-				BE964FA822EC344E00158C92 /* OhSwifter */,
 				BE9F371622DDB066009E5E9C /* Theme */,
 				BEA3CDAD2263169800BE1DC8 /* Extension */,
 				BEA3CD5C22630F8100BE1DC8 /* Base */,
@@ -286,89 +230,6 @@
 				BE15CBE0226308B300AFAB2C /* Info.plist */,
 			);
 			path = kMoneyUITests;
-			sourceTree = "<group>";
-		};
-		BE964FA822EC344E00158C92 /* OhSwifter */ = {
-			isa = PBXGroup;
-			children = (
-				BE964FAB22EC344E00158C92 /* OhSwifter.h */,
-				BE964FA922EC344E00158C92 /* PrivacyAuthorizedCheck */,
-				BE964FAC22EC344E00158C92 /* typealias */,
-				BE964FAE22EC344E00158C92 /* Pring+Debug */,
-				BE964FB022EC344E00158C92 /* UIKit */,
-				BE964FBF22EC344E00158C92 /* RunTime */,
-				BE964FC122EC344E00158C92 /* Fundation */,
-			);
-			path = OhSwifter;
-			sourceTree = "<group>";
-		};
-		BE964FA922EC344E00158C92 /* PrivacyAuthorizedCheck */ = {
-			isa = PBXGroup;
-			children = (
-				BE964FAA22EC344E00158C92 /* PrivacyAuthorization.swift */,
-			);
-			path = PrivacyAuthorizedCheck;
-			sourceTree = "<group>";
-		};
-		BE964FAC22EC344E00158C92 /* typealias */ = {
-			isa = PBXGroup;
-			children = (
-				BE964FAD22EC344E00158C92 /* ClosureType.swift */,
-			);
-			path = typealias;
-			sourceTree = "<group>";
-		};
-		BE964FAE22EC344E00158C92 /* Pring+Debug */ = {
-			isa = PBXGroup;
-			children = (
-				BE964FAF22EC344E00158C92 /* PrintDebug.swift */,
-			);
-			path = "Pring+Debug";
-			sourceTree = "<group>";
-		};
-		BE964FB022EC344E00158C92 /* UIKit */ = {
-			isa = PBXGroup;
-			children = (
-				BE964FB122EC344E00158C92 /* UILabel+Ext.swift */,
-				BE964FB222EC344E00158C92 /* Ext+UIScreen.swift */,
-				BE964FB322EC344E00158C92 /* UICollectionView+Ext.swift */,
-				BE964FB422EC344E00158C92 /* UIImage+Ext.swift */,
-				BE964FB522EC344E00158C92 /* UITextField+Ext.swift */,
-				BE964FB622EC344E00158C92 /* UITableView+Ext.swift */,
-				BE964FB722EC344E00158C92 /* UIButton+Ext.swift */,
-				BE964FB822EC344E00158C92 /* UIScrollView+Ext.swift */,
-				BE964FB922EC344E00158C92 /* UIColor+Ext.swift */,
-				BE964FBA22EC344E00158C92 /* UIAlertController+Ext.swift */,
-				BE964FBB22EC344E00158C92 /* UIStackView+Ext.swift */,
-				BE964FBC22EC344E00158C92 /* UIWindow+Ext.swift */,
-				BE964FBD22EC344E00158C92 /* UIViewController+Ext.swift */,
-				BE964FBE22EC344E00158C92 /* UIView+Ext.swift */,
-			);
-			path = UIKit;
-			sourceTree = "<group>";
-		};
-		BE964FBF22EC344E00158C92 /* RunTime */ = {
-			isa = PBXGroup;
-			children = (
-				BE964FC022EC344E00158C92 /* RunTime+Ext.swift */,
-			);
-			path = RunTime;
-			sourceTree = "<group>";
-		};
-		BE964FC122EC344E00158C92 /* Fundation */ = {
-			isa = PBXGroup;
-			children = (
-				BE964FC222EC344E00158C92 /* NumberType+Ext.swift */,
-				BE964FC322EC344E00158C92 /* TimeInterval+Ext.swift */,
-				BE964FC422EC344E00158C92 /* Double+Ext.swift */,
-				BE964FC522EC344E00158C92 /* Date+Ext.swift */,
-				BE964FC622EC344E00158C92 /* FileMamager+Ext.swift */,
-				BE964FC722EC344E00158C92 /* Thread+Ext.swift */,
-				BE964FC822EC344E00158C92 /* String+Ext.swift */,
-				BE964FC922EC344E00158C92 /* Array+Ext.swift */,
-				BE964FCA22EC344E00158C92 /* URL+Ext.swift */,
-			);
-			path = Fundation;
 			sourceTree = "<group>";
 		};
 		BE9F371622DDB066009E5E9C /* Theme */ = {
@@ -532,7 +393,7 @@
 				BE15CBB7226308B000AFAB2C /* Sources */,
 				BE15CBB8226308B000AFAB2C /* Frameworks */,
 				BE15CBB9226308B000AFAB2C /* Resources */,
-				AB7D96F9759EF1AADA74E9FC /* [CP] Embed Pods Frameworks */,
+				4AB509435E5F0E809CDE444A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -673,6 +534,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		4AB509435E5F0E809CDE444A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-kMoney/Pods-kMoney-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-kMoney/Pods-kMoney-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-kMoney/Pods-kMoney-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		58EA498537E77F4CDFE30FB7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -717,23 +595,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AB7D96F9759EF1AADA74E9FC /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-kMoney/Pods-kMoney-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-kMoney/Pods-kMoney-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-kMoney/Pods-kMoney-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -742,54 +603,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEA3CDAF226316C400BE1DC8 /* ColorMaker.swift in Sources */,
-				BE964FDA22EC344E00158C92 /* UIWindow+Ext.swift in Sources */,
-				BE964FDB22EC344E00158C92 /* UIViewController+Ext.swift in Sources */,
 				BE15CBBF226308B000AFAB2C /* AppDelegate.swift in Sources */,
-				BE964FCF22EC344E00158C92 /* UILabel+Ext.swift in Sources */,
 				BE9F372322DDC0F3009E5E9C /* SettingViewController.swift in Sources */,
-				BE964FDF22EC344E00158C92 /* TimeInterval+Ext.swift in Sources */,
 				BEE4A30722F557BC00C0F81D /* DiffustionPresentAnimation.swift in Sources */,
-				BE964FD122EC344E00158C92 /* UICollectionView+Ext.swift in Sources */,
-				BE964FD722EC344E00158C92 /* UIColor+Ext.swift in Sources */,
-				BE964FE422EC344E00158C92 /* String+Ext.swift in Sources */,
 				BE0430FE22E20F4900C5F74B /* ColorSet.swift in Sources */,
-				BE964FDD22EC344E00158C92 /* RunTime+Ext.swift in Sources */,
 				BEE4A30A22F557BC00C0F81D /* UpToDownIneraction.swift in Sources */,
-				BE964FE122EC344E00158C92 /* Date+Ext.swift in Sources */,
-				BE964FCE22EC344E00158C92 /* PrintDebug.swift in Sources */,
 				BE04310022E2102F00C5F74B /* IconSet.swift in Sources */,
 				BEA3CDB42263187B00BE1DC8 /* GlobalImport.swift in Sources */,
-				BE964FDE22EC344E00158C92 /* NumberType+Ext.swift in Sources */,
 				BE9F372122DDC0C9009E5E9C /* ReportViewController.swift in Sources */,
-				BE964FD822EC344E00158C92 /* UIAlertController+Ext.swift in Sources */,
 				BE9F371922DDB09B009E5E9C /* KMFont.swift in Sources */,
-				BE964FCD22EC344E00158C92 /* ClosureType.swift in Sources */,
 				BEA3CD5B22630F7D00BE1DC8 /* BaseViewController.swift in Sources */,
-				BE964FE222EC344E00158C92 /* FileMamager+Ext.swift in Sources */,
 				BEA3CD602263107D00BE1DC8 /* DashboardTabBarController.swift in Sources */,
-				BE964FD922EC344E00158C92 /* UIStackView+Ext.swift in Sources */,
-				BE964FD022EC344E00158C92 /* Ext+UIScreen.swift in Sources */,
 				BE04310422E211F700C5F74B /* Records.swift in Sources */,
 				BEE4A30022F556F700C0F81D /* DetailViewController.swift in Sources */,
 				BE04310822E3725700C5F74B /* CalenderView.swift in Sources */,
 				BEE4A30922F557BC00C0F81D /* DiffusionDismissAnimation.swift in Sources */,
-				BE964FD322EC344E00158C92 /* UITextField+Ext.swift in Sources */,
-				BE964FD222EC344E00158C92 /* UIImage+Ext.swift in Sources */,
 				BEA3CD5E2263105000BE1DC8 /* BaseNavigationController.swift in Sources */,
-				BE964FCC22EC344E00158C92 /* PrivacyAuthorization.swift in Sources */,
 				BE9F371F22DDC07D009E5E9C /* HomeViewController.swift in Sources */,
-				BE964FD422EC344E00158C92 /* UITableView+Ext.swift in Sources */,
-				BE964FE022EC344E00158C92 /* Double+Ext.swift in Sources */,
 				BEE4A2FD22F542BD00C0F81D /* ImageHelper.swift in Sources */,
 				BE04310622E3721B00C5F74B /* HomeViewModel.swift in Sources */,
-				BE964FE622EC344E00158C92 /* URL+Ext.swift in Sources */,
-				BE964FDC22EC344E00158C92 /* UIView+Ext.swift in Sources */,
-				BE964FD522EC344E00158C92 /* UIButton+Ext.swift in Sources */,
 				BE04310222E2109400C5F74B /* Category.swift in Sources */,
-				BE964FE522EC344E00158C92 /* Array+Ext.swift in Sources */,
 				BEE4A30822F557BC00C0F81D /* DiffusionTransition.swift in Sources */,
-				BE964FD622EC344E00158C92 /* UIScrollView+Ext.swift in Sources */,
-				BE964FE322EC344E00158C92 /* Thread+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -960,7 +794,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TSTQSY2TJN;
 				INFOPLIST_FILE = "$(SRCROOT)/kMoney/Resource/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -980,7 +814,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TSTQSY2TJN;
 				INFOPLIST_FILE = "$(SRCROOT)/kMoney/Resource/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

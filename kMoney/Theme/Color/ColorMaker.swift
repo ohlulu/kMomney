@@ -52,4 +52,12 @@ extension UIColor {
     @nonobjc class var black90: UIColor {
         return UIColor(white: 37.0 / 255.0, alpha: 0.9)
     }
+    
+    @nonobjc class var fromPurple: UIColor {
+        return UIColor(red: 125, green: 129, blue: 222, alpha: 1)
+    }
+    
+    @nonobjc class var toPurple: UIColor {
+        return UIColor(red: 81, green: 90, blue: 211, alpha: 1)
+    }
 }

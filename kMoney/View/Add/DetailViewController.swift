@@ -49,7 +49,7 @@ fileprivate extension DetailViewController {
     func observerSequence() {
         closeButton.rx.tap
             .subscribe(onNext: { [unowned self] _ in
-                self.dismissSelf()
+                self.dismiss()
             }).disposed(by: bag)
     }
 }

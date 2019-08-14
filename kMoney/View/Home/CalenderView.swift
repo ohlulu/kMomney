@@ -28,7 +28,7 @@ extension CalendarView: FSCalendarDelegateAppearance {
 extension CalendarView: FSCalendarDelegate {
     func calendar(_ calendar: FSCalendar, willDisplay cell: FSCalendarCell, for date: Date, at monthPosition: FSCalendarMonthPosition) {
         if monthPosition == .next && monthPosition == .previous {
-            cell.titleLabel.textColor = UIColor.gunmetal.setAlpha(0.6   )
+            cell.titleLabel.textColor = UIColor.gunmetal.alpha(0.6)
         }
     }
 }
