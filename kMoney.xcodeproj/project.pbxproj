@@ -205,7 +205,6 @@
 			children = (
 				BE006B4022DDA62900A08239 /* Resource */,
 				BE9F371622DDB066009E5E9C /* Theme */,
-				BEA3CDAD2263169800BE1DC8 /* Extension */,
 				BEA3CD5C22630F8100BE1DC8 /* Base */,
 				BEA3CD5922630F5300BE1DC8 /* Model */,
 				BEA3CD5722630F3200BE1DC8 /* View */,
@@ -332,21 +331,6 @@
 			path = SettingPage;
 			sourceTree = "<group>";
 		};
-		BEA3CDAD2263169800BE1DC8 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				BEA3CDB02263176A00BE1DC8 /* Factory */,
-			);
-			path = Extension;
-			sourceTree = "<group>";
-		};
-		BEA3CDB02263176A00BE1DC8 /* Factory */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Factory;
-			sourceTree = "<group>";
-		};
 		BEE4A2FB22F542B400C0F81D /* Image */ = {
 			isa = PBXGroup;
 			children = (
@@ -394,6 +378,7 @@
 				BE15CBB8226308B000AFAB2C /* Frameworks */,
 				BE15CBB9226308B000AFAB2C /* Resources */,
 				4AB509435E5F0E809CDE444A /* [CP] Embed Pods Frameworks */,
+				BE570B7B2305BB4B001A20FC /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -594,6 +579,23 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		BE570B7B2305BB4B001A20FC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "REVEAL_APP_PATH=$(mdfind kMDItemCFBundleIdentifier=\"com.ittybittyapps.Reveal2\" | head -n 1)\nBUILD_SCRIPT_PATH=\"${REVEAL_APP_PATH}/Contents/SharedSupport/Scripts/reveal_server_build_phase.sh\"\nif [ \"${REVEAL_APP_PATH}\" -a -e \"${BUILD_SCRIPT_PATH}\" ]; then\n\"${BUILD_SCRIPT_PATH}\"\nelse\necho \"Reveal Server not loaded: Cannot find a compatible Reveal app.\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

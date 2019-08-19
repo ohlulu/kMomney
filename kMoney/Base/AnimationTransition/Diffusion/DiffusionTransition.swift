@@ -40,7 +40,6 @@ class DiffusionTransition: NSObject, UIViewControllerTransitioningDelegate {
     
     
     func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-        print(interaction.interacting)
         return interaction.interacting ? interaction : nil
     }
     

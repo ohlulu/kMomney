@@ -25,7 +25,6 @@ class UpToDownIneraction: UIPercentDrivenInteractiveTransition {
         let trainsiton = gestureRecoginizer.translation(in: gestureView)
         switch gestureRecoginizer.state {
         case .began:
-            print("began")
             interacting = true
             if let naviController = presentingViewController?.navigationController {
                 naviController.popViewController(animated: true)
@@ -34,7 +33,6 @@ class UpToDownIneraction: UIPercentDrivenInteractiveTransition {
             }
         case .changed:
             var fraction = trainsiton.y / gestureView.frame.height
-            print("\(String(format: "%.2f", trainsiton.y)) / \(String(format: "%.2f", gestureView.frame.height)) = \(String(format: "%.2f", fraction))")
             fraction = max(fraction, 0.0)
             fraction = min(fraction, 1)
             couldComplete = fraction > 0.25

@@ -11,8 +11,16 @@ import ChameleonFramework
 
 class BaseViewController: UIViewController {
 
-    private lazy var backgroundImage = UIImage.background
-    internal lazy var bag = DisposeBag()
+    final lazy var backgroundImageView = UIImageView(image: .background)
+    
+    final lazy var bag = DisposeBag()
+    
+    // UI
+    lazy var closeButton = UIButton().oh
+        .image(.close, for: .normal)
+        .done()
+    
+    // private property
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,12 +34,22 @@ extension BaseViewController {
     
     @discardableResult
     func addBackgroundImage() -> Self {
-        let imageView = UIImageView(image: backgroundImage)
-        view.addSubview(imageView)
-        imageView.snp.makeConstraints { (make) in
+        view.addSubview(backgroundImageView)
+        backgroundImageView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
         return self
+    }
+    
+    func addCloseButton() {
+        
+        let rightButton = UIBarButtonItem(customView: closeButton)
+        var items = [UIBarButtonItem]()
+        if let _items = navigationItem.rightBarButtonItems {
+            items = _items
+        }
+        items.append(rightButton)
+        navigationItem.rightBarButtonItems = items
     }
 }
 

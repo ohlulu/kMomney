@@ -7,12 +7,27 @@
 //
 
 import UIKit
+import ChameleonFramework
 
 class DetailViewController: BaseViewController {
     
-    // MARK: UI element
+    // UI element
     
-    private let closeButton = UIButton()
+    private let moneyLabel = UILabel().oh
+        .kFont(.numbdr(.regular, 40))
+        .textColor(.pureWhite)
+        .textAlignment(.right)
+        .isUserInteractionEnabled(true)
+        .text("$ 1,000")
+        .done()
+    
+    private let textField = UITextField().oh
+        .isHidden(true)
+        .keyboardType(.numberPad)
+        .createConfigurator {
+            $0.keyboardAppearance = UIKeyboardAppearance.dark
+        }
+        .done()
     
     // MARK: Private property
     
@@ -47,9 +62,30 @@ class DetailViewController: BaseViewController {
 fileprivate extension DetailViewController {
     
     func observerSequence() {
+        textField.becomeFirstResponder()
+        // closeButton Pressed
         closeButton.rx.tap
             .subscribe(onNext: { [unowned self] _ in
                 self.dismiss()
+            }).disposed(by: bag)
+        
+        backgroundImageView.rx.tapGesture()
+            .when(.recognized)
+            .subscribe(onNext: { [unowned self] _ in
+                self.textField.resignFirstResponder()
+            }).disposed(by: bag)
+        
+        moneyLabel.rx.tapGesture()
+            .when(.recognized)
+            .debug()
+            .subscribe(onNext: { [unowned self] _ in
+                self.textField.becomeFirstResponder()
+            }).disposed(by: bag)
+        
+        view.rx.touchDownGesture()
+            .when(.began)
+            .subscribe(onNext: { [unowned self] _ in
+                self.textField.resignFirstResponder()
             }).disposed(by: bag)
     }
 }
@@ -59,15 +95,30 @@ fileprivate extension DetailViewController {
 fileprivate extension DetailViewController {
     
     func setupUI() {
-        addBackgroundImage()
         
-        closeButton.setImage(.close, for: .normal)
-        view.addSubview(closeButton)
-        closeButton.snp.makeConstraints { (make) in
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(10)
-            make.right.equalTo(-16)
-            make.size.equalTo(44)
+        addBackgroundImage()
+        addCloseButton()
+        
+        let topView = UIView().oh
+            .backgroundColor(.detailTopColor)
+            .roundCorners([.bottomLeft, .bottomRight], radius: 20)
+            .addShadow(color: .white, radius: 20, y: 5, opacity: 0.6)
+            .done()
+        
+        backgroundImageView.addSubview(topView)
+        topView.snp.makeConstraints { (make) in
+            make.leading.trailing.top.equalToSuperview()
+            make.height.equalTo(146)
         }
         
+        topView.addSubview(moneyLabel)
+        moneyLabel.snp.makeConstraints { (make) in
+            make.right.bottom.equalToSuperview().inset(16)
+        }
+        
+        topView.addSubview(textField)
+        textField.snp.makeConstraints { (make) in
+            make.edges.equalTo(moneyLabel)
+        }
     }
 }

@@ -7,8 +7,7 @@
 //
 
 import UIKit
-
-
+import ChameleonFramework
 
 // MARK: - Pure color
 extension UIColor {
@@ -54,10 +53,16 @@ extension UIColor {
     }
     
     @nonobjc class var fromPurple: UIColor {
-        return UIColor(red: 125, green: 129, blue: 222, alpha: 1)
+        return .rgba(red: 125, green: 129, blue: 222, alpha: 1)
     }
     
     @nonobjc class var toPurple: UIColor {
-        return UIColor(red: 81, green: 90, blue: 211, alpha: 1)
+        return .rgba(red: 81, green: 90, blue: 211, alpha: 1)
+    }
+    
+    class var detailTopColor: UIColor {
+        return .init(gradientStyle: .topToBottom,
+                     withFrame: .init(x: 0, y: 0, width: UIScreen.width, height: 146),
+                     andColors: [.fromPurple, toPurple])
     }
 }

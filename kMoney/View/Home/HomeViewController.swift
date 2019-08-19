@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import ChameleonFramework
 
 class HomeViewController: BaseViewController {
 
@@ -49,8 +48,9 @@ fileprivate extension HomeViewController {
     func observerSequence() {
         addButton.rx.tap
             .subscribe(onNext: { [unowned self] _ in
-                let vc = DetailViewController(diffusionPoint: self.addButton.center)
+                let vc = BaseNavigationController(rootVC: DetailViewController(), diffusionPoint: self.addButton.center)
                 self.present(vc, animated: true, completion: nil)
+                
             }).disposed(by: bag)
     }
 }
@@ -65,9 +65,9 @@ fileprivate extension HomeViewController {
         searchButton.setImage(.search, for: .normal)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: searchButton)
         
-        view.addSubview(calendarView)
+        backgroundImageView.addSubview(calendarView)
         calendarView.snp.makeConstraints { (make) in
-            make.left.right.equalToSuperview()
+            make.top.left.right.equalToSuperview()
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(-4)
             make.height.equalToSuperview().dividedBy(2.6)
         }

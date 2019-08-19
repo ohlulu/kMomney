@@ -9,12 +9,24 @@
 import UIKit
 
 class BaseNavigationController: UINavigationController {
+    
+    private lazy var transitionAnimation = DiffusionTransition()
 
     init(rootVC: UIViewController) {
         super.init(nibName: nil, bundle: nil)
         self.viewControllers = [rootVC]
     }
     
+    init(rootVC: UIViewController, diffusionPoint: CGPoint? = nil) {
+        super.init(nibName: nil, bundle: nil)
+        self.viewControllers = [rootVC]
+        if let diffusionPoint = diffusionPoint {
+            transitionAnimation.targetPoint = diffusionPoint
+            transitionAnimation.interaction.wireGesture(on: self)
+            transitioningDelegate = transitionAnimation
+            modalPresentationStyle = .custom
+        }
+    }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -41,8 +53,8 @@ extension BaseNavigationController: UIGestureRecognizerDelegate {
 // MARK: Setup UI methods
 
 fileprivate extension BaseNavigationController {
+    
     func setupUI() {
-        
         interactivePopGestureRecognizer?.delegate = self
         
         navigationBar.tintColor = .white
