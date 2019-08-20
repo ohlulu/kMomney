@@ -37,6 +37,7 @@
 		BEE4A30822F557BC00C0F81D /* DiffusionTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE4A30422F557BC00C0F81D /* DiffusionTransition.swift */; };
 		BEE4A30922F557BC00C0F81D /* DiffusionDismissAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE4A30522F557BC00C0F81D /* DiffusionDismissAnimation.swift */; };
 		BEE4A30A22F557BC00C0F81D /* UpToDownIneraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE4A30622F557BC00C0F81D /* UpToDownIneraction.swift */; };
+		BEECBF6E230C4A9A00CFB393 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEECBF6D230C4A9A00CFB393 /* CategoryView.swift */; };
 		E7B1EF693A61EE27295A816A /* Pods_kMoneyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBE39E4A717746154116D347 /* Pods_kMoneyTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +99,7 @@
 		BEE4A30422F557BC00C0F81D /* DiffusionTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiffusionTransition.swift; sourceTree = "<group>"; };
 		BEE4A30522F557BC00C0F81D /* DiffusionDismissAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiffusionDismissAnimation.swift; sourceTree = "<group>"; };
 		BEE4A30622F557BC00C0F81D /* UpToDownIneraction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpToDownIneraction.swift; sourceTree = "<group>"; };
+		BEECBF6D230C4A9A00CFB393 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		C19430838692ADDBBD474E0B /* Pods-kMoneyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kMoneyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kMoneyTests/Pods-kMoneyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C1CF24BF821556BAAF36A576 /* Pods_kMoney.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kMoney.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3753CC075D28F88815CCE5F /* Pods-kMoney.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kMoney.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kMoney/Pods-kMoney.debug.xcconfig"; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 		BE0454EE22EC4A4200255267 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BEECBF6D230C4A9A00CFB393 /* CategoryView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -632,6 +635,7 @@
 				BEA3CD5B22630F7D00BE1DC8 /* BaseViewController.swift in Sources */,
 				BEA3CD602263107D00BE1DC8 /* DashboardTabBarController.swift in Sources */,
 				BE1AA218230B793300AFB759 /* RealmHelper.swift in Sources */,
+				BEECBF6E230C4A9A00CFB393 /* CategoryView.swift in Sources */,
 				BE04310422E211F700C5F74B /* Records.swift in Sources */,
 				BEE4A30022F556F700C0F81D /* DetailViewController.swift in Sources */,
 				BE04310822E3725700C5F74B /* CalenderView.swift in Sources */,
