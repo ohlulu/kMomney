@@ -10,12 +10,21 @@ import UIKit
 
 class CategoryView: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    // override
+    override var intrinsicContentSize: CGSize {
+        return frame.size
     }
-    */
-
+    
+    // public property
+    private(set) var category: Category
+    
+    // life cycle
+    init(_ category: Category) {
+        self.category = category
+        super.init(frame: .size(44))
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }
