@@ -19,6 +19,8 @@
 		BE15CBC9226308B300AFAB2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE15CBC7226308B300AFAB2C /* LaunchScreen.storyboard */; };
 		BE15CBD4226308B300AFAB2C /* kMoneyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15CBD3226308B300AFAB2C /* kMoneyTests.swift */; };
 		BE15CBDF226308B300AFAB2C /* kMoneyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15CBDE226308B300AFAB2C /* kMoneyUITests.swift */; };
+		BE1AA215230B6F8B00AFB759 /* ModelInitial.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1AA214230B6F8B00AFB759 /* ModelInitial.swift */; };
+		BE1AA218230B793300AFB759 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1AA217230B793300AFB759 /* RealmHelper.swift */; };
 		BE9F371922DDB09B009E5E9C /* KMFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F371822DDB09B009E5E9C /* KMFont.swift */; };
 		BE9F371F22DDC07D009E5E9C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F371E22DDC07D009E5E9C /* HomeViewController.swift */; };
 		BE9F372122DDC0C9009E5E9C /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F372022DDC0C9009E5E9C /* ReportViewController.swift */; };
@@ -78,6 +80,8 @@
 		BE15CBDA226308B300AFAB2C /* kMoneyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kMoneyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE15CBDE226308B300AFAB2C /* kMoneyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kMoneyUITests.swift; sourceTree = "<group>"; };
 		BE15CBE0226308B300AFAB2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE1AA214230B6F8B00AFB759 /* ModelInitial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelInitial.swift; sourceTree = "<group>"; };
+		BE1AA217230B793300AFB759 /* RealmHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
 		BE9F371822DDB09B009E5E9C /* KMFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMFont.swift; sourceTree = "<group>"; };
 		BE9F371E22DDC07D009E5E9C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BE9F372022DDC0C9009E5E9C /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
@@ -203,6 +207,7 @@
 		BE15CBBD226308B000AFAB2C /* kMoney */ = {
 			isa = PBXGroup;
 			children = (
+				BE1AA216230B792300AFB759 /* Realm */,
 				BE006B4022DDA62900A08239 /* Resource */,
 				BE9F371622DDB066009E5E9C /* Theme */,
 				BEA3CD5C22630F8100BE1DC8 /* Base */,
@@ -229,6 +234,14 @@
 				BE15CBE0226308B300AFAB2C /* Info.plist */,
 			);
 			path = kMoneyUITests;
+			sourceTree = "<group>";
+		};
+		BE1AA216230B792300AFB759 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				BE1AA217230B793300AFB759 /* RealmHelper.swift */,
+			);
+			path = Realm;
 			sourceTree = "<group>";
 		};
 		BE9F371622DDB066009E5E9C /* Theme */ = {
@@ -293,6 +306,7 @@
 				BE0430FF22E2102F00C5F74B /* IconSet.swift */,
 				BE04310122E2109400C5F74B /* Category.swift */,
 				BE04310322E211F700C5F74B /* Records.swift */,
+				BE1AA214230B6F8B00AFB759 /* ModelInitial.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -612,10 +626,12 @@
 				BEE4A30A22F557BC00C0F81D /* UpToDownIneraction.swift in Sources */,
 				BE04310022E2102F00C5F74B /* IconSet.swift in Sources */,
 				BEA3CDB42263187B00BE1DC8 /* GlobalImport.swift in Sources */,
+				BE1AA215230B6F8B00AFB759 /* ModelInitial.swift in Sources */,
 				BE9F372122DDC0C9009E5E9C /* ReportViewController.swift in Sources */,
 				BE9F371922DDB09B009E5E9C /* KMFont.swift in Sources */,
 				BEA3CD5B22630F7D00BE1DC8 /* BaseViewController.swift in Sources */,
 				BEA3CD602263107D00BE1DC8 /* DashboardTabBarController.swift in Sources */,
+				BE1AA218230B793300AFB759 /* RealmHelper.swift in Sources */,
 				BE04310422E211F700C5F74B /* Records.swift in Sources */,
 				BEE4A30022F556F700C0F81D /* DetailViewController.swift in Sources */,
 				BE04310822E3725700C5F74B /* CalenderView.swift in Sources */,

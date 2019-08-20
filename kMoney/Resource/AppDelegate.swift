@@ -15,8 +15,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     
+        let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+        printDebug(documentsPath)
+        
         initialWindow()
         
+        RealmHelper.migration()
+        
+        ModelUtility.initModel()
         
         return true
     }

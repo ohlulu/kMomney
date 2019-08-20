@@ -52,6 +52,11 @@ class DetailViewController: BaseViewController {
         observerSequence()
     }
     
+    override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
+        textField.resignFirstResponder()
+        super.dismiss(animated: flag, completion: completion)
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -62,7 +67,7 @@ class DetailViewController: BaseViewController {
 fileprivate extension DetailViewController {
     
     func observerSequence() {
-        textField.becomeFirstResponder()
+        
         // closeButton Pressed
         closeButton.rx.tap
             .subscribe(onNext: { [unowned self] _ in
@@ -98,6 +103,7 @@ fileprivate extension DetailViewController {
         
         addBackgroundImage()
         addCloseButton()
+        textField.becomeFirstResponder()
         
         let topView = UIView().oh
             .backgroundColor(.detailTopColor)

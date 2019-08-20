@@ -9,9 +9,19 @@
 
 import RealmSwift
 
-@objc class IconSet: Object {
+class IconSet: Object {
     
-    dynamic var id: Int = 0
+    @objc dynamic var index: Int = 0
     
-    dynamic var name: String = ""
+    @objc dynamic var name: String = ""
+    
+    override static func indexedProperties() -> [String] {
+        return ["index"]
+    }
+    
+    override static func primaryKey() -> String? {
+        return "index"
+    }
 }
+
+
