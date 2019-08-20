@@ -7,3 +7,10 @@
 //
 
 import Foundation
+
+public extension CGRect {
+    
+    static func size(_ length: Double) -> CGRect {
+        return CGRect(x: 0, y: 0, width: length, height: length)
+    }
+}
