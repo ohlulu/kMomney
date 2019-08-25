@@ -29,6 +29,8 @@ class DetailViewController: BaseViewController {
         }
         .done()
     
+    private let categoryView = CategoryView()
+    
     // MARK: Private property
     
     private lazy var transitionAnimation = DiffusionTransition()
@@ -74,21 +76,30 @@ fileprivate extension DetailViewController {
                 self.dismiss()
             }).disposed(by: bag)
         
-        backgroundImageView.rx.tapGesture()
-            .when(.recognized)
-            .subscribe(onNext: { [unowned self] _ in
-                self.textField.resignFirstResponder()
-            }).disposed(by: bag)
+        textField.rx.text
+            .orEmpty
+            .distinctUntilChanged()
+            .flatMap { e -> Observable<Int> in
+                return (Int(e) ?? 0).rx.asObservable()
+            }
+            .filter { $0 < 99999999 }
+            .map {
+                let formatter = NumberFormatter()
+                formatter.numberStyle = .decimal
+                formatter.positivePrefix = "$ "
+                return formatter.string(from: NSNumber(value: $0)) ?? "X"
+            }
+            .bind(to: moneyLabel.rx.text)
+            .disposed(by: bag)
         
         moneyLabel.rx.tapGesture()
             .when(.recognized)
-            .debug()
             .subscribe(onNext: { [unowned self] _ in
                 self.textField.becomeFirstResponder()
             }).disposed(by: bag)
         
-        view.rx.touchDownGesture()
-            .when(.began)
+        backgroundImageView.rx.tapGesture()
+            .when(.recognized)
             .subscribe(onNext: { [unowned self] _ in
                 self.textField.resignFirstResponder()
             }).disposed(by: bag)
@@ -108,7 +119,6 @@ fileprivate extension DetailViewController {
         let topView = UIView().oh
             .backgroundColor(.detailTopColor)
             .roundCorners([.bottomLeft, .bottomRight], radius: 20)
-            .addShadow(color: .white, radius: 20, y: 5, opacity: 0.6)
             .done()
         
         backgroundImageView.addSubview(topView)
@@ -117,14 +127,38 @@ fileprivate extension DetailViewController {
             make.height.equalTo(146)
         }
         
-        topView.addSubview(moneyLabel)
-        moneyLabel.snp.makeConstraints { (make) in
-            make.right.bottom.equalToSuperview().inset(16)
+        // categoryView
+        topView.addSubview(categoryView)
+        categoryView.snp.makeConstraints { (make) in
+            make.left.bottom.equalToSuperview().inset(24)
+            make.size.equalTo(44)
         }
         
+        // moneyLabel
+        topView.addSubview(moneyLabel)
+        moneyLabel.snp.makeConstraints { (make) in
+            make.left.equalTo(categoryView.snp.right).offset(24)
+            make.right.equalToSuperview().inset(24)
+            make.centerY.equalTo(categoryView)
+            make.height.equalTo(44)
+        }
+        
+        // textField
         topView.addSubview(textField)
         textField.snp.makeConstraints { (make) in
             make.edges.equalTo(moneyLabel)
         }
+        
+    }
+}
+
+
+extension Int: ReactiveCompatible {
+    
+}
+
+extension Reactive where Base == Int {
+    func asObservable() -> Observable<Base> {
+        return Observable.just(base)
     }
 }

@@ -24,4 +24,9 @@ class IconSet: Object {
     }
 }
 
-
+// MARK: - convenience usage
+extension IconSet {
+    var image: UIImage {
+        return UIImage(named: name)!
+    }
+}

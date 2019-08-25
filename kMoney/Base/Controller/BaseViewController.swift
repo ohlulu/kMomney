@@ -13,7 +13,7 @@ class BaseViewController: UIViewController {
 
     final lazy var backgroundImageView = UIImageView(image: .background)
     
-    final lazy var bag = DisposeBag()
+    final private(set) lazy var bag = DisposeBag()
     
     // UI
     lazy var closeButton = UIButton().oh
