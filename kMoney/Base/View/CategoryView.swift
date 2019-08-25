@@ -11,9 +11,9 @@ import UIKit
 class CategoryView: UIView {
 
     // override
-    override var intrinsicContentSize: CGSize {
-        return frame.size
-    }
+//    override var intrinsicContentSize: CGSize {
+//        return frame.size
+//    }
     
     // public property
     var category: Category? {
