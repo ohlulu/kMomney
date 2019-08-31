@@ -87,7 +87,7 @@ class CategorySelecteView: UICollectionView {
             .backgroundColor(.clear)
             .showsVerticalIndicator(false)
             .showsHorizontalIndicator(false)
-        isPagingEnabled = true
+            .isPagingEnabled(true)
     }
     
     required init?(coder aDecoder: NSCoder) {
