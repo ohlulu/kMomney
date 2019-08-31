@@ -21,6 +21,7 @@
 		BE15CBDF226308B300AFAB2C /* kMoneyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15CBDE226308B300AFAB2C /* kMoneyUITests.swift */; };
 		BE1AA215230B6F8B00AFB759 /* ModelInitial.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1AA214230B6F8B00AFB759 /* ModelInitial.swift */; };
 		BE1AA218230B793300AFB759 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1AA217230B793300AFB759 /* RealmHelper.swift */; };
+		BE61F45E231435C8002E643C /* CategorySelecteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE61F45D231435C8002E643C /* CategorySelecteCell.swift */; };
 		BE9F371922DDB09B009E5E9C /* KMFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F371822DDB09B009E5E9C /* KMFont.swift */; };
 		BE9F371F22DDC07D009E5E9C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F371E22DDC07D009E5E9C /* HomeViewController.swift */; };
 		BE9F372122DDC0C9009E5E9C /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F372022DDC0C9009E5E9C /* ReportViewController.swift */; };
@@ -85,6 +86,7 @@
 		BE15CBE0226308B300AFAB2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE1AA214230B6F8B00AFB759 /* ModelInitial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelInitial.swift; sourceTree = "<group>"; };
 		BE1AA217230B793300AFB759 /* RealmHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
+		BE61F45D231435C8002E643C /* CategorySelecteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelecteCell.swift; sourceTree = "<group>"; };
 		BE9F371822DDB09B009E5E9C /* KMFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMFont.swift; sourceTree = "<group>"; };
 		BE9F371E22DDC07D009E5E9C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BE9F372022DDC0C9009E5E9C /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
@@ -366,6 +368,7 @@
 			children = (
 				BEE4A2FF22F556F700C0F81D /* DetailViewController.swift */,
 				BEE831C42312E4AE00C919F8 /* CategorySelecteView.swift */,
+				BE61F45D231435C8002E643C /* CategorySelecteCell.swift */,
 			);
 			path = Add;
 			sourceTree = "<group>";
@@ -408,8 +411,8 @@
 				BE15CBB7226308B000AFAB2C /* Sources */,
 				BE15CBB8226308B000AFAB2C /* Frameworks */,
 				BE15CBB9226308B000AFAB2C /* Resources */,
-				4AB509435E5F0E809CDE444A /* [CP] Embed Pods Frameworks */,
 				BE570B7B2305BB4B001A20FC /* ShellScript */,
+				50D16DC49593D8E1C4AE1AB8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -550,7 +553,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4AB509435E5F0E809CDE444A /* [CP] Embed Pods Frameworks */ = {
+		50D16DC49593D8E1C4AE1AB8 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -638,6 +641,7 @@
 				BEA3CDAF226316C400BE1DC8 /* ColorMaker.swift in Sources */,
 				BE15CBBF226308B000AFAB2C /* AppDelegate.swift in Sources */,
 				BE9F372322DDC0F3009E5E9C /* SettingViewController.swift in Sources */,
+				BE61F45E231435C8002E643C /* CategorySelecteCell.swift in Sources */,
 				BEE4A30722F557BC00C0F81D /* DiffustionPresentAnimation.swift in Sources */,
 				BE0430FE22E20F4900C5F74B /* ColorSet.swift in Sources */,
 				BEE4A30A22F557BC00C0F81D /* UpToDownIneraction.swift in Sources */,

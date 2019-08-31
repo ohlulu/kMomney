@@ -30,6 +30,7 @@ class DetailViewController: BaseViewController {
         .done()
     
     private let categoryView = CategoryView()
+    private let categorySelectorView = CategorySelecteView()
     
     // MARK: Private property
     
@@ -96,6 +97,7 @@ fileprivate extension DetailViewController {
             .when(.recognized)
             .subscribe(onNext: { [unowned self] _ in
                 self.textField.becomeFirstResponder()
+                self.categorySelectorView.reloadData()
             }).disposed(by: bag)
         
         backgroundImageView.rx.tapGesture()
@@ -149,6 +151,13 @@ fileprivate extension DetailViewController {
             make.edges.equalTo(moneyLabel)
         }
         
+        // category selector view
+        view.addSubview(categorySelectorView)
+        categorySelectorView.snp.makeConstraints { (make) in
+            make.left.right.equalToSuperview()
+            make.top.equalTo(topView.snp.bottom)
+            make.height.equalTo(172)
+        }
     }
 }
 
