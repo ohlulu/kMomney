@@ -33,4 +33,8 @@ struct RealmHelper {
             printDebug(error)
         }
     }
+    
+    /*
+     第一次開啟APP，初始化資料庫
+     */
 }
