@@ -81,6 +81,7 @@ class CategorySelecteView: UICollectionView {
 
         super.init(frame: .init(x: 0, y: 0, width: UIScreen.width, height: 124),
                    collectionViewLayout: flowLayout)
+        
         oh.regiter(CategorySelecteCell.self)
             .dataSource(self)
             .delegate(self)

@@ -39,15 +39,15 @@ extension KMFont {
     }
 }
 
-extension OhConfigureWrapper where Base: SwiftOriginFontExclamationMark {
-    func kFont(_ font: KMFont) -> OhConfigureWrapper {
+extension OhSwifter where Base: SwiftOriginFontExclamationMark {
+    func kFont(_ font: KMFont) -> OhSwifter {
         base.font = font.rawValue
         return self
     }
 }
 
-extension OhConfigureWrapper where Base: SwiftOriginFontQuestionMark {
-    func kFont(_ font: KMFont) -> OhConfigureWrapper {
+extension OhSwifter where Base: SwiftOriginFontQuestionMark {
+    func kFont(_ font: KMFont) -> OhSwifter {
         base.font = font.rawValue
         return self
     }

@@ -27,7 +27,7 @@ class CategoryView: UIView {
     // life cycle
     init(_ category: Category? = nil) {
         self.category = category
-        super.init(frame: .size(44))
+        super.init(frame: .init(square: 44))
         setupUI()
     }
     
