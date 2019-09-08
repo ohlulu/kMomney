@@ -41,6 +41,7 @@
 		BEE831C52312E4AE00C919F8 /* CategorySelecteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE831C42312E4AE00C919F8 /* CategorySelecteView.swift */; };
 		BEECBF6E230C4A9A00CFB393 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEECBF6D230C4A9A00CFB393 /* CategoryView.swift */; };
 		BEECBF73230C4C0B00CFB393 /* Temp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEECBF72230C4C0B00CFB393 /* Temp.swift */; };
+		BEF8133B23240D3000EAD664 /* UserDefaultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF8133A23240D3000EAD664 /* UserDefaultHelper.swift */; };
 		E7B1EF693A61EE27295A816A /* Pods_kMoneyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBE39E4A717746154116D347 /* Pods_kMoneyTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -106,6 +107,7 @@
 		BEE831C42312E4AE00C919F8 /* CategorySelecteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelecteView.swift; sourceTree = "<group>"; };
 		BEECBF6D230C4A9A00CFB393 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		BEECBF72230C4C0B00CFB393 /* Temp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temp.swift; sourceTree = "<group>"; };
+		BEF8133A23240D3000EAD664 /* UserDefaultHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultHelper.swift; sourceTree = "<group>"; };
 		C19430838692ADDBBD474E0B /* Pods-kMoneyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kMoneyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kMoneyTests/Pods-kMoneyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C1CF24BF821556BAAF36A576 /* Pods_kMoney.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kMoney.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3753CC075D28F88815CCE5F /* Pods-kMoney.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kMoney.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kMoney/Pods-kMoney.debug.xcconfig"; sourceTree = "<group>"; };
@@ -216,14 +218,14 @@
 		BE15CBBD226308B000AFAB2C /* kMoney */ = {
 			isa = PBXGroup;
 			children = (
-				BEECBF71230C4BFF00CFB393 /* Temp */,
-				BE1AA216230B792300AFB759 /* Realm */,
 				BE006B4022DDA62900A08239 /* Resource */,
 				BE9F371622DDB066009E5E9C /* Theme */,
 				BEA3CD5C22630F8100BE1DC8 /* Base */,
 				BEA3CD5922630F5300BE1DC8 /* Model */,
 				BEA3CD5722630F3200BE1DC8 /* View */,
 				BEA3CD5822630F3F00BE1DC8 /* ViewModel */,
+				BE7E59F723240C9100BA06F3 /* Helpers */,
+				BEECBF71230C4BFF00CFB393 /* Temp */,
 			);
 			path = kMoney;
 			sourceTree = "<group>";
@@ -252,6 +254,15 @@
 				BE1AA217230B793300AFB759 /* RealmHelper.swift */,
 			);
 			path = Realm;
+			sourceTree = "<group>";
+		};
+		BE7E59F723240C9100BA06F3 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				BE1AA216230B792300AFB759 /* Realm */,
+				BEF8133A23240D3000EAD664 /* UserDefaultHelper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		BE9F371622DDB066009E5E9C /* Theme */ = {
@@ -655,6 +666,7 @@
 				BE1AA218230B793300AFB759 /* RealmHelper.swift in Sources */,
 				BEECBF6E230C4A9A00CFB393 /* CategoryView.swift in Sources */,
 				BE04310422E211F700C5F74B /* Records.swift in Sources */,
+				BEF8133B23240D3000EAD664 /* UserDefaultHelper.swift in Sources */,
 				BEE4A30022F556F700C0F81D /* DetailViewController.swift in Sources */,
 				BE04310822E3725700C5F74B /* CalenderView.swift in Sources */,
 				BEE4A30922F557BC00C0F81D /* DiffusionDismissAnimation.swift in Sources */,

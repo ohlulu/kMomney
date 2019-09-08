@@ -8,9 +8,15 @@
 
 import RealmSwift
 
-@objc class ColorSet: Object {
+class ColorSet: Object {
     
-    dynamic var id: Int = 0
+    @objc dynamic var id: Int = 0
     
-    dynamic var hex: String = "#FFFFFF"
+    @objc dynamic var normalHex: String = "#FFFFFF"
+    
+    @objc dynamic var pressedHex: String = "#FFFFFF"
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
 }

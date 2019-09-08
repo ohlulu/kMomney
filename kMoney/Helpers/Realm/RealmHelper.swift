@@ -8,11 +8,21 @@
 
 import RealmSwift
 
+var kRealm = _kRealm.`default`
+
+private class _kRealm {
+    static var `default`: Realm = {
+       return try! Realm()
+    }()
+}
+
 struct RealmHelper {
+    
+    private init() { }
     
     static func migration() {
         
-        let newSchemaVersion: UInt64 = 1
+        let newSchemaVersion: UInt64 = 3
         
         var config = Realm.Configuration(
             schemaVersion: newSchemaVersion,
@@ -37,4 +47,23 @@ struct RealmHelper {
     /*
      第一次開啟APP，初始化資料庫
      */
+    static func initial() {
+        var colorSet = [ColorSet]()
+        let hexs = ["#A4BFFA", "#7776B4"]
+        for (i, hex) in hexs.enumerated() {
+            let color = ColorSet()
+            color.id = i
+            color.normalHex = hex
+            colorSet.append(color)
+        }
+        
+        do {
+            let rm = kRealm
+            try rm.write {
+                rm.add(colorSet, update: .all)
+            }
+        } catch {
+            printDebug(error)
+        }
+    }
 }

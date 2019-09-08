@@ -18,9 +18,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
         printDebug(documentsPath)
         
+        initialUserDefault()
+        
         initialWindow()
         
         RealmHelper.migration()
+        
+        RealmHelper.initial()
         
         ModelUtility.initModel()
         
@@ -39,6 +43,14 @@ extension AppDelegate {
         
         window!.rootViewController = tabbar
         window!.makeKeyAndVisible()
+    }
+    
+    func initialUserDefault() {
+        let defaults = [
+            "oprne": false
+        ]
+        
+        UserDefaults.standard.register(defaults: defaults)
     }
 }
 
