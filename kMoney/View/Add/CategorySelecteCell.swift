@@ -12,6 +12,12 @@ class CategorySelecteCell: UICollectionViewCell {
     
     private let categoryView = CategoryView()
     
+    private let nameLabel = UILabel().oh
+        .font(12, weight: .regular)
+        .textColor(.greyText186)
+        .textAlignment(.center)
+        .done()
+    
     override init(frame: CGRect) {
         super.init(frame: .zero)
         setupUI()
@@ -28,6 +34,7 @@ extension CategorySelecteCell {
     
     func configCell(_ category: Category) {
         categoryView.category = category
+        nameLabel.text = category.name
     }
 }
 
@@ -39,6 +46,12 @@ private extension CategorySelecteCell {
         categoryView.snp.makeConstraints { (make) in
             make.top.centerX.equalToSuperview()
             make.size.equalTo(40)
+        }
+        
+        contentView.addSubview(nameLabel)
+        nameLabel.snp.makeConstraints { (make) in
+            make.bottom.leading.trailing.equalToSuperview()
+            make.top.equalTo(categoryView.snp.bottom).offset(4)
         }
     }
 }

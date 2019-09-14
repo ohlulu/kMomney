@@ -56,6 +56,10 @@ extension UIColor {
         return .rgba(red: 125, green: 129, blue: 222, alpha: 1)
     }
     
+    @nonobjc class var greyText186: UIColor {
+        return .rgba(red: 186, green: 186, blue: 186, alpha: 1)
+    }
+    
     @nonobjc class var toPurple: UIColor {
         return .rgba(red: 81, green: 90, blue: 211, alpha: 1)
     }
