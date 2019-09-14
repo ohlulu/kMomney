@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import RealmSwift
 
 /*
  Layout
  */
-class CategorySelectorLayout: UICollectionViewLayout {
+private final class CategorySelectorLayout: UICollectionViewLayout {
     
     override var collectionViewContentSize: CGSize {
         guard let collectionView = collectionView else {
@@ -24,7 +25,7 @@ class CategorySelectorLayout: UICollectionViewLayout {
             - collectionView.contentInset.left
             - collectionView.contentInset.right
         
-        let height = 172.cgfloat
+        let height = 172.cgfloat + 20
             - topInset
             - collectionView.contentInset.bottom
         
@@ -80,12 +81,12 @@ class CategorySelectorLayout: UICollectionViewLayout {
 /**
  Collection View
  */
-class CategorySelecteView: UICollectionView {
+private final class CategorySelecteCollectionView: UICollectionView {
     
-    private var datas = Category.getAll()
+    private var datas: Results<Category>
     
-    init() {
-        
+    init(datas: Results<Category>) {
+        self.datas = datas
         let flowLayout = CategorySelectorLayout()
 
         super.init(frame: .init(x: 0, y: 0, width: UIScreen.width, height: 124),
@@ -108,7 +109,7 @@ class CategorySelecteView: UICollectionView {
 
 // MARK: - UICollectionViewDelegate
 
-extension CategorySelecteView: UICollectionViewDelegate {
+extension CategorySelecteCollectionView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
     }
@@ -116,7 +117,7 @@ extension CategorySelecteView: UICollectionViewDelegate {
 
 // MARK: - UICollectionViewDataSource
 
-extension CategorySelecteView: UICollectionViewDataSource {
+extension CategorySelecteCollectionView: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -131,5 +132,46 @@ extension CategorySelecteView: UICollectionViewDataSource {
         let currentData = datas[indexPath.row]
         cell.configCell(currentData)
         return cell
+    }
+}
+
+final class CategorySelectorView: UIView {
+    
+    var datas = Category.getAll()
+    
+    private lazy var collectionView = CategorySelecteCollectionView(datas: datas)
+    
+    private lazy var pageControl = UIPageControl().oh
+        .numberOfPages(datas.count / 10)
+        .pageIndicatorTintColor(.blueGrey)
+        .currentPageIndicatorTintColor(.cornflower)
+        .done()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupUI()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+
+private extension CategorySelectorView {
+    
+    func setupUI() {
+        // category selector view
+        addSubview(collectionView)
+        collectionView.snp.makeConstraints { (make) in
+            make.top.left.right.equalToSuperview()
+            make.height.equalTo(172)
+        }
+        
+        addSubview(pageControl)
+        pageControl.snp.makeConstraints { (make) in
+            make.top.equalTo(collectionView.snp.bottom)
+            make.centerX.equalToSuperview()
+        }
     }
 }

@@ -18,19 +18,23 @@ class DetailViewController: BaseViewController {
         .textColor(.pureWhite)
         .textAlignment(.right)
         .isUserInteractionEnabled(true)
-        .text("$ 1,000")
         .done()
     
     private let textField = UITextField().oh
         .isHidden(true)
         .keyboardType(.numberPad)
-        .createConfigurator {
-            $0.keyboardAppearance = UIKeyboardAppearance.dark
-        }
+        .keyboardAppearance(.dark)
         .done()
     
     private let categoryView = CategoryView()
-    private let categorySelectorView = CategorySelecteView()
+    
+    private let categorySelectorView = CategorySelectorView()
+    
+    private let pageControl = UIPageControl().oh
+        .createConfigurator { (page: UIPageControl) in
+            
+        }
+        .done()
     
     // MARK: Private property
     
@@ -88,7 +92,7 @@ fileprivate extension DetailViewController {
                 let formatter = NumberFormatter()
                 formatter.numberStyle = .decimal
                 formatter.positivePrefix = "$ "
-                return formatter.string(from: NSNumber(value: $0)) ?? "X"
+                return formatter.string(from: NSNumber(value: $0)) ?? "error"
             }
             .bind(to: moneyLabel.rx.text)
             .disposed(by: bag)
@@ -97,7 +101,6 @@ fileprivate extension DetailViewController {
             .when(.recognized)
             .subscribe(onNext: { [unowned self] _ in
                 self.textField.becomeFirstResponder()
-                self.categorySelectorView.reloadData()
             }).disposed(by: bag)
         
         backgroundImageView.rx.tapGesture()
@@ -156,7 +159,7 @@ fileprivate extension DetailViewController {
         categorySelectorView.snp.makeConstraints { (make) in
             make.left.right.equalToSuperview()
             make.top.equalTo(topView.snp.bottom)
-            make.height.equalTo(172)
+            make.height.equalTo(192)
         }
     }
 }
