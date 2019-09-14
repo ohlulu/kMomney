@@ -67,8 +67,8 @@ fileprivate extension HomeViewController {
         
         backgroundImageView.addSubview(calendarView)
         calendarView.snp.makeConstraints { (make) in
-            make.top.left.right.equalToSuperview()
-//            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(-4)
+            make.left.right.equalToSuperview()
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(-4)
             make.height.equalToSuperview().dividedBy(2.6)
         }
         

@@ -8,11 +8,23 @@
 
 import RealmSwift
 
-@objc class Category: Object {
+class Category: Object, GetAllable {
     
-    dynamic var name = ""
+    @objc dynamic var name = ""
     
-    dynamic var icon = IconSet()
+    @objc dynamic var iconInfo: IconSet? = IconSet()
     
-    dynamic var color = ColorSet()
+    @objc dynamic var colorInfo: ColorSet? = ColorSet()
+    
+    override static func primaryKey() -> String? {
+        return "name"
+    }
+    
+    var color: UIColor {
+        return UIColor(hexString: colorInfo!.normalHex)!
+    }
+    
+    var iconImage: UIImage {
+        return UIImage(named: iconInfo!.name)!
+    }
 }

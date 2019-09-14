@@ -22,6 +22,15 @@ class CategorySelecteCell: UICollectionViewCell {
     }
 }
 
+// MARK: Input
+
+extension CategorySelecteCell {
+    
+    func configCell(_ category: Category) {
+        categoryView.category = category
+    }
+}
+
 // MARK: - setupUI
 private extension CategorySelecteCell {
     

@@ -48,19 +48,25 @@ struct RealmHelper {
      第一次開啟APP，初始化資料庫
      */
     static func initial() {
-        var colorSet = [ColorSet]()
-        let hexs = ["#A4BFFA", "#7776B4"]
-        for (i, hex) in hexs.enumerated() {
-            let color = ColorSet()
-            color.id = i
-            color.normalHex = hex
-            colorSet.append(color)
+        var categorys = [Category]()
+        
+        let categoryNames = ["食物", "旅行", "零食", "衣服"]
+        let hexs = ["#A4BFFA", "#7776B4", "#FFA56B", "#C361E8"]
+        let icons = ["food", "airplane", "candy", "clothes"]
+        for (i, categoryName) in categoryNames.enumerated() {
+            let color = ColorSet(value: [i, hexs[i]])
+            
+            let icon = IconSet(value: [i, icons[i]])
+            
+            let category = Category(value: [categoryName, icon, color])
+
+            categorys.append(category)
         }
         
         do {
             let rm = kRealm
             try rm.write {
-                rm.add(colorSet, update: .all)
+                rm.add(categorys, update: .all)
             }
         } catch {
             printDebug(error)

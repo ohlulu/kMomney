@@ -8,7 +8,7 @@
 
 import RealmSwift
 
-class ColorSet: Object {
+class ColorSet: Object, GetAllable {
     
     @objc dynamic var id: Int = 0
     

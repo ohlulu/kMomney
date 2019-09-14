@@ -9,11 +9,6 @@
 import UIKit
 
 class CategoryView: UIView {
-
-    // override
-//    override var intrinsicContentSize: CGSize {
-//        return frame.size
-//    }
     
     // public property
     var category: Category? {
@@ -48,7 +43,8 @@ private extension CategoryView {
         if let category = category {
             imageView.oh
                 .borderWidth(0)
-            imageView.image = category.icon.image
+            imageView.image = category.iconImage
+            imageView.backgroundColor = category.color
         } else {
             imageView.oh
                 .border(color: .white, width: 1)

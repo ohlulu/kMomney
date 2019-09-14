@@ -41,6 +41,7 @@
 		BEE831C52312E4AE00C919F8 /* CategorySelecteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE831C42312E4AE00C919F8 /* CategorySelecteView.swift */; };
 		BEECBF6E230C4A9A00CFB393 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEECBF6D230C4A9A00CFB393 /* CategoryView.swift */; };
 		BEECBF73230C4C0B00CFB393 /* Temp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEECBF72230C4C0B00CFB393 /* Temp.swift */; };
+		BEF78B0A232C9B600023DCA7 /* Realm+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF78B09232C9B600023DCA7 /* Realm+Ext.swift */; };
 		BEF8133B23240D3000EAD664 /* UserDefaultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF8133A23240D3000EAD664 /* UserDefaultHelper.swift */; };
 		E7B1EF693A61EE27295A816A /* Pods_kMoneyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBE39E4A717746154116D347 /* Pods_kMoneyTests.framework */; };
 /* End PBXBuildFile section */
@@ -107,6 +108,7 @@
 		BEE831C42312E4AE00C919F8 /* CategorySelecteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelecteView.swift; sourceTree = "<group>"; };
 		BEECBF6D230C4A9A00CFB393 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		BEECBF72230C4C0B00CFB393 /* Temp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temp.swift; sourceTree = "<group>"; };
+		BEF78B09232C9B600023DCA7 /* Realm+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Realm+Ext.swift"; sourceTree = "<group>"; };
 		BEF8133A23240D3000EAD664 /* UserDefaultHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultHelper.swift; sourceTree = "<group>"; };
 		C19430838692ADDBBD474E0B /* Pods-kMoneyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kMoneyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kMoneyTests/Pods-kMoneyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C1CF24BF821556BAAF36A576 /* Pods_kMoney.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kMoney.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -252,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				BE1AA217230B793300AFB759 /* RealmHelper.swift */,
+				BEF78B09232C9B600023DCA7 /* Realm+Ext.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -668,6 +671,7 @@
 				BE04310422E211F700C5F74B /* Records.swift in Sources */,
 				BEF8133B23240D3000EAD664 /* UserDefaultHelper.swift in Sources */,
 				BEE4A30022F556F700C0F81D /* DetailViewController.swift in Sources */,
+				BEF78B0A232C9B600023DCA7 /* Realm+Ext.swift in Sources */,
 				BE04310822E3725700C5F74B /* CalenderView.swift in Sources */,
 				BEE4A30922F557BC00C0F81D /* DiffusionDismissAnimation.swift in Sources */,
 				BEA3CD5E2263105000BE1DC8 /* BaseNavigationController.swift in Sources */,

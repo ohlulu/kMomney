@@ -8,6 +8,9 @@
 
 import UIKit
 
+/*
+ Layout
+ */
 class CategorySelectorLayout: UICollectionViewLayout {
     
     override var collectionViewContentSize: CGSize {
@@ -74,9 +77,15 @@ class CategorySelectorLayout: UICollectionViewLayout {
     }
 }
 
+/**
+ Collection View
+ */
 class CategorySelecteView: UICollectionView {
     
+    private var datas = Category.getAll()
+    
     init() {
+        
         let flowLayout = CategorySelectorLayout()
 
         super.init(frame: .init(x: 0, y: 0, width: UIScreen.width, height: 124),
@@ -114,11 +123,13 @@ extension CategorySelecteView: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return datas.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: CategorySelecteCell = collectionView.dequeueReuseableCell(indexPath: indexPath)
+        let currentData = datas[indexPath.row]
+        cell.configCell(currentData)
         return cell
     }
 }
