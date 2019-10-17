@@ -47,6 +47,10 @@ extension UIImage {
     
     static var calendar: UIImage {
         return UIImage(named: "calendar")!
-    }    
+    }
+    
+    static var hashtag: UIImage {
+        return UIImage(named: "hashtag")!
+    }
 }
 

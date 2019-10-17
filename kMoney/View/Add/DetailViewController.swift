@@ -30,10 +30,21 @@ class DetailViewController: BaseViewController {
     
     private let categorySelectorView = CategorySelectorView()
     
-    private let pageControl = UIPageControl().oh
-        .createConfigurator { (page: UIPageControl) in
-            
-        }
+    private let dateLabel = UILabel().oh
+        .textColor(.white)
+        .font(15, weight: .medium)
+        .text("2019年7月5日")
+        .done()
+    
+    private let hashTagTextField = UITextField().oh
+        .textColor(.white)
+        .tintColor(.white)
+        .font(15, weight: .medium)
+        .keyboardAppearance(.dark)
+        .attributedPlaceholder("建立新的 #hashtag", attribute: [
+            .font: UIFont.systemFont(ofSize: 15, weight: .medium),
+            .foregroundColor: UIColor.greyText186
+            ])
         .done()
     
     // MARK: Private property
@@ -160,6 +171,44 @@ fileprivate extension DetailViewController {
             make.left.right.equalToSuperview()
             make.top.equalTo(topView.snp.bottom)
             make.height.equalTo(192)
+        }
+        
+        let calendarIcon = UIImageView(image: .calendar)
+        view.addSubview(calendarIcon)
+        calendarIcon.snp.makeConstraints { (make) in
+            make.leading.equalToSuperview().inset(20)
+            make.top.equalTo(categorySelectorView.snp.bottom).offset(12)
+            make.size.equalTo(24)
+        }
+        
+        view.addSubview(dateLabel)
+        dateLabel.snp.makeConstraints { (make) in
+            make.leading.equalTo(calendarIcon.snp.trailing).offset(13)
+            make.centerY.equalTo(calendarIcon)
+        }
+        
+        let tagIcon = UIImageView(image: .hashtag)
+        view.addSubview(tagIcon)
+        tagIcon.snp.makeConstraints { (make) in
+            make.size.leading.equalTo(calendarIcon)
+            make.top.equalTo(calendarIcon.snp.bottom).offset(13)
+        }
+        
+        view.addSubview(hashTagTextField)
+        hashTagTextField.snp.makeConstraints { (make) in
+            make.leading.equalTo(dateLabel)
+            make.trailing.equalToSuperview().inset(20)
+            make.centerY.equalTo(tagIcon)
+        }
+        
+        let lineView = UIView().oh
+            .backgroundColor(.greyText186)
+            .done()
+        view.addSubview(lineView)
+        lineView.snp.makeConstraints { (make) in
+            make.leading.trailing.equalTo(hashTagTextField)
+            make.height.equalTo(1)
+            make.top.equalTo(hashTagTextField.snp.bottom)
         }
     }
 }

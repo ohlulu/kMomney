@@ -9,8 +9,11 @@
 import Foundation
 import FSCalendar
 
-class CalendarView: FSCalendar {
-
+class CalendarView: UIView {
+    
+    let _calnedar = FSCalendar(frame: .init(width: UIScreen.height/2.6,
+                                            height: UIScreen.width))
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
@@ -41,23 +44,30 @@ extension CalendarView: FSCalendarDataSource {
 extension CalendarView {
     
     func setupUI() {
-        dataSource = self
-        delegate = self
-        locale = Locale(identifier: "zh-TW")
-        placeholderType = .fillHeadTail
-        appearance.weekdayFont = UIFont.systemFont(ofSize: 14, weight: .bold)
-        appearance.weekdayTextColor = .white
-        appearance.headerTitleColor = .white
-        appearance.headerMinimumDissolvedAlpha = 0
-        appearance.headerDateFormat = "M 月"
-        appearance.caseOptions = .weekdayUsesSingleUpperCase
-        appearance.titleOffset = CGPoint(x: 0, y: 0)
-        appearance.titleDefaultColor = .white
-        appearance.titleTodayColor = .lavenderBlue
-        appearance.todayColor = .clear
-        appearance.selectionColor = .lavenderBlue
-        appearance.titleSelectionColor = .white
-        appearance.titleFont = UIFont.systemFont(ofSize: 14, weight: .medium)
+        addSubview(_calnedar)
+//        _calnedar.snp.makeConstraints { (make) in
+//            make.edges.equalToSuperview()
+//        }
+        
+//        _calnedar.scrollDirection = .horizontal
+//        _calnedar.scrollEnabled = true
+        _calnedar.dataSource = self
+        _calnedar.delegate = self
+        _calnedar.locale = Locale(identifier: "zh-TW")
+        _calnedar.placeholderType = .fillHeadTail
+        _calnedar.appearance.weekdayFont = UIFont.systemFont(ofSize: 14, weight: .bold)
+        _calnedar.appearance.weekdayTextColor = .white
+        _calnedar.appearance.headerTitleColor = .white
+        _calnedar.appearance.headerMinimumDissolvedAlpha = 0
+        _calnedar.appearance.headerDateFormat = "M 月"
+        _calnedar.appearance.caseOptions = .weekdayUsesSingleUpperCase
+        _calnedar.appearance.titleOffset = CGPoint(x: 0, y: 0)
+        _calnedar.appearance.titleDefaultColor = .white
+        _calnedar.appearance.titleTodayColor = .lavenderBlue
+        _calnedar.appearance.todayColor = .clear
+        _calnedar.appearance.selectionColor = .lavenderBlue
+        _calnedar.appearance.titleSelectionColor = .white
+        _calnedar.appearance.titleFont = UIFont.systemFont(ofSize: 14, weight: .medium)
         
     }
     

@@ -26,8 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         RealmHelper.initial()
         
-//        ModelUtility.initModel()
-        
         return true
     }
 }
