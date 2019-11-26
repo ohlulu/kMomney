@@ -22,7 +22,7 @@ struct RealmHelper {
     
     static func migration() {
         
-        let newSchemaVersion: UInt64 = 3
+        let newSchemaVersion: UInt64 = 4
         
         var config = Realm.Configuration(
             schemaVersion: newSchemaVersion,

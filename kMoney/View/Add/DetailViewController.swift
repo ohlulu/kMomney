@@ -32,14 +32,14 @@ class DetailViewController: BaseViewController {
     
     private let dateLabel = UILabel().oh
         .textColor(.white)
-        .font(15, weight: .medium)
+        .font(.systemFont(ofSize: 15, weight: .medium))
         .text("2019年7月5日")
         .done()
     
     private let hashTagTextField = UITextField().oh
         .textColor(.white)
         .tintColor(.white)
-        .font(15, weight: .medium)
+        .font(.systemFont(ofSize: 15, weight: .medium))
         .keyboardAppearance(.dark)
         .attributedPlaceholder("建立新的 #hashtag", attribute: [
             .font: UIFont.systemFont(ofSize: 15, weight: .medium),

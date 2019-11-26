@@ -7,25 +7,22 @@ PODS:
   - Charts/Core (3.4.0)
   - EFCountingLabel (5.1.1)
   - FSCalendar (2.8.0)
-  - OhSwifter (0.5.3)
-  - Realm (3.19.0):
-    - Realm/Headers (= 3.19.0)
-  - Realm/Headers (3.19.0)
-  - RealmSwift (3.19.0):
-    - Realm (= 3.19.0)
+  - OhSwifter (0.5.7)
+  - Realm (4.1.1):
+    - Realm/Headers (= 4.1.1)
+  - Realm/Headers (4.1.1)
+  - RealmSwift (4.1.1):
+    - Realm (= 4.1.1)
   - RxCocoa (4.5.0):
     - RxSwift (>= 4.4.2, ~> 4.4)
   - RxGesture (2.2.0):
     - RxCocoa (~> 4.5)
     - RxSwift (~> 4.5)
-  - RxRealm (0.7.6):
-    - RealmSwift (~> 3.0)
-    - RxSwift (~> 4.0)
   - RxSwift (4.5.0)
   - SnapKit (5.0.1)
 
 DEPENDENCIES:
-  - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
+  - ChameleonFramework/Swift (from `https://github.com/wowansm/Chameleon.git`, branch `swift5`)
   - Charts
   - EFCountingLabel
   - FSCalendar
@@ -33,7 +30,6 @@ DEPENDENCIES:
   - RealmSwift
   - RxCocoa (~> 4.0)
   - RxGesture
-  - RxRealm
   - RxSwift (~> 4.0)
   - SnapKit (~> 5.0.0)
 
@@ -47,33 +43,32 @@ SPEC REPOS:
     - RealmSwift
     - RxCocoa
     - RxGesture
-    - RxRealm
     - RxSwift
     - SnapKit
 
 EXTERNAL SOURCES:
   ChameleonFramework:
-    :git: https://github.com/ViccAlexander/Chameleon.git
+    :branch: swift5
+    :git: https://github.com/wowansm/Chameleon.git
 
 CHECKOUT OPTIONS:
   ChameleonFramework:
-    :commit: 6dd284bde21ea2e7f9fd89bc36f40df16e16369d
-    :git: https://github.com/ViccAlexander/Chameleon.git
+    :commit: 96d52c36a45847fff60bcff7a58fec1e4bd7390b
+    :git: https://github.com/wowansm/Chameleon.git
 
 SPEC CHECKSUMS:
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   Charts: 74c9f256eaf0460c0c416522d1cf8c634ea6b286
   EFCountingLabel: 605358591a67a3c92feb7ec32486bfab4a30e2c9
   FSCalendar: 3a5ed3636e2ba1b83ebebfcf0c2603105a6f5efe
-  OhSwifter: bab4516f71220f330c2f16ace3012b9333a1caab
-  Realm: 995d585bcf699aaff226715886c849a29dd3d07f
-  RealmSwift: 35f284a537989f2187b413e5917091948cb87a3f
+  OhSwifter: 8ab5d39f859b90755ac41e71efff1e79f272cce4
+  Realm: 25f0a8244cbb1c2271c922963ea8666fc2d8104d
+  RealmSwift: 9e2657b33764f80e4a4dffd6d440e24715782052
   RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
   RxGesture: c1b7bf17166b0ef9d642a9510f8bac5785f18990
-  RxRealm: 5379eddd74f8d617ca7681d1f8d144af25b432b0
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: b4cd44e45f493b614631294e0622710c02ea7ad2
+PODFILE CHECKSUM: 31340c76dbff73a81b72afbfe68f4742e2b97d82
 
-COCOAPODS: 1.8.3
+COCOAPODS: 1.8.4

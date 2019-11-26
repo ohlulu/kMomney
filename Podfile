@@ -1,4 +1,4 @@
-platform :ios, '11.0'
+platform :ios, '12.0'
 
 target 'kMoney' do
   use_frameworks!
@@ -8,7 +8,6 @@ target 'kMoney' do
   pod 'RxSwift',    '~> 4.0'
   pod 'RxCocoa',    '~> 4.0'
   pod 'RxGesture'
-  pod 'RxRealm'
 
   # DB
   pod 'RealmSwift'
@@ -17,7 +16,7 @@ target 'kMoney' do
   pod 'Charts'
   pod 'SnapKit', '~> 5.0.0'
   pod 'EFCountingLabel'
-  pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
+  pod 'ChameleonFramework/Swift', :git => 'https://github.com/wowansm/Chameleon.git', :branch => 'swift5'
   pod 'FSCalendar'
 
   target 'kMoneyTests' do

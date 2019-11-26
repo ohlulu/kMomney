@@ -13,7 +13,7 @@ import RealmSwift
     
     dynamic var time = Date().timeIntervalSince1970
     
-    dynamic var category = Category()
+    dynamic var category: Category? = nil
     
     dynamic var money = 0
     

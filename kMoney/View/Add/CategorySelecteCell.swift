@@ -13,7 +13,7 @@ class CategorySelecteCell: UICollectionViewCell {
     private let categoryView = CategoryView()
     
     private let nameLabel = UILabel().oh
-        .font(12, weight: .regular)
+        .font(.systemFont(ofSize: 12, weight: .regular))
         .textColor(.greyText186)
         .textAlignment(.center)
         .done()

@@ -45,12 +45,12 @@ extension CalendarView {
     
     func setupUI() {
         addSubview(_calnedar)
-//        _calnedar.snp.makeConstraints { (make) in
-//            make.edges.equalToSuperview()
-//        }
+        _calnedar.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
         
-//        _calnedar.scrollDirection = .horizontal
-//        _calnedar.scrollEnabled = true
+        _calnedar.scrollDirection = .horizontal
+        _calnedar.scrollEnabled = true
         _calnedar.dataSource = self
         _calnedar.delegate = self
         _calnedar.locale = Locale(identifier: "zh-TW")
