@@ -7,7 +7,7 @@ PODS:
   - Charts/Core (3.4.0)
   - EFCountingLabel (5.1.1)
   - FSCalendar (2.8.0)
-  - OhSwifter (0.5.7)
+  - OhSwifter (0.5.8)
   - Realm (4.1.1):
     - Realm/Headers (= 4.1.1)
   - Realm/Headers (4.1.1)
@@ -61,7 +61,7 @@ SPEC CHECKSUMS:
   Charts: 74c9f256eaf0460c0c416522d1cf8c634ea6b286
   EFCountingLabel: 605358591a67a3c92feb7ec32486bfab4a30e2c9
   FSCalendar: 3a5ed3636e2ba1b83ebebfcf0c2603105a6f5efe
-  OhSwifter: 8ab5d39f859b90755ac41e71efff1e79f272cce4
+  OhSwifter: 481863b54bb484686495f4c8c9d3e00b37e9124b
   Realm: 25f0a8244cbb1c2271c922963ea8666fc2d8104d
   RealmSwift: 9e2657b33764f80e4a4dffd6d440e24715782052
   RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0

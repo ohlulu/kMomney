@@ -47,6 +47,6 @@ fileprivate extension ReportViewController {
     func setupUI() {
         navigationItem.title = "財報"
         
-        addBackgroundImage()
+//        addBackgroundImage()
     }
 }

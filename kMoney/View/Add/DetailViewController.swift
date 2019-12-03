@@ -114,11 +114,11 @@ fileprivate extension DetailViewController {
                 self.textField.becomeFirstResponder()
             }).disposed(by: bag)
         
-        backgroundImageView.rx.tapGesture()
-            .when(.recognized)
-            .subscribe(onNext: { [unowned self] _ in
-                self.textField.resignFirstResponder()
-            }).disposed(by: bag)
+//        backgroundImageView.rx.tapGesture()
+//            .when(.recognized)
+//            .subscribe(onNext: { [unowned self] _ in
+//                self.textField.resignFirstResponder()
+//            }).disposed(by: bag)
     }
 }
 
@@ -128,7 +128,6 @@ fileprivate extension DetailViewController {
     
     func setupUI() {
         
-        addBackgroundImage()
         addCloseButton()
         textField.becomeFirstResponder()
         
@@ -137,16 +136,17 @@ fileprivate extension DetailViewController {
             .roundCorners([.bottomLeft, .bottomRight], radius: 20)
             .done()
         
-        backgroundImageView.addSubview(topView)
+        view.addSubview(topView)
         topView.snp.makeConstraints { (make) in
             make.leading.trailing.top.equalToSuperview()
-            make.height.equalTo(146)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.top)
+                .offset(80)
         }
         
         // categoryView
         topView.addSubview(categoryView)
         categoryView.snp.makeConstraints { (make) in
-            make.left.bottom.equalToSuperview().inset(24)
+            make.left.bottom.equalToSuperview().inset(18)
             make.size.equalTo(44)
         }
         
@@ -170,7 +170,6 @@ fileprivate extension DetailViewController {
         categorySelectorView.snp.makeConstraints { (make) in
             make.left.right.equalToSuperview()
             make.top.equalTo(topView.snp.bottom)
-            make.height.equalTo(192)
         }
         
         let calendarIcon = UIImageView(image: .calendar)

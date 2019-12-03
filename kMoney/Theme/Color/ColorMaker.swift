@@ -64,9 +64,13 @@ extension UIColor {
         return .rgba(red: 81, green: 90, blue: 211, alpha: 1)
     }
     
+    @nonobjc class var background: UIColor {
+        return .rgba(red: 48, green: 48, blue: 52, alpha: 1)
+    }
+    
     class var detailTopColor: UIColor {
         return .init(gradientStyle: .topToBottom,
-                     withFrame: .init(x: 0, y: 0, width: UIScreen.width, height: 146),
+                     withFrame: .init(x: 0, y: 0, width: UIScreen.width, height: 180),
                      andColors: [.fromPurple, toPurple])
     }
 }

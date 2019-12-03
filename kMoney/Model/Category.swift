@@ -10,14 +10,16 @@ import RealmSwift
 
 class Category: Object, GetAllable {
     
-    @objc dynamic var name = ""
+    @objc dynamic var index: Int = 0
+    
+    @objc dynamic var name: String = ""
     
     @objc dynamic var iconInfo: IconSet? = IconSet()
     
     @objc dynamic var colorInfo: ColorSet? = ColorSet()
     
     override static func primaryKey() -> String? {
-        return "name"
+        return "index"
     }
     
     var color: UIColor {

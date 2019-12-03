@@ -10,10 +10,8 @@ import UIKit
 import ChameleonFramework
 
 class BaseViewController: UIViewController {
-
-    final lazy var backgroundImageView = UIImageView(image: .background)
     
-    final private(set) lazy var bag = DisposeBag()
+    private(set) lazy var bag = DisposeBag()
     
     // UI
     lazy var closeButton = UIButton().oh
@@ -32,14 +30,14 @@ class BaseViewController: UIViewController {
 
 extension BaseViewController {
     
-    @discardableResult
-    func addBackgroundImage() -> Self {
-        view.addSubview(backgroundImageView)
-        backgroundImageView.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
-        }
-        return self
-    }
+//    @discardableResult
+//    func addBackgroundImage() -> Self {
+//        view.addSubview(backgroundImageView)
+//        backgroundImageView.snp.makeConstraints { (make) in
+//            make.edges.equalToSuperview()
+//        }
+//        return self
+//    }
     
     func addCloseButton() {
         
@@ -58,6 +56,6 @@ extension BaseViewController {
 fileprivate extension BaseViewController {
     
     func setupUI() {
-        
+        view.backgroundColor = .background
     }
 }

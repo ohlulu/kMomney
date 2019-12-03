@@ -16,13 +16,41 @@ private class _kRealm {
     }()
 }
 
+extension Realm {
+    
+    static var shared: Realm {
+        return try! Realm()
+    }
+    
+    static func getAll<O: Object>(_ type: O.Type) -> Results<O> {
+        return try! Realm().objects(type.self)
+    }
+    
+    static func getFirst<O: Object>(_ type: O.Type) -> O {
+        return try! Realm().objects(type.self).first!
+    }
+    
+    static func deleteAll<O: Object>(_ type: O.Type) {
+        let realm = Realm.shared
+        let all = Realm.getAll(type)
+        try! realm.write {
+            realm.delete(all)
+        }
+    }
+    
+    static func write(_ closure: (Realm) -> Void) {
+        let realm = try! Realm()
+        try! realm.write { closure(realm) }
+    }
+}
+
 struct RealmHelper {
     
     private init() { }
     
     static func migration() {
         
-        let newSchemaVersion: UInt64 = 4
+        let newSchemaVersion: UInt64 = 5
         
         var config = Realm.Configuration(
             schemaVersion: newSchemaVersion,
@@ -50,26 +78,35 @@ struct RealmHelper {
     static func initial() {
         var categorys = [Category]()
         
-        let categoryNames = ["食物", "旅行", "零食", "衣服"]
-        let hexs = ["#A4BFFA", "#7776B4", "#FFA56B", "#C361E8"]
-        let icons = ["food", "airplane", "candy", "clothes"]
-        for (i, categoryName) in categoryNames.enumerated() {
-            let color = ColorSet(value: [i, hexs[i]])
+        let url = Bundle.main.url(forResource: "CategoryList", withExtension: "json")!
+        let data = try! Data(contentsOf: url)
+        let list = try! JSONDecoder().decode(CategoryListModel.self, from: data)
+
+        for (i, c) in list.datas.enumerated() {
+            let color = ColorSet(value: [i, c.hex])
             
-            let icon = IconSet(value: [i, icons[i]])
+            let icon = IconSet(value: [i, c.icon])
             
-            let category = Category(value: [categoryName, icon, color])
+            let category = Category(value: [i, c.name, icon, color])
 
             categorys.append(category)
         }
         
-        do {
-            let rm = kRealm
-            try rm.write {
-                rm.add(categorys, update: .all)
-            }
-        } catch {
-            printDebug(error)
+        Realm.deleteAll(Category.self)
+        
+        Realm.write {
+            $0.add(categorys, update: .all)
         }
+    }
+}
+
+private struct CategoryListModel: Decodable {
+    
+    let datas: [List]
+    
+    struct List: Decodable {
+        let name: String
+        let hex: String
+        let icon: String
     }
 }
