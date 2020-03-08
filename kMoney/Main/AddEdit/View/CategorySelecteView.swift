@@ -15,7 +15,9 @@ import RealmSwift
 private final class CategorySelectorLayout: UICollectionViewFlowLayout {
     
     override var collectionViewContentSize: CGSize {
-        guard let collectionView = collectionView else {
+        
+        guard let collectionView = collectionView,
+            collectionView.numberOfSections != 0 else {
             return .zero
         }
         let numberOfPage = Int(ceil(collectionView.numberOfItems(inSection: 0).double / 10))
@@ -103,20 +105,12 @@ private final class CategorySelecteCollectionView: UICollectionView {
         return flowLayout.collectionViewContentSize
     }
     
-    let flowLayout = CategorySelectorLayout()
+    private let flowLayout = CategorySelectorLayout()
     
-    private var datas: Results<Category>
-    
-    init(datas: Results<Category>) {
-        self.datas = datas
-        
-
-        super.init(frame: .zero,
-                   collectionViewLayout: flowLayout)
+    init() {
+        super.init(frame: .zero, collectionViewLayout: flowLayout)
         
         oh.register(CategorySelecteCell.self)
-            .dataSource(self)
-            .delegate(self)
             .backgroundColor(.clear)
             .showsVerticalIndicator(false)
             .showsHorizontalIndicator(false)
@@ -126,73 +120,76 @@ private final class CategorySelecteCollectionView: UICollectionView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }
 
-// MARK: - UICollectionViewDelegate
-
-extension CategorySelecteCollectionView: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        collectionView.deselectItem(at: indexPath, animated: true)
-    }
-}
-
-// MARK: - UICollectionViewDataSource
-
-extension CategorySelecteCollectionView: UICollectionViewDataSource {
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return datas.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: CategorySelecteCell = collectionView.dequeueReuseableCell(indexPath: indexPath)
-        let currentData = datas[indexPath.row]
-        cell.configCell(currentData)
-        return cell
-    }
-}
-
+/**
+ Collection view + page controller
+ */
 final class CategorySelectorView: UIView {
     
     var datas = Category.getAll()
+    
+    let selectedAtIndexPath: Observable<IndexPath>
     
     override var intrinsicContentSize: CGSize {
         let height = collectionView.intrinsicContentSize.height + 32
         return .init(width: collectionView.intrinsicContentSize.width, height: height)
     }
     
-    private lazy var collectionView = CategorySelecteCollectionView(datas: datas)
-    
+    private let collectionView = CategorySelecteCollectionView()
     private lazy var pageControl = UIPageControl().oh
         .numberOfPages(Int(ceil(datas.count.double / 10.0)))
         .pageIndicatorTintColor(.blueGrey)
         .currentPageIndicatorTintColor(.cornflower)
         .done()
     
+    // porperty
+    private let datasRelay = PublishRelay<[Category]>()
     private let bag = DisposeBag()
     
+    // life cycle
     override init(frame: CGRect) {
+        
+        selectedAtIndexPath = collectionView.rx.itemSelected.asObservable()
+        
         super.init(frame: frame)
         setupUI()
+        observe()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // observe
+    private func observe() {
         
+        let dataScource = RxCollectionDataSource<SectionModel<String, Category>>(
+            configureCell: { _, cv, ip, item in
+                let cell: CategorySelecteCell = cv.dequeueReuseableCell(indexPath: ip)
+                cell.configCell(item)
+                return cell
+        })
+        
+        datasRelay
+            .startWith(datas.toArray())
+            .map { [SectionModel(model: "", items: $0)] }
+            .bind(to: collectionView.rx.items(dataSource: dataScource))
+            .disposed(by: bag)
+            
         collectionView.rx.didScroll
             .map { [unowned self] in
                 Int(self.collectionView.contentOffset.x / UIScreen.widthf)
             }
             .bind(to: pageControl.rx.currentPage)
             .disposed(by: bag)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        
+        collectionView.rx.itemSelected
+            .subscribe(onNext: { index in
+                
+            }).disposed(by: bag)
     }
 }
-
 
 private extension CategorySelectorView {
     
@@ -206,7 +203,6 @@ private extension CategorySelectorView {
         addSubview(pageControl)
         pageControl.snp.makeConstraints { (make) in
             make.centerX.bottom.equalToSuperview()
-//            make.bottom.equalToSuperview().offset(4)
         }
     }
 }

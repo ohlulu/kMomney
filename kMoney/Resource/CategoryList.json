@@ -119,8 +119,12 @@
             "name": "衣服end",
             "hex": "C361E8",
             "icon": "clothes"
+        },
+        {
+            "name": "新增",
+            "hex": "clear",
+            "icon": "new"
         }
-        
     ]
 
 }

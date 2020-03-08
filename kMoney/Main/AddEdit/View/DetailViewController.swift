@@ -28,7 +28,7 @@ class DetailViewController: BaseViewController {
     
     private let categoryView = CategoryView()
     
-    private let categorySelectorView = CategorySelectorView()
+    private let categorySelectorView = CategoryListView()
     
     private let dateLabel = UILabel().oh
         .textColor(.white)
@@ -169,7 +169,8 @@ fileprivate extension DetailViewController {
         view.addSubview(categorySelectorView)
         categorySelectorView.snp.makeConstraints { (make) in
             make.left.right.equalToSuperview()
-            make.top.equalTo(topView.snp.bottom)
+            make.top.equalTo(topView.snp.bottom).offset(16)
+            make.height.equalTo(150)
         }
         
         let calendarIcon = UIImageView(image: .calendar)

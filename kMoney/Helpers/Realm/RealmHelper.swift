@@ -12,7 +12,7 @@ var kRealm = _kRealm.`default`
 
 private class _kRealm {
     static var `default`: Realm = {
-       return try! Realm()
+        return try! Realm()
     }()
 }
 
@@ -41,6 +41,12 @@ extension Realm {
     static func write(_ closure: (Realm) -> Void) {
         let realm = try! Realm()
         try! realm.write { closure(realm) }
+    }
+}
+
+extension Results {
+    func toArray() -> [Element] {
+        return Array(self)
     }
 }
 

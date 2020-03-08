@@ -5,9 +5,10 @@ target 'kMoney' do
   pod 'OhSwifter'
   
   # Rx
-  pod 'RxSwift',    '~> 4.0'
-  pod 'RxCocoa',    '~> 4.0'
+  pod 'RxSwift'
+  pod 'RxCocoa'
   pod 'RxGesture'
+  pod 'RxDataSources', '~> 4.0'
 
   # DB
   pod 'RealmSwift'

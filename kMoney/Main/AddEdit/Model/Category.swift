@@ -23,7 +23,7 @@ class Category: Object, GetAllable {
     }
     
     var color: UIColor {
-        return UIColor(hexString: colorInfo!.normalHex)!
+        return UIColor(hexString: colorInfo!.normalHex) ?? .clear
     }
     
     var iconImage: UIImage {
