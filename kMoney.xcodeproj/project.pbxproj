@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		500A20E6244D649800643B78 /* ImageEngine in Resources */ = {isa = PBXBuildFile; fileRef = 500A20E5244D649800643B78 /* ImageEngine */; };
 		500A20E8244D667000643B78 /* ImageFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500A20E7244D667000643B78 /* ImageFactory.swift */; };
+		50215B29244DF52C00545644 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50215B28244DF52C00545644 /* DetailViewModel.swift */; };
 		503ED4562414A27C00749F89 /* CategoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503ED4552414A27C00749F89 /* CategoryListView.swift */; };
 		6B3533E10A63EF360E42FB62 /* Pods_kMoneyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8E3257BAD4AD8C14171CE09 /* Pods_kMoneyUITests.framework */; };
 		B86985727EDE5DC532850060 /* Pods_kMoney.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1CF24BF821556BAAF36A576 /* Pods_kMoney.framework */; };
@@ -36,9 +37,8 @@
 		BEA3CD5E2263105000BE1DC8 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA3CD5D2263105000BE1DC8 /* BaseNavigationController.swift */; };
 		BEA3CD602263107D00BE1DC8 /* DashboardTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA3CD5F2263107D00BE1DC8 /* DashboardTabBarController.swift */; };
 		BEA3CDAC2263144B00BE1DC8 /* Asset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEA3CDAB2263144B00BE1DC8 /* Asset.xcassets */; };
-		BEA3CDAF226316C400BE1DC8 /* ColorMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA3CDAE226316C400BE1DC8 /* ColorMaker.swift */; };
+		BEA3CDAF226316C400BE1DC8 /* ColorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA3CDAE226316C400BE1DC8 /* ColorFactory.swift */; };
 		BEA3CDB42263187B00BE1DC8 /* GlobalImport.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA3CDB32263187B00BE1DC8 /* GlobalImport.swift */; };
-		BEE4A2FD22F542BD00C0F81D /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE4A2FC22F542BD00C0F81D /* ImageHelper.swift */; };
 		BEE4A30022F556F700C0F81D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE4A2FF22F556F700C0F81D /* DetailViewController.swift */; };
 		BEE4A30722F557BC00C0F81D /* DiffustionPresentAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE4A30322F557BC00C0F81D /* DiffustionPresentAnimation.swift */; };
 		BEE4A30822F557BC00C0F81D /* DiffusionTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE4A30422F557BC00C0F81D /* DiffusionTransition.swift */; };
@@ -72,6 +72,7 @@
 		4EA9D0F760CA475B2F8D7A85 /* Pods-kMoneyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kMoneyUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-kMoneyUITests/Pods-kMoneyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		500A20E5244D649800643B78 /* ImageEngine */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = ImageEngine; sourceTree = "<group>"; };
 		500A20E7244D667000643B78 /* ImageFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageFactory.swift; sourceTree = "<group>"; };
+		50215B28244DF52C00545644 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		503ED4552414A27C00749F89 /* CategoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListView.swift; sourceTree = "<group>"; };
 		8CC4D85B3AF091562618C4ED /* Pods-kMoney.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kMoney.release.xcconfig"; path = "Pods/Target Support Files/Pods-kMoney/Pods-kMoney.release.xcconfig"; sourceTree = "<group>"; };
 		952CC604BDEB6C93D2BD4B79 /* Pods-kMoneyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kMoneyUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kMoneyUITests/Pods-kMoneyUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -106,9 +107,8 @@
 		BEA3CD5D2263105000BE1DC8 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		BEA3CD5F2263107D00BE1DC8 /* DashboardTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTabBarController.swift; sourceTree = "<group>"; };
 		BEA3CDAB2263144B00BE1DC8 /* Asset.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Asset.xcassets; sourceTree = "<group>"; };
-		BEA3CDAE226316C400BE1DC8 /* ColorMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorMaker.swift; sourceTree = "<group>"; };
+		BEA3CDAE226316C400BE1DC8 /* ColorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFactory.swift; sourceTree = "<group>"; };
 		BEA3CDB32263187B00BE1DC8 /* GlobalImport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalImport.swift; sourceTree = "<group>"; };
-		BEE4A2FC22F542BD00C0F81D /* ImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
 		BEE4A2FF22F556F700C0F81D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		BEE4A30322F557BC00C0F81D /* DiffustionPresentAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiffustionPresentAnimation.swift; sourceTree = "<group>"; };
 		BEE4A30422F557BC00C0F81D /* DiffusionTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiffusionTransition.swift; sourceTree = "<group>"; };
@@ -210,6 +210,7 @@
 		503ED4542414A23300749F89 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				50215B28244DF52C00545644 /* DetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -331,8 +332,6 @@
 		BE9F371622DDB066009E5E9C /* Theme */ = {
 			isa = PBXGroup;
 			children = (
-				BEE4A2FB22F542B400C0F81D /* Image */,
-				BE9F371A22DDB38D009E5E9C /* Color */,
 				BE9F371722DDB07D009E5E9C /* Font */,
 			);
 			path = Theme;
@@ -344,14 +343,6 @@
 				BE9F371822DDB09B009E5E9C /* KMFont.swift */,
 			);
 			path = Font;
-			sourceTree = "<group>";
-		};
-		BE9F371A22DDB38D009E5E9C /* Color */ = {
-			isa = PBXGroup;
-			children = (
-				BEA3CDAE226316C400BE1DC8 /* ColorMaker.swift */,
-			);
-			path = Color;
 			sourceTree = "<group>";
 		};
 		BE9F371D22DDBF88009E5E9C /* Home */ = {
@@ -425,14 +416,6 @@
 			path = SettingPage;
 			sourceTree = "<group>";
 		};
-		BEE4A2FB22F542B400C0F81D /* Image */ = {
-			isa = PBXGroup;
-			children = (
-				BEE4A2FC22F542BD00C0F81D /* ImageHelper.swift */,
-			);
-			path = Image;
-			sourceTree = "<group>";
-		};
 		BEE4A30122F5575600C0F81D /* AnimationTransition */ = {
 			isa = PBXGroup;
 			children = (
@@ -457,6 +440,7 @@
 			children = (
 				500A20E5244D649800643B78 /* ImageEngine */,
 				500A20E7244D667000643B78 /* ImageFactory.swift */,
+				BEA3CDAE226316C400BE1DC8 /* ColorFactory.swift */,
 			);
 			path = Factory;
 			sourceTree = "<group>";
@@ -701,7 +685,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEA3CDAF226316C400BE1DC8 /* ColorMaker.swift in Sources */,
+				BEA3CDAF226316C400BE1DC8 /* ColorFactory.swift in Sources */,
 				BE15CBBF226308B000AFAB2C /* AppDelegate.swift in Sources */,
 				BE9F372322DDC0F3009E5E9C /* SettingViewController.swift in Sources */,
 				BE61F45E231435C8002E643C /* CategorySelecteCell.swift in Sources */,
@@ -729,10 +713,10 @@
 				BEA3CD5E2263105000BE1DC8 /* BaseNavigationController.swift in Sources */,
 				BE9F371F22DDC07D009E5E9C /* HomeViewController.swift in Sources */,
 				500A20E8244D667000643B78 /* ImageFactory.swift in Sources */,
-				BEE4A2FD22F542BD00C0F81D /* ImageHelper.swift in Sources */,
 				BE04310622E3721B00C5F74B /* HomeViewModel.swift in Sources */,
 				BEE831C52312E4AE00C919F8 /* CategorySelecteView.swift in Sources */,
 				BE04310222E2109400C5F74B /* Category.swift in Sources */,
+				50215B29244DF52C00545644 /* DetailViewModel.swift in Sources */,
 				BEE4A30822F557BC00C0F81D /* DiffusionTransition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

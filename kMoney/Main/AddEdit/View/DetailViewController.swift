@@ -113,12 +113,6 @@ fileprivate extension DetailViewController {
             .subscribe(onNext: { [unowned self] _ in
                 self.textField.becomeFirstResponder()
             }).disposed(by: bag)
-        
-//        backgroundImageView.rx.tapGesture()
-//            .when(.recognized)
-//            .subscribe(onNext: { [unowned self] _ in
-//                self.textField.resignFirstResponder()
-//            }).disposed(by: bag)
     }
 }
 

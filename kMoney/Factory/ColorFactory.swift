@@ -1,5 +1,5 @@
 //
-//  TintColorExtension.swift
+//  ColorFactory.swift
 //  kMoney
 //
 //  Created by ohlulu on 2019/4/14.
@@ -53,15 +53,16 @@ extension UIColor {
     }
     
     @nonobjc class var fromPurple: UIColor {
-        return .rgba(red: 125, green: 129, blue: 222, alpha: 1)
+//        return .hex("563d7c")
+        return .rgba(red: 103, green: 60, blue: 159, alpha: 1)
+    }
+    
+    @nonobjc class var toPurple: UIColor {
+        return .rgba(red: 79, green: 54, blue: 118, alpha: 1)
     }
     
     @nonobjc class var greyText186: UIColor {
         return .rgba(red: 186, green: 186, blue: 186, alpha: 1)
-    }
-    
-    @nonobjc class var toPurple: UIColor {
-        return .rgba(red: 81, green: 90, blue: 211, alpha: 1)
     }
     
     @nonobjc class var background: UIColor {
