@@ -1,0 +1,6 @@
+framework module Pods_kMoneyUITests {
+  umbrella header "Pods-kMoneyUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

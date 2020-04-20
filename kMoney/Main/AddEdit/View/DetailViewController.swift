@@ -50,7 +50,7 @@ class DetailViewController: BaseViewController {
     // MARK: Private property
     
     private lazy var transitionAnimation = DiffusionTransition()
-    private let viewModel = HomeViewModel()
+    private let viewModel = DetailViewModel()
     
     // MARK: - Life cycle
     
@@ -67,7 +67,8 @@ class DetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        observerSequence()
+        outputStream()
+        observerStream()
     }
     
     override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
@@ -80,11 +81,26 @@ class DetailViewController: BaseViewController {
     }
 }
 
-// MARK: - Observer sequence
+// MARK: - output stream
 
-fileprivate extension DetailViewController {
+private extension DetailViewController {
     
-    func observerSequence() {
+    func outputStream() {
+        
+        categorySelectorView.collectionView.rx
+            .itemSelected
+            .subscribe(onNext: { [weak self] indexPath in
+                guard let self = self else { return }
+                self.viewModel.onTapCategory(at: indexPath)
+            }).disposed(by: bag)
+    }
+}
+
+// MARK: - Observer Stream
+
+private extension DetailViewController {
+    
+    func observerStream() {
         
         // closeButton Pressed
         closeButton.rx.tap
@@ -115,6 +131,7 @@ fileprivate extension DetailViewController {
             }).disposed(by: bag)
     }
 }
+
 
 // MARK: - Setup UI methods
 

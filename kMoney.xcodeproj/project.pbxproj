@@ -26,7 +26,6 @@
 		BE1AA215230B6F8B00AFB759 /* ModelInitial.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1AA214230B6F8B00AFB759 /* ModelInitial.swift */; };
 		BE1AA218230B793300AFB759 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1AA217230B793300AFB759 /* RealmHelper.swift */; };
 		BE61F45E231435C8002E643C /* CategorySelecteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE61F45D231435C8002E643C /* CategorySelecteCell.swift */; };
-		BE7702EA238EBA2E00151140 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7702E9238EBA2E00151140 /* DetailViewModel.swift */; };
 		BE7702EC238EBA7400151140 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7702EB238EBA7400151140 /* BaseViewModel.swift */; };
 		BE7702EE238EBB1800151140 /* CategoryList.json in Resources */ = {isa = PBXBuildFile; fileRef = BE7702ED238EBB1800151140 /* CategoryList.json */; };
 		BE9F371922DDB09B009E5E9C /* KMFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F371822DDB09B009E5E9C /* KMFont.swift */; };
@@ -96,7 +95,6 @@
 		BE1AA214230B6F8B00AFB759 /* ModelInitial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelInitial.swift; sourceTree = "<group>"; };
 		BE1AA217230B793300AFB759 /* RealmHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
 		BE61F45D231435C8002E643C /* CategorySelecteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelecteCell.swift; sourceTree = "<group>"; };
-		BE7702E9238EBA2E00151140 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		BE7702EB238EBA7400151140 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		BE7702ED238EBB1800151140 /* CategoryList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CategoryList.json; sourceTree = "<group>"; };
 		BE9F371822DDB09B009E5E9C /* KMFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMFont.swift; sourceTree = "<group>"; };
@@ -370,7 +368,6 @@
 			children = (
 				BE7702EB238EBA7400151140 /* BaseViewModel.swift */,
 				BE04310522E3721B00C5F74B /* HomeViewModel.swift */,
-				BE7702E9238EBA2E00151140 /* DetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -698,7 +695,6 @@
 				BE9F372122DDC0C9009E5E9C /* ReportViewController.swift in Sources */,
 				BE9F371922DDB09B009E5E9C /* KMFont.swift in Sources */,
 				BEA3CD5B22630F7D00BE1DC8 /* BaseViewController.swift in Sources */,
-				BE7702EA238EBA2E00151140 /* DetailViewModel.swift in Sources */,
 				BEA3CD602263107D00BE1DC8 /* DashboardTabBarController.swift in Sources */,
 				BE1AA218230B793300AFB759 /* RealmHelper.swift in Sources */,
 				BEECBF6E230C4A9A00CFB393 /* CategoryView.swift in Sources */,

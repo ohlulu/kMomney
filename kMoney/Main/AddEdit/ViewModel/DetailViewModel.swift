@@ -29,7 +29,9 @@ extension DetailViewModel {
 // MARK: - Input
 
 extension DetailViewModel {
-    
+    func onTapCategory(at indexPath: IndexPath) {
+        
+    }
 }
 
 // MARK: - Helper
