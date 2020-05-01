@@ -32,11 +32,3 @@ struct UserDefaultHelper {
     @UserDefault(key: "firstOpen", defaultValue: "")
     static var firstOpen: String
 }
-//extension UserDefaults {
-//
-//    struct First: UserDefaultsSettable {
-//        enum defaultKeys: String {
-//            case open
-//        }
-//    }
-//}

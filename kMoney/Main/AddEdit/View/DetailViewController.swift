@@ -129,6 +129,17 @@ private extension DetailViewController {
             .subscribe(onNext: { [unowned self] _ in
                 self.textField.becomeFirstResponder()
             }).disposed(by: bag)
+
+        viewModel.categorysStream
+            .bind(to: categorySelectorView.datasRelay)
+            .disposed(by: bag)
+        
+        viewModel.selectedCategoryStream
+            .subscribe(onNext: { [weak self] selected in
+                guard let self = self else { return }
+                self.categoryView.category = selected
+            }).disposed(by: bag)
+        
     }
 }
 

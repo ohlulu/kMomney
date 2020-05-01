@@ -8,21 +8,6 @@
 
 import UIKit
 
-private extension Collection {
-    func group(by size: Int) -> [[Element]] {
-        // Inspired by: https://lodash.com/docs/4.17.4#chunk
-        guard size > 0, !isEmpty else { return [] }
-        var start = startIndex
-        var slices = [[Element]]()
-        while start != endIndex {
-            let end = index(start, offsetBy: size, limitedBy: endIndex) ?? endIndex
-            slices.append(Array(self[start..<end]))
-            start = end
-        }
-        return slices
-    }
-}
-
 // MARK: - Flow layout
 
 private class CategoryListFlowLayout: UICollectionViewFlowLayout {
@@ -78,7 +63,7 @@ private class CategoryListFlowLayout: UICollectionViewFlowLayout {
 class CategoryListView: UIView {
     
     var collectionView: UICollectionView! = nil
-    var datas = Category.getAll().group(by: 10)
+    let datasRelay = PublishRelay<[[Category]]>()
     
     private let bag = DisposeBag()
     
@@ -121,7 +106,7 @@ extension CategoryListView {
                 return cell
         })
         
-        Observable.just(datas)
+        datasRelay
             .map { $0.map { SectionModel(model: "", items: $0) } }
             .bind(to: collectionView.rx.items(dataSource: dataSource))
             .disposed(by: bag)
