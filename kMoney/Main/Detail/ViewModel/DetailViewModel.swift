@@ -77,6 +77,12 @@ extension DetailViewModel {
         let record = recordRelay.value
         if record.money == 0 {
             moneyZeroShakeRelay.accept(())
+            return
+        }
+        
+        printDebug(record)
+        Realm.write {
+            $0.add(record, update: .all)
         }
     }
 }

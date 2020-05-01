@@ -8,14 +8,6 @@
 
 import RealmSwift
 
-var kRealm = _kRealm.`default`
-
-private class _kRealm {
-    static var `default`: Realm = {
-        return try! Realm()
-    }()
-}
-
 extension Realm {
     
     static var shared: Realm {
@@ -56,7 +48,7 @@ struct RealmHelper {
     
     static func migration() {
         
-        let newSchemaVersion: UInt64 = 5
+        let newSchemaVersion: UInt64 = 6
         
         var config = Realm.Configuration(
             schemaVersion: newSchemaVersion,
@@ -67,6 +59,8 @@ struct RealmHelper {
         config.fileURL = config.fileURL!
             .deletingLastPathComponent()
             .appendingPathComponent("kMoney.realm")
+        
+        config.deleteRealmIfMigrationNeeded = true
         
         // 通知Realm為默認的Realm數據庫使用這個新的配置對象
         Realm.Configuration.defaultConfiguration = config

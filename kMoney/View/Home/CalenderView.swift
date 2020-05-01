@@ -33,6 +33,18 @@ extension CalendarView: FSCalendarDelegate {
         if monthPosition == .next && monthPosition == .previous {
             cell.titleLabel.textColor = UIColor.white.alpha(0.6)
         }
+        
+    }
+    
+    func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
+        let crrentMonth = calendar.currentPage.add(.day, value: 1)
+        if !Calendar.current.isDate(crrentMonth, equalTo: Date(), toGranularity: .year) {
+            _calendar.appearance.headerDateFormat = "yyyy 年 M 月"
+            calendar.appearance.headerMinimumDissolvedAlpha = 0.4
+        } else {
+            _calendar.appearance.headerDateFormat = "M 月"
+            calendar.appearance.headerMinimumDissolvedAlpha = 0
+        }
     }
 }
 

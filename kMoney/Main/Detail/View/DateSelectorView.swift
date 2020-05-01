@@ -49,6 +49,17 @@ extension DateSelectorView: FSCalendarDelegate {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         selectedDateStream.accept(date)
     }
+    
+    func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
+        let crrentMonth = calendar.currentPage.add(.day, value: 1)
+        if !Calendar.current.isDate(crrentMonth, equalTo: Date(), toGranularity: .year) {
+            calendar.appearance.headerDateFormat = "yyyy 年 M 月"
+            calendar.appearance.headerMinimumDissolvedAlpha = 0.4
+        } else {
+            calendar.appearance.headerDateFormat = "M 月"
+            calendar.appearance.headerMinimumDissolvedAlpha = 0
+        }
+    }
 }
 
 

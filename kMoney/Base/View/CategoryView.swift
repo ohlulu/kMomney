@@ -16,7 +16,9 @@ class CategoryView: UIView {
     }
     
     // private property
-    private lazy var imageView = UIImageView()
+    private lazy var imageView = UIImageView().oh
+        .contentMode(.scaleAspectFill)
+        .done()
     private let bag = DisposeBag()
     
     // life cycle
@@ -24,6 +26,11 @@ class CategoryView: UIView {
         self.category = category
         super.init(frame: .init(square: 44))
         setupUI()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        imageView.oh.cornerRadius(frame.size.height / 2)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -55,6 +62,5 @@ private extension CategoryView {
             make.edges.equalToSuperview()
         }
         categoryDidChagne()
-        imageView.oh.cornerRadius(frame.size.height / 2)
     }
 }

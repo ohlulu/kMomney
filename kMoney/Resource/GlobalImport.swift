@@ -12,6 +12,7 @@
 @_exported import OhSwifter
 @_exported import RxGesture
 @_exported import RxDataSources
+@_exported import RealmSwift
 
 
 typealias RxTableDataSource = RxTableViewSectionedReloadDataSource

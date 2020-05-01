@@ -9,15 +9,25 @@
 import Foundation
 import RealmSwift
 
-@objc class Record: Object {
+class Record: Object {
     
-    dynamic var time = Date().timeIntervalSince1970
+    @objc dynamic var id: String = UUID().uuidString
     
-    dynamic var category: Category? = nil
+    @objc dynamic var time = Date().timeIntervalSince1970
     
-    dynamic var money = 0
+    @objc dynamic var category: Category? = nil
     
-    dynamic var tag = ""
+    @objc dynamic var money = 0
+    
+    @objc dynamic var tag = ""
+    
+    static override func primaryKey() -> String? {
+        return "id"
+    }
+    
+    static override func indexedProperties() -> [String] {
+        return ["id"]
+    }
 }
 
 // MARK: - Getter / Setter

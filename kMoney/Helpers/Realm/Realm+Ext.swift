@@ -13,6 +13,6 @@ protocol GetAllable {
 }
 extension GetAllable where Self: Object {
     static func getAll() -> Results<Self> {
-        return kRealm.objects(Self.self)
+        return try! Realm().objects(Self.self)
     }
 }
