@@ -12,6 +12,10 @@ import ChameleonFramework
 class DetailViewController: BaseViewController {
     
     // UI element
+    private let topView = UIView().oh
+        .backgroundColor(.detailTopColor)
+        .roundCorners([.bottomLeft, .bottomRight], radius: 20)
+        .done()
     
     private let moneyLabel = UILabel().oh
         .kFont(.numbdr(.regular, 40))
@@ -53,18 +57,19 @@ class DetailViewController: BaseViewController {
             ])
         .done()
     
-    private let saveButton = UIButton().oh
-        .backgroundImage(.create(from: .lightGray), for: .disabled)
-        .backgroundImage(.create(from: .seafoamBlue), for: .normal)
-        .title("儲存", for: .normal)
-        .font(.boldSystemFont(ofSize: 18))
-        .done()
+    private lazy var saveButton: ThanosButton = {
+        var style = SaveButtonStyle()
+        let button = ThanosButton(thanosStyle: style)
+        button.setTitle("儲存", for: .normal)
+        return button
+    }()
+    
     private let saveButtonHoldupView = UIView()
     
     // Property
     private let viewModel = DetailViewModel()
     private lazy var transitionAnimation = DiffusionTransition()
-    private var saveButtonBottomConstraint: Constraint?
+    private var tagTextFieldMaxY: CGFloat { hashTagTextField.frame.maxY }
     
     // MARK: - Life cycle
     
@@ -142,6 +147,25 @@ private extension DetailViewController {
                 self.moneyHiddenTextField.becomeFirstResponder()
                 self.viewModel.didTapSaveButton()
             }).disposed(by: bag)
+        
+//        view.rx.tapGesture().when(.recognized)
+//            .subscribe(onNext: { [weak self] gesture in
+//                guard let self = self else { return }
+//                let ignoreViews = [
+//                    self.saveButton,
+//                    self.moneyHiddenTextField,
+//                    self.dateHiddenTextField,
+//                    self.hashTagTextField
+//                ]
+//                for ignoreView in ignoreViews {
+//                    if ignoreView.frame.contains(gesture.location(in: self.view)) {
+//                        return
+//                    }
+//                }
+//                self.moneyHiddenTextField.resignFirstResponder()
+//                self.dateHiddenTextField.resignFirstResponder()
+//                self.hashTagTextField.resignFirstResponder()
+//            }).disposed(by: bag)
     }
 }
 
@@ -200,7 +224,6 @@ private extension DetailViewController {
         
         // saveButton IsEnable
         viewModel.saveButtonIsEnable
-            .debug()
             .drive(saveButton.rx.isEnabled)
             .disposed(by: bag)
         
@@ -216,21 +239,25 @@ private extension DetailViewController {
             .drive(onNext: { [weak self] height in
                 guard let self = self else { return }
                 var height = height
-                if height > 0 {
-                    height -= UIScreen.safeAreaInset.bottom
-                }
+                height -= UIScreen.safeAreaInset.bottom
                 
                 let bottomOffset: CGFloat = 12
                 height = max(height, bottomOffset)
                 
                 UIView.animate(
-                    withDuration: 0.25,
-                    delay: 0,
-                    options: UIView.AnimationOptions.init(rawValue: 7), animations: {
+                    withDuration: 0.25, delay: 0, options: .init(rawValue: 7),
+                    animations: {
+                        let needMoveH = self.tagTextFieldMaxY - (self.view.frame.height - height - 44)
+                        if needMoveH > 0 {
+                            self.view.frame = self.view.frame.offsetBy(dx: 0, dy: -(needMoveH + 50))
+                            height -= needMoveH + 50
+                        } else if self.view.frame.minY != 0 {
+                            self.view.frame = UIScreen.main.bounds
+                        }
+                        
                         let cornerRadius: CGFloat = height == bottomOffset ? 22 : 0
                         let inset: CGFloat = height == bottomOffset ? 16 : 0
                         self.saveButton.oh.cornerRadius(cornerRadius)
-//                        self.saveButtonBottomConstraint?.update(offset: -height)
                         self.saveButton.snp.updateConstraints { make in
                             make.leading.trailing.equalToSuperview().inset(inset)
                             make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).offset(-height)
@@ -250,11 +277,6 @@ fileprivate extension DetailViewController {
         
         addCloseButton()
         moneyHiddenTextField.becomeFirstResponder()
-        
-        let topView = UIView().oh
-            .backgroundColor(.detailTopColor)
-            .roundCorners([.bottomLeft, .bottomRight], radius: 20)
-            .done()
         
         view.addSubview(topView)
         topView.snp.makeConstraints { (make) in
@@ -340,7 +362,7 @@ fileprivate extension DetailViewController {
         view.addSubview(saveButton)
         saveButton.snp.makeConstraints { (make) in
             make.leading.trailing.equalToSuperview()
-            saveButtonBottomConstraint = make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).constraint
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
             make.height.equalTo(44)
         }
         
@@ -348,6 +370,8 @@ fileprivate extension DetailViewController {
         saveButtonHoldupView.snp.makeConstraints { (make) in
             make.edges.equalTo(saveButton)
         }
+        
+        view.bringSubviewToFront(saveButton)
         view.layoutIfNeeded()
     }
 }

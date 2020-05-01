@@ -15,6 +15,8 @@
 		505D2F98245C0D0B004DF4DD /* DateSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505D2F97245C0D0B004DF4DD /* DateSelectorView.swift */; };
 		505D2F9A245C1089004DF4DD /* CGRectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505D2F99245C1089004DF4DD /* CGRectExtension.swift */; };
 		505D2F9E245C2F41004DF4DD /* RxKeyboardHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505D2F9D245C2F41004DF4DD /* RxKeyboardHeight.swift */; };
+		505D2FA5245C5D4D004DF4DD /* ThanosButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505D2FA2245C5D4C004DF4DD /* ThanosButton.swift */; };
+		505D2FA6245C5D4D004DF4DD /* ThanosButtonStyleTemplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505D2FA3245C5D4C004DF4DD /* ThanosButtonStyleTemplete.swift */; };
 		6B3533E10A63EF360E42FB62 /* Pods_kMoneyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8E3257BAD4AD8C14171CE09 /* Pods_kMoneyUITests.framework */; };
 		B86985727EDE5DC532850060 /* Pods_kMoney.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1CF24BF821556BAAF36A576 /* Pods_kMoney.framework */; };
 		BE0430FE22E20F4900C5F74B /* ColorSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0430FD22E20F4900C5F74B /* ColorSet.swift */; };
@@ -81,6 +83,8 @@
 		505D2F97245C0D0B004DF4DD /* DateSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelectorView.swift; sourceTree = "<group>"; };
 		505D2F99245C1089004DF4DD /* CGRectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGRectExtension.swift; sourceTree = "<group>"; };
 		505D2F9D245C2F41004DF4DD /* RxKeyboardHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxKeyboardHeight.swift; sourceTree = "<group>"; };
+		505D2FA2245C5D4C004DF4DD /* ThanosButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThanosButton.swift; sourceTree = "<group>"; };
+		505D2FA3245C5D4C004DF4DD /* ThanosButtonStyleTemplete.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThanosButtonStyleTemplete.swift; sourceTree = "<group>"; };
 		8CC4D85B3AF091562618C4ED /* Pods-kMoney.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kMoney.release.xcconfig"; path = "Pods/Target Support Files/Pods-kMoney/Pods-kMoney.release.xcconfig"; sourceTree = "<group>"; };
 		952CC604BDEB6C93D2BD4B79 /* Pods-kMoneyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kMoneyUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kMoneyUITests/Pods-kMoneyUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A000A5079EA183EBFFC630AF /* Pods-kMoneyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kMoneyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kMoneyTests/Pods-kMoneyTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -238,6 +242,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		505D2F9F245C5D4C004DF4DD /* ThanosButton */ = {
+			isa = PBXGroup;
+			children = (
+				505D2FA2245C5D4C004DF4DD /* ThanosButton.swift */,
+				505D2FA3245C5D4C004DF4DD /* ThanosButtonStyleTemplete.swift */,
+			);
+			path = ThanosButton;
+			sourceTree = "<group>";
+		};
 		95EFFB9D4427AC747AA3A2A2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -274,6 +287,7 @@
 			isa = PBXGroup;
 			children = (
 				BEECBF6D230C4A9A00CFB393 /* CategoryView.swift */,
+				505D2F9F245C5D4C004DF4DD /* ThanosButton */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -700,6 +714,7 @@
 				505D2F98245C0D0B004DF4DD /* DateSelectorView.swift in Sources */,
 				BE0430FE22E20F4900C5F74B /* ColorSet.swift in Sources */,
 				BEE4A30A22F557BC00C0F81D /* UpToDownIneraction.swift in Sources */,
+				505D2FA5245C5D4D004DF4DD /* ThanosButton.swift in Sources */,
 				BE04310022E2102F00C5F74B /* IconSet.swift in Sources */,
 				BEA3CDB42263187B00BE1DC8 /* GlobalImport.swift in Sources */,
 				505D2F9A245C1089004DF4DD /* CGRectExtension.swift in Sources */,
@@ -712,6 +727,7 @@
 				BEECBF6E230C4A9A00CFB393 /* CategoryView.swift in Sources */,
 				BE04310422E211F700C5F74B /* Record.swift in Sources */,
 				BEF8133B23240D3000EAD664 /* UserDefaultHelper.swift in Sources */,
+				505D2FA6245C5D4D004DF4DD /* ThanosButtonStyleTemplete.swift in Sources */,
 				BEE4A30022F556F700C0F81D /* DetailViewController.swift in Sources */,
 				505D2F96245C0AAF004DF4DD /* CollectionExtensions.swift in Sources */,
 				BEF78B0A232C9B600023DCA7 /* Realm+Ext.swift in Sources */,
