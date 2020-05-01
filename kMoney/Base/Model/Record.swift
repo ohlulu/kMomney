@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-@objc class Records: Object {
+@objc class Record: Object {
     
     dynamic var time = Date().timeIntervalSince1970
     
@@ -18,4 +18,13 @@ import RealmSwift
     dynamic var money = 0
     
     dynamic var tag = ""
+}
+
+// MARK: - Getter / Setter
+
+extension Record {
+    var date: Date {
+        get { time.dateSince1970 }
+        set { time = newValue.timeIntervalSince1970}
+    }
 }

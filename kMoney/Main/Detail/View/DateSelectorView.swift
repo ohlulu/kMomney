@@ -59,6 +59,8 @@ private extension DateSelectorView {
     func setupUI() {
         addSubview(calendar)
         
+        calendar.select(Date())
+        
         calendar.scrollDirection = .horizontal
         calendar.locale = Locale(identifier: "zh-TW")
         calendar.placeholderType = .fillHeadTail

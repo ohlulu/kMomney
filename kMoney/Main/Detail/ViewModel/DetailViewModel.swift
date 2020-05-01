@@ -18,10 +18,16 @@ final class DetailViewModel: BaseViewModel {
     var selectedCategoryStream: Observable<Category?> {
         return selectedCategoryRelay.asObservable()
     }
+    
+    var dateTextStream: Observable<String> {
+        return dateRelay.map { $0.string(format: "yyyy 年 MM 月 dd 日")}
+    }
 
     // Property
+    let recordModel = Record()
     private let categorysRelay = BehaviorRelay<[[Category]]>(value: Category.getAll().group(by: 10))
     private let selectedCategoryRelay = BehaviorRelay<Category?>(value: nil)
+    private let dateRelay = BehaviorRelay<Date>(value: Date())
 
     // life cycle
     override init() {
@@ -44,6 +50,16 @@ extension DetailViewModel {
         }
         
         selectedCategoryRelay.accept(category)
+        recordModel.category = category
+    }
+    
+    func changeRecord(date: Date) {
+        recordModel.date = date
+        dateRelay.accept(date)
+    }
+    
+    func changeRecord(tag: String) {
+        recordModel.tag = tag
     }
 }
 

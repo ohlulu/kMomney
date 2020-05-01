@@ -12,13 +12,13 @@ class HomeViewModel {
 
     // MARK: Public Output
     
-    var recordStream: Observable<[Records]> {
+    var recordStream: Observable<[Record]> {
         return recordSubject.asObservable()
     }
 
     // MARK: Private Subject
     
-    private let recordSubject = ReplaySubject<[Records]>.create(bufferSize: 1)
+    private let recordSubject = ReplaySubject<[Record]>.create(bufferSize: 1)
 
     // MARK: Private property
 
@@ -34,7 +34,7 @@ extension HomeViewModel {
         
     }
     
-    func edit(record: Records) {
+    func edit(record: Record) {
         
     }
 }

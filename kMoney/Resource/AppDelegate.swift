@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,11 +21,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         initialUserDefault()
         
-        initialWindow()
+        initialIQKeyboard()
         
         RealmHelper.migration()
         
         RealmHelper.initial()
+        
+        initialWindow()
         
         return true
     }
@@ -49,6 +52,13 @@ extension AppDelegate {
         ]
         
         UserDefaults.standard.register(defaults: defaults)
+    }
+    
+    func initialIQKeyboard() {
+        let manager = IQKeyboardManager.shared
+        manager.enable = true
+        manager.enableAutoToolbar = false
+        manager.shouldResignOnTouchOutside = true
     }
 }
 

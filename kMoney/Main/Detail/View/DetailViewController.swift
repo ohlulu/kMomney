@@ -33,7 +33,6 @@ class DetailViewController: BaseViewController {
     private let dateLabel = UILabel().oh
         .textColor(.white)
         .font(.systemFont(ofSize: 15, weight: .medium))
-        .text("2019年7月5日")
         .done()
     
     private lazy var dateSelectorView = DateSelectorView()
@@ -48,7 +47,7 @@ class DetailViewController: BaseViewController {
         .tintColor(.white)
         .font(.systemFont(ofSize: 15, weight: .medium))
         .keyboardAppearance(.dark)
-        .attributedPlaceholder("建立新的 #hashtag", attribute: [
+        .attributedPlaceholder("＃標籤", attribute: [
             .font: UIFont.systemFont(ofSize: 15, weight: .medium),
             .foregroundColor: UIColor.greyText186
             ])
@@ -100,6 +99,26 @@ private extension DetailViewController {
                 guard let self = self else { return }
                 self.viewModel.onTapCategory(at: indexPath)
             }).disposed(by: bag)
+        
+        dateSelectorView.selectedDateStream
+            .subscribe(onNext: { [weak self] date in
+                guard let self = self else { return }
+                self.viewModel.changeRecord(date: date)
+            }).disposed(by: bag)
+        
+        // date label did tap
+        dateLabel.rx.tapGesture().when(.recognized)
+            .subscribe(onNext: { [weak self] _ in
+                guard let self = self else { return }
+                self.dateHiddenTextField.becomeFirstResponder()
+            }).disposed(by: bag)
+        
+        // tag text -> record
+        hashTagTextField.rx.text.orEmpty
+            .subscribe(onNext: { [weak self] tag in
+                guard let self = self else { return }
+                self.viewModel.changeRecord(tag: tag)
+            }).disposed(by: bag)
     }
 }
 
@@ -147,12 +166,10 @@ private extension DetailViewController {
                 self.categoryView.category = selected
             }).disposed(by: bag)
         
-        dateLabel.rx.tapGesture().when(.recognized)
-            .subscribe(onNext: { [weak self] _ in
-                guard let self = self else { return }
-                self.dateHiddenTextField.becomeFirstResponder()
-            }).disposed(by: bag)
-        
+        // date label text
+        viewModel.dateTextStream
+            .bind(to: dateLabel.rx.text)
+            .disposed(by: bag)
     }
 }
 
@@ -238,7 +255,7 @@ fileprivate extension DetailViewController {
         view.addSubview(hashTagTextField)
         hashTagTextField.snp.makeConstraints { (make) in
             make.leading.equalTo(dateLabel)
-            make.trailing.equalToSuperview().inset(20)
+            make.trailing.equalToSuperview().inset(25)
             make.centerY.equalTo(tagIcon)
         }
         

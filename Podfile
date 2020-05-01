@@ -2,8 +2,11 @@ platform :ios, '12.0'
 
 target 'kMoney' do
   use_frameworks!
-  pod 'OhSwifter'
+  
   pod 'Reveal-SDK', :configurations => ['Debug']
+  
+  pod 'OhSwifter'
+  
   # Rx
   pod 'RxSwift'
   pod 'RxCocoa'
@@ -19,6 +22,7 @@ target 'kMoney' do
   pod 'EFCountingLabel'
   pod 'ChameleonFramework/Swift', :git => 'https://github.com/wowansm/Chameleon.git', :branch => 'swift5'
   pod 'FSCalendar'
+  pod 'IQKeyboardManagerSwift'
 
   target 'kMoneyTests' do
     inherit! :search_paths
