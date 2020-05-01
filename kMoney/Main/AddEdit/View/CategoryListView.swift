@@ -23,6 +23,8 @@ private extension Collection {
     }
 }
 
+// MARK: - Flow layout
+
 private class CategoryListFlowLayout: UICollectionViewFlowLayout {
     
     private var computedContentSize: CGSize = .zero
@@ -71,10 +73,14 @@ private class CategoryListFlowLayout: UICollectionViewFlowLayout {
     }
 }
 
+// MARK: - view
+
 class CategoryListView: UIView {
     
     var collectionView: UICollectionView! = nil
     var datas = Category.getAll().group(by: 10)
+    
+    private let bag = DisposeBag()
     
     init() {
         super.init(frame: .zero)
@@ -106,25 +112,36 @@ extension CategoryListView {
     }
     
     func configureDataSource() {
-        collectionView.dataSource = self
         collectionView.register(cell: CategorySelecteCell.self)
+        
+        let dataSource = RxCollectionDataSource<SectionModel<String, Category>>(
+            configureCell: { _, cv, ip, model in
+                let cell: CategorySelecteCell = cv.dequeueReuseableCell(indexPath: ip)
+                cell.configCell(model)
+                return cell
+        })
+        
+        Observable.just(datas)
+            .map { $0.map { SectionModel(model: "", items: $0) } }
+            .bind(to: collectionView.rx.items(dataSource: dataSource))
+            .disposed(by: bag)
     }
 }
 
-// MARK: - Delegate
-
-extension CategoryListView: UICollectionViewDataSource {
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return datas.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return datas[section].count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: CategorySelecteCell = collectionView.dequeueReuseableCell(indexPath: indexPath)
-        cell.configCell(datas[indexPath.section][indexPath.row])
-        return cell
-    }
-}
+//// MARK: - Delegate
+//
+//extension CategoryListView: UICollectionViewDataSource {
+//    func numberOfSections(in collectionView: UICollectionView) -> Int {
+//        return datas.count
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        return datas[section].count
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        let cell: CategorySelecteCell = collectionView.dequeueReuseableCell(indexPath: indexPath)
+//        cell.configCell(datas[indexPath.section][indexPath.row])
+//        return cell
+//    }
+//}

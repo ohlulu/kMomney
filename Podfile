@@ -3,7 +3,7 @@ platform :ios, '12.0'
 target 'kMoney' do
   use_frameworks!
   pod 'OhSwifter'
-  
+  pod 'Reveal-SDK', :configurations => ['Debug']
   # Rx
   pod 'RxSwift'
   pod 'RxCocoa'

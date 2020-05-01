@@ -52,21 +52,20 @@ extension UIColor {
         return UIColor(white: 37.0 / 255.0, alpha: 0.9)
     }
     
-    @nonobjc class var fromPurple: UIColor {
-//        return .hex("563d7c")
-        return .rgba(red: 103, green: 60, blue: 159, alpha: 1)
-    }
-    
-    @nonobjc class var toPurple: UIColor {
-        return .rgba(red: 79, green: 54, blue: 118, alpha: 1)
-    }
-    
     @nonobjc class var greyText186: UIColor {
         return .rgba(red: 186, green: 186, blue: 186, alpha: 1)
     }
     
     @nonobjc class var background: UIColor {
         return .rgba(red: 48, green: 48, blue: 52, alpha: 1)
+    }
+    
+    @nonobjc class var fromPurple: UIColor {
+        return .rgba(red: 125, green: 129, blue: 222, alpha: 1)
+    }
+    
+    @nonobjc class var toPurple: UIColor {
+        return .rgba(red: 81, green: 90, blue: 211, alpha: 1)
     }
     
     class var detailTopColor: UIColor {
