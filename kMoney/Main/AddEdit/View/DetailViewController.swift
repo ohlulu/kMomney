@@ -20,7 +20,7 @@ class DetailViewController: BaseViewController {
         .isUserInteractionEnabled(true)
         .done()
     
-    private let textField = UITextField().oh
+    private let moneyHiddenTextField = UITextField().oh
         .isHidden(true)
         .keyboardType(.numberPad)
         .keyboardAppearance(.dark)
@@ -34,6 +34,13 @@ class DetailViewController: BaseViewController {
         .textColor(.white)
         .font(.systemFont(ofSize: 15, weight: .medium))
         .text("2019年7月5日")
+        .done()
+    
+    private lazy var dateSelectorView = DateSelectorView()
+    private lazy var dateHiddenTextField = UITextField().oh
+        .isHidden(true)
+        .inputView(dateSelectorView)
+        .keyboardAppearance(.dark)
         .done()
     
     private let hashTagTextField = UITextField().oh
@@ -72,7 +79,7 @@ class DetailViewController: BaseViewController {
     }
     
     override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
-        textField.resignFirstResponder()
+        moneyHiddenTextField.resignFirstResponder()
         super.dismiss(animated: flag, completion: completion)
     }
     
@@ -108,7 +115,7 @@ private extension DetailViewController {
                 self.dismiss()
             }).disposed(by: bag)
         
-        textField.rx.text
+        moneyHiddenTextField.rx.text
             .orEmpty
             .distinctUntilChanged()
             .flatMap { e -> Observable<Int> in
@@ -127,7 +134,7 @@ private extension DetailViewController {
         moneyLabel.rx.tapGesture()
             .when(.recognized)
             .subscribe(onNext: { [unowned self] _ in
-                self.textField.becomeFirstResponder()
+                self.moneyHiddenTextField.becomeFirstResponder()
             }).disposed(by: bag)
 
         viewModel.categorysStream
@@ -138,6 +145,12 @@ private extension DetailViewController {
             .subscribe(onNext: { [weak self] selected in
                 guard let self = self else { return }
                 self.categoryView.category = selected
+            }).disposed(by: bag)
+        
+        dateLabel.rx.tapGesture().when(.recognized)
+            .subscribe(onNext: { [weak self] _ in
+                guard let self = self else { return }
+                self.dateHiddenTextField.becomeFirstResponder()
             }).disposed(by: bag)
         
     }
@@ -151,7 +164,7 @@ fileprivate extension DetailViewController {
     func setupUI() {
         
         addCloseButton()
-        textField.becomeFirstResponder()
+        moneyHiddenTextField.becomeFirstResponder()
         
         let topView = UIView().oh
             .backgroundColor(.detailTopColor)
@@ -181,9 +194,9 @@ fileprivate extension DetailViewController {
             make.height.equalTo(44)
         }
         
-        // textField
-        topView.addSubview(textField)
-        textField.snp.makeConstraints { (make) in
+        // money hidden textField
+        topView.addSubview(moneyHiddenTextField)
+        moneyHiddenTextField.snp.makeConstraints { (make) in
             make.edges.equalTo(moneyLabel)
         }
         
@@ -203,10 +216,16 @@ fileprivate extension DetailViewController {
             make.size.equalTo(24)
         }
         
+        // date label
         view.addSubview(dateLabel)
         dateLabel.snp.makeConstraints { (make) in
             make.leading.equalTo(calendarIcon.snp.trailing).offset(13)
             make.centerY.equalTo(calendarIcon)
+        }
+        
+        view.addSubview(dateHiddenTextField)
+        dateHiddenTextField.snp.makeConstraints { (make) in
+            make.edges.equalTo(dateLabel)
         }
         
         let tagIcon = UIImageView(image: .hashtag)

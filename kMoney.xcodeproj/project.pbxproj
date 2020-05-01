@@ -12,6 +12,8 @@
 		50215B29244DF52C00545644 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50215B28244DF52C00545644 /* DetailViewModel.swift */; };
 		503ED4562414A27C00749F89 /* CategoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503ED4552414A27C00749F89 /* CategoryListView.swift */; };
 		505D2F96245C0AAF004DF4DD /* CollectionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505D2F95245C0AAF004DF4DD /* CollectionExtensions.swift */; };
+		505D2F98245C0D0B004DF4DD /* DateSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505D2F97245C0D0B004DF4DD /* DateSelectorView.swift */; };
+		505D2F9A245C1089004DF4DD /* CGRectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505D2F99245C1089004DF4DD /* CGRectExtension.swift */; };
 		6B3533E10A63EF360E42FB62 /* Pods_kMoneyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8E3257BAD4AD8C14171CE09 /* Pods_kMoneyUITests.framework */; };
 		B86985727EDE5DC532850060 /* Pods_kMoney.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1CF24BF821556BAAF36A576 /* Pods_kMoney.framework */; };
 		BE0430FE22E20F4900C5F74B /* ColorSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0430FD22E20F4900C5F74B /* ColorSet.swift */; };
@@ -75,6 +77,8 @@
 		50215B28244DF52C00545644 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		503ED4552414A27C00749F89 /* CategoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListView.swift; sourceTree = "<group>"; };
 		505D2F95245C0AAF004DF4DD /* CollectionExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExtensions.swift; sourceTree = "<group>"; };
+		505D2F97245C0D0B004DF4DD /* DateSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelectorView.swift; sourceTree = "<group>"; };
+		505D2F99245C1089004DF4DD /* CGRectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGRectExtension.swift; sourceTree = "<group>"; };
 		8CC4D85B3AF091562618C4ED /* Pods-kMoney.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kMoney.release.xcconfig"; path = "Pods/Target Support Files/Pods-kMoney/Pods-kMoney.release.xcconfig"; sourceTree = "<group>"; };
 		952CC604BDEB6C93D2BD4B79 /* Pods-kMoneyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kMoneyUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kMoneyUITests/Pods-kMoneyUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A000A5079EA183EBFFC630AF /* Pods-kMoneyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kMoneyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kMoneyTests/Pods-kMoneyTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -191,6 +195,7 @@
 				503ED4552414A27C00749F89 /* CategoryListView.swift */,
 				BEE831C42312E4AE00C919F8 /* CategorySelecteView.swift */,
 				BE61F45D231435C8002E643C /* CategorySelecteCell.swift */,
+				505D2F97245C0D0B004DF4DD /* DateSelectorView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -219,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				505D2F95245C0AAF004DF4DD /* CollectionExtensions.swift */,
+				505D2F99245C1089004DF4DD /* CGRectExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -680,10 +686,12 @@
 				BE9F372322DDC0F3009E5E9C /* SettingViewController.swift in Sources */,
 				BE61F45E231435C8002E643C /* CategorySelecteCell.swift in Sources */,
 				BEE4A30722F557BC00C0F81D /* DiffustionPresentAnimation.swift in Sources */,
+				505D2F98245C0D0B004DF4DD /* DateSelectorView.swift in Sources */,
 				BE0430FE22E20F4900C5F74B /* ColorSet.swift in Sources */,
 				BEE4A30A22F557BC00C0F81D /* UpToDownIneraction.swift in Sources */,
 				BE04310022E2102F00C5F74B /* IconSet.swift in Sources */,
 				BEA3CDB42263187B00BE1DC8 /* GlobalImport.swift in Sources */,
+				505D2F9A245C1089004DF4DD /* CGRectExtension.swift in Sources */,
 				BE1AA215230B6F8B00AFB759 /* ModelInitial.swift in Sources */,
 				BE9F372122DDC0C9009E5E9C /* ReportViewController.swift in Sources */,
 				BE9F371922DDB09B009E5E9C /* KMFont.swift in Sources */,
