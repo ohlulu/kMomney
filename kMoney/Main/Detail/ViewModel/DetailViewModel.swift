@@ -16,18 +16,16 @@ final class DetailViewModel: BaseViewModel {
     }
     
     var selectedCategoryStream: Observable<Category?> {
-        return selectedCategoryRelay.asObservable()
+        return recordRelay.map { $0.category }
     }
     
     var dateTextStream: Observable<String> {
-        return dateRelay.map { $0.string(format: "yyyy 年 MM 月 dd 日")}
+        return recordRelay.map { $0.date.string(format: "yyyy 年 MM 月 dd 日") }
     }
 
     // Property
-    let recordModel = Record()
+    private let recordRelay = BehaviorRelay<Record>(value: Record())
     private let categorysRelay = BehaviorRelay<[[Category]]>(value: Category.getAll().group(by: 10))
-    private let selectedCategoryRelay = BehaviorRelay<Category?>(value: nil)
-    private let dateRelay = BehaviorRelay<Date>(value: Date())
 
     // life cycle
     override init() {
@@ -49,22 +47,24 @@ extension DetailViewModel {
             return
         }
         
-        selectedCategoryRelay.accept(category)
-        recordModel.category = category
+        modifyRecord { $0.category = category }
     }
     
     func changeRecord(date: Date) {
-        recordModel.date = date
-        dateRelay.accept(date)
+        modifyRecord { $0.date = date }
     }
     
     func changeRecord(tag: String) {
-        recordModel.tag = tag
+        modifyRecord { $0.tag = tag }
     }
 }
 
 // MARK: - Helper
 
 private extension DetailViewModel {
-    
+    func modifyRecord(_ closure: (Record) -> Void) {
+        let record = recordRelay.value
+        closure(record)
+        recordRelay.accept(record)
+    }
 }

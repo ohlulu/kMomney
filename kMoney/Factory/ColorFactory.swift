@@ -60,6 +60,10 @@ extension UIColor {
         return .rgba(red: 48, green: 48, blue: 52, alpha: 1)
     }
     
+    @nonobjc class var veryLightPink: UIColor {
+        return .rgba(red: 222, green: 222, blue: 222, alpha: 1)
+    }
+    
     @nonobjc class var fromPurple: UIColor {
         return .rgba(red: 125, green: 129, blue: 222, alpha: 1)
     }

@@ -53,10 +53,16 @@ class DetailViewController: BaseViewController {
             ])
         .done()
     
-    // MARK: Private property
+    private let saveButton = UIButton().oh
+        .backgroundImage(.create(from: .veryLightPink), for: .disabled)
+        .backgroundImage(.create(from: .seafoamBlue), for: .normal)
+        .title("儲存", for: .normal)
+        .done()
     
-    private lazy var transitionAnimation = DiffusionTransition()
+    // Property
     private let viewModel = DetailViewModel()
+    private lazy var transitionAnimation = DiffusionTransition()
+    private var saveButtonBottomConstraint: Constraint?
     
     // MARK: - Life cycle
     
@@ -128,6 +134,8 @@ private extension DetailViewController {
     
     func observerStream() {
         
+        observKeyboard()
+        
         // closeButton Pressed
         closeButton.rx.tap
             .subscribe(onNext: { [unowned self] _ in
@@ -170,6 +178,25 @@ private extension DetailViewController {
         viewModel.dateTextStream
             .bind(to: dateLabel.rx.text)
             .disposed(by: bag)
+    }
+    
+    private func observKeyboard() {
+        
+        RxKeyboard.shared.visibleHeight
+            .drive(onNext: { [weak self] height in
+                guard let self = self else { return }
+                var height = height
+                if height > 0 {
+                    height -= UIScreen.safeAreaInset.bottom
+                }
+                self.saveButtonBottomConstraint?.update(offset: -height)
+                UIView.animate(
+                    withDuration: 0.25,
+                    delay: 0,
+                    options: UIView.AnimationOptions.init(rawValue: 7), animations: {
+                        self.view.layoutIfNeeded()
+                })
+            }).disposed(by: bag)
     }
 }
 
@@ -268,6 +295,14 @@ fileprivate extension DetailViewController {
             make.height.equalTo(1)
             make.top.equalTo(hashTagTextField.snp.bottom)
         }
+        
+        view.addSubview(saveButton)
+        saveButton.snp.makeConstraints { (make) in
+            make.leading.trailing.equalToSuperview()
+            saveButtonBottomConstraint = make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).constraint
+            make.height.equalTo(44)
+        }
+        view.layoutIfNeeded()
     }
 }
 
