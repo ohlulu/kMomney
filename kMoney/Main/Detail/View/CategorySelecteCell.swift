@@ -14,7 +14,7 @@ class CategorySelecteCell: UICollectionViewCell {
     
     private let nameLabel = UILabel().oh
         .font(.systemFont(ofSize: 12, weight: .regular))
-        .textColor(.greyText186)
+        .textColor(.pinkishGrey)
         .textAlignment(.center)
         .done()
     

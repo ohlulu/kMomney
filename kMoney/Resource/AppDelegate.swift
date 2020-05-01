@@ -59,6 +59,12 @@ extension AppDelegate {
         manager.enable = true
         manager.enableAutoToolbar = false
         manager.shouldResignOnTouchOutside = true
+//        manager.disabledTouchResignedClasses = [
+//            DetailViewController.self
+//        ]
+//        manager.touchResignedGestureIgnoreClasses = [
+//            UIButton.self
+//        ]
     }
 }
 

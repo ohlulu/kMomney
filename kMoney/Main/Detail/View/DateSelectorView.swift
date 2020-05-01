@@ -16,7 +16,7 @@ final class DateSelectorView: UIView {
     
     // property
     let selectedDateStream = PublishRelay<Date>()
-    private let calendarSize = CGSize.init(width: UIScreen.width, height: UIScreen.height * 0.3)
+    private let calendarSize = CGSize.init(width: UIScreen.width, height: Int(UIScreen.height * 0.3).double)
     
     // MARK: - Life cycle
     override init(frame: CGRect) {

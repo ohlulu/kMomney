@@ -26,11 +26,6 @@ class CategoryView: UIView {
         setupUI()
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        imageView.oh.cornerRadius(frame.size.height / 2)
-    }
-    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -60,5 +55,6 @@ private extension CategoryView {
             make.edges.equalToSuperview()
         }
         categoryDidChagne()
+        imageView.oh.cornerRadius(frame.size.height / 2)
     }
 }

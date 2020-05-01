@@ -49,15 +49,17 @@ class DetailViewController: BaseViewController {
         .keyboardAppearance(.dark)
         .attributedPlaceholder("＃標籤", attribute: [
             .font: UIFont.systemFont(ofSize: 15, weight: .medium),
-            .foregroundColor: UIColor.greyText186
+            .foregroundColor: UIColor.pinkishGrey.alpha(0.7)
             ])
         .done()
     
     private let saveButton = UIButton().oh
-        .backgroundImage(.create(from: .veryLightPink), for: .disabled)
+        .backgroundImage(.create(from: .lightGray), for: .disabled)
         .backgroundImage(.create(from: .seafoamBlue), for: .normal)
         .title("儲存", for: .normal)
+        .font(.boldSystemFont(ofSize: 18))
         .done()
+    private let saveButtonHoldupView = UIView()
     
     // Property
     private let viewModel = DetailViewModel()
@@ -125,6 +127,21 @@ private extension DetailViewController {
                 guard let self = self else { return }
                 self.viewModel.changeRecord(tag: tag)
             }).disposed(by: bag)
+        
+        // tap savebutton
+        saveButton.rx.tap
+            .subscribe(onNext: { [weak self] _ in
+                guard let self = self else { return }
+                self.viewModel.didTapSaveButton()
+            }).disposed(by: bag)
+        
+        saveButtonHoldupView.rx.tapGesture().when(.recognized)
+            .filter { [saveButton] _ in !saveButton.isEnabled }
+            .subscribe(onNext: { [weak self] _ in
+                guard let self = self else { return }
+                self.moneyHiddenTextField.becomeFirstResponder()
+                self.viewModel.didTapSaveButton()
+            }).disposed(by: bag)
     }
 }
 
@@ -134,7 +151,7 @@ private extension DetailViewController {
     
     func observerStream() {
         
-        observKeyboard()
+        observeKeyboard()
         
         // closeButton Pressed
         closeButton.rx.tap
@@ -149,7 +166,9 @@ private extension DetailViewController {
                 return (Int(e) ?? 0).rx.asObservable()
             }
             .filter { $0 < 99999999 }
-            .map {
+            .map { [weak self] in
+                guard let self = self else { return "" }
+                self.viewModel.changeRecord(money: $0)
                 let formatter = NumberFormatter()
                 formatter.numberStyle = .decimal
                 formatter.positivePrefix = "$ "
@@ -169,18 +188,29 @@ private extension DetailViewController {
             .disposed(by: bag)
         
         viewModel.selectedCategoryStream
-            .subscribe(onNext: { [weak self] selected in
+            .drive(onNext: { [weak self] selected in
                 guard let self = self else { return }
                 self.categoryView.category = selected
             }).disposed(by: bag)
         
         // date label text
         viewModel.dateTextStream
-            .bind(to: dateLabel.rx.text)
+            .drive(dateLabel.rx.text)
             .disposed(by: bag)
+        
+        // saveButton IsEnable
+        viewModel.saveButtonIsEnable
+            .debug()
+            .drive(saveButton.rx.isEnabled)
+            .disposed(by: bag)
+        
+        viewModel.moneyZeroShakeStream
+            .drive(onNext: { [weak self] _ in
+                self?.moneyLabel.errorshake()
+            }).disposed(by: bag)
     }
     
-    private func observKeyboard() {
+    private func observeKeyboard() {
         
         RxKeyboard.shared.visibleHeight
             .drive(onNext: { [weak self] height in
@@ -189,11 +219,22 @@ private extension DetailViewController {
                 if height > 0 {
                     height -= UIScreen.safeAreaInset.bottom
                 }
-                self.saveButtonBottomConstraint?.update(offset: -height)
+                
+                let bottomOffset: CGFloat = 12
+                height = max(height, bottomOffset)
+                
                 UIView.animate(
                     withDuration: 0.25,
                     delay: 0,
                     options: UIView.AnimationOptions.init(rawValue: 7), animations: {
+                        let cornerRadius: CGFloat = height == bottomOffset ? 22 : 0
+                        let inset: CGFloat = height == bottomOffset ? 16 : 0
+                        self.saveButton.oh.cornerRadius(cornerRadius)
+//                        self.saveButtonBottomConstraint?.update(offset: -height)
+                        self.saveButton.snp.updateConstraints { make in
+                            make.leading.trailing.equalToSuperview().inset(inset)
+                            make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).offset(-height)
+                        }
                         self.view.layoutIfNeeded()
                 })
             }).disposed(by: bag)
@@ -287,13 +328,13 @@ fileprivate extension DetailViewController {
         }
         
         let lineView = UIView().oh
-            .backgroundColor(.greyText186)
+            .backgroundColor(.pinkishGrey)
             .done()
         view.addSubview(lineView)
         lineView.snp.makeConstraints { (make) in
             make.leading.trailing.equalTo(hashTagTextField)
             make.height.equalTo(1)
-            make.top.equalTo(hashTagTextField.snp.bottom)
+            make.bottom.equalTo(tagIcon.snp.bottom)
         }
         
         view.addSubview(saveButton)
@@ -301,6 +342,11 @@ fileprivate extension DetailViewController {
             make.leading.trailing.equalToSuperview()
             saveButtonBottomConstraint = make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).constraint
             make.height.equalTo(44)
+        }
+        
+        view.addSubview(saveButtonHoldupView)
+        saveButtonHoldupView.snp.makeConstraints { (make) in
+            make.edges.equalTo(saveButton)
         }
         view.layoutIfNeeded()
     }

@@ -82,10 +82,6 @@ public class RxKeyboard: NSObject, RxKeyboardType {
         let willChangeFrame = NotificationCenter.default.rx.notification(keyboardWillChangeFrame)
             .map { notification -> CGRect in
                 let rectValue = notification.userInfo?[keyboardFrameEndKey] as? NSValue
-                let d = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey]
-                let c = notification.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey]
-                printDebug(d)
-                printDebug(c)
                 return rectValue?.cgRectValue ?? defaultFrame
             }
             .map { frame -> CGRect in
@@ -101,10 +97,6 @@ public class RxKeyboard: NSObject, RxKeyboardType {
         let willHide = NotificationCenter.default.rx.notification(keyboardWillHide)
             .map { notification -> CGRect in
                 let rectValue = notification.userInfo?[keyboardFrameEndKey] as? NSValue
-                let d = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey]
-                let c = notification.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey]
-                printDebug(d)
-                printDebug(c)
                 return rectValue?.cgRectValue ?? defaultFrame
             }
             .map { frame -> CGRect in

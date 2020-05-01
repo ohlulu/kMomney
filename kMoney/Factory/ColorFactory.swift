@@ -52,8 +52,8 @@ extension UIColor {
         return UIColor(white: 37.0 / 255.0, alpha: 0.9)
     }
     
-    @nonobjc class var greyText186: UIColor {
-        return .rgba(red: 186, green: 186, blue: 186, alpha: 1)
+    @nonobjc class var pinkishGrey: UIColor {
+        return .rgba(red: 206, green: 206, blue: 206, alpha: 1)
     }
     
     @nonobjc class var background: UIColor {
