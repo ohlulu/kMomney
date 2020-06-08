@@ -1,0 +1,130 @@
+{
+    "datas": [
+        {
+            "name": "食物",
+            "hex": "A4BFFA",
+            "icon": "food"
+        },
+        {
+            "name": "旅行",
+            "hex": "7776B4",
+            "icon": "airplane"
+        },
+        {
+            "name": "零食",
+            "hex": "FFA56B",
+            "icon": "candy"
+        },
+        {
+            "name": "衣服",
+            "hex": "C361E8",
+            "icon": "clothes"
+        },
+        {
+            "name": "食物",
+            "hex": "A4BFFA",
+            "icon": "food"
+        },
+        {
+            "name": "旅行",
+            "hex": "7776B4",
+            "icon": "airplane"
+        },
+        {
+            "name": "零食",
+            "hex": "FFA56B",
+            "icon": "candy"
+        },
+        {
+            "name": "衣服",
+            "hex": "C361E8",
+            "icon": "clothes"
+        },
+        {
+            "name": "食物",
+            "hex": "A4BFFA",
+            "icon": "food"
+        },
+        {
+            "name": "旅行",
+            "hex": "7776B4",
+            "icon": "airplane"
+        },
+        {
+            "name": "零食",
+            "hex": "FFA56B",
+            "icon": "candy"
+        },
+        {
+            "name": "衣服",
+            "hex": "C361E8",
+            "icon": "clothes"
+        },
+        {
+            "name": "食物",
+            "hex": "A4BFFA",
+            "icon": "food"
+        },
+        {
+            "name": "旅行",
+            "hex": "7776B4",
+            "icon": "airplane"
+        },
+        {
+            "name": "零食",
+            "hex": "FFA56B",
+            "icon": "candy"
+        },
+        {
+            "name": "衣服",
+            "hex": "C361E8",
+            "icon": "clothes"
+        },
+        {
+            "name": "食物",
+            "hex": "A4BFFA",
+            "icon": "food"
+        },
+        {
+            "name": "旅行",
+            "hex": "7776B4",
+            "icon": "airplane"
+        },
+        {
+            "name": "零食",
+            "hex": "FFA56B",
+            "icon": "candy"
+        },
+        {
+            "name": "衣服",
+            "hex": "C361E8",
+            "icon": "clothes"
+        },
+        {
+            "name": "食物",
+            "hex": "A4BFFA",
+            "icon": "food"
+        },
+        {
+            "name": "旅行",
+            "hex": "7776B4",
+            "icon": "airplane"
+        },
+        {
+            "name": "零食",
+            "hex": "FFA56B",
+            "icon": "candy"
+        },
+        {
+            "name": "衣服end",
+            "hex": "C361E8",
+            "icon": "clothes"
+        },
+        {
+            "name": "新增",
+            "hex": "clear",
+            "icon": "new"
+        }
+    ]
+
+}

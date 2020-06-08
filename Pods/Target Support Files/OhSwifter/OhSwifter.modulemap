@@ -1,0 +1,6 @@
+framework module OhSwifter {
+  umbrella header "OhSwifter-umbrella.h"
+
+  export *
+  module * { export * }
+}

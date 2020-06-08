@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import OhSwifter
 
 enum KMFont {
     case text(Weight, CGFloat)
@@ -35,5 +36,19 @@ extension KMFont {
             case .bold: return .bold
             }
         }
+    }
+}
+
+extension OhSwifter where Base: SwiftOriginFontExclamationMark {
+    func kFont(_ font: KMFont) -> OhSwifter {
+        base.font = font.rawValue
+        return self
+    }
+}
+
+extension OhSwifter where Base: SwiftOriginFontQuestionMark {
+    func kFont(_ font: KMFont) -> OhSwifter {
+        base.font = font.rawValue
+        return self
     }
 }
