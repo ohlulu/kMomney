@@ -127,17 +127,24 @@ private extension DetailViewController {
             }).disposed(by: bag)
         
         // tag text -> record
-        hashTagTextField.rx.text.orEmpty
-            .subscribe(onNext: { [weak self] tag in
+        hashTagTextField.rx.controlEvent(.editingDidEnd)
+            .subscribe(onNext: { [weak self] _ in
                 guard let self = self else { return }
-                self.viewModel.changeRecord(tag: tag)
+                if let tags = self.hashTagTextField.text, !tags.isEmpty {
+                    self.viewModel.changeRecord(tag: tags)
+                }
             }).disposed(by: bag)
         
         // tap savebutton
         saveButton.rx.tap
+            .do(onNext: { [weak self] _ in
+                self?.hashTagTextField.sendActions(for: .editingDidEnd)
+            })
+            .flatMap { [viewModel] _ in viewModel.didTapSaveButton() }
+            .filter { $0 }
             .subscribe(onNext: { [weak self] _ in
                 guard let self = self else { return }
-                self.viewModel.didTapSaveButton()
+                self.dismiss(animated: true)
             }).disposed(by: bag)
         
         saveButtonHoldupView.rx.tapGesture().when(.recognized)
@@ -147,25 +154,6 @@ private extension DetailViewController {
                 self.moneyHiddenTextField.becomeFirstResponder()
                 self.viewModel.didTapSaveButton()
             }).disposed(by: bag)
-        
-//        view.rx.tapGesture().when(.recognized)
-//            .subscribe(onNext: { [weak self] gesture in
-//                guard let self = self else { return }
-//                let ignoreViews = [
-//                    self.saveButton,
-//                    self.moneyHiddenTextField,
-//                    self.dateHiddenTextField,
-//                    self.hashTagTextField
-//                ]
-//                for ignoreView in ignoreViews {
-//                    if ignoreView.frame.contains(gesture.location(in: self.view)) {
-//                        return
-//                    }
-//                }
-//                self.moneyHiddenTextField.resignFirstResponder()
-//                self.dateHiddenTextField.resignFirstResponder()
-//                self.hashTagTextField.resignFirstResponder()
-//            }).disposed(by: bag)
     }
 }
 

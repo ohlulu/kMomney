@@ -19,7 +19,9 @@ class Record: Object {
     
     @objc dynamic var money = 0
     
-    @objc dynamic var tag = ""
+    var tagRawString: String = ""
+    
+    var tagList: List<HashTag> = List()
     
     static override func primaryKey() -> String? {
         return "id"

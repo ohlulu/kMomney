@@ -35,6 +35,7 @@ final class DetailViewModel: BaseViewModel {
             .asDriver(onErrorJustReturn: "")
         
         saveButtonIsEnable = recordRelay.map { $0.money != 0 && $0.category != nil }
+            .debug()
             .asDriver(onErrorJustReturn: false)
             .distinctUntilChanged()
         
@@ -70,20 +71,51 @@ extension DetailViewModel {
     }
     
     func changeRecord(tag: String) {
-        modifyRecord { $0.tag = tag }
+        modifyRecord { $0.tagRawString = tag}
     }
     
-    func didTapSaveButton() {
+    @discardableResult
+    func didTapSaveButton() -> Observable<Bool> {
         let record = recordRelay.value
         if record.money == 0 {
             moneyZeroShakeRelay.accept(())
-            return
+            return .just(false)
+        }
+        
+        let tagList = record.tagRawString.components(separatedBy: ",")
+            .map { $0.trimmingCharacters(in: .whitespaces) }
+            .filter { !$0.isEmpty }
+        
+        let tagListToRealm = List<HashTag>()
+        tagList.forEach {
+            let tag: HashTag
+            if let oldTag = $0.getTagFromRealm() {
+                tag = oldTag
+            } else {
+                let newTag = HashTag(value: [$0])
+                tag = newTag
+            }
+            
+            tagListToRealm.append(tag)
+        }
+        
+        Realm.write {
+            $0.add(tagListToRealm, update: .modified)
+        }
+        
+        modifyRecord { record in
+            record.tagList.removeAll()
+            tagListToRealm.forEach { tag in
+                record.tagList.append(tag)
+            }
         }
         
         printDebug(record)
         Realm.write {
             $0.add(record, update: .all)
         }
+        
+        return .just(true)
     }
 }
 
